@@ -1,5 +1,7 @@
 import random
 from html import escape
+from pathlib import Path
+from streamlit.components.v1 import declare_component
 
 import streamlit as st
 from questions import DATA
@@ -78,10 +80,16 @@ h1,h2,h3,p,li{letter-spacing:-.025em}
 .hero h1{font-size:3rem}
 .result-panel{padding:22px 15px;gap:14px}.score-ring{width:94px;height:94px}.score-core{width:78px;height:78px}.score-core strong{font-size:1.5rem}
 }
+@keyframes starshine{50%{opacity:.15;box-shadow:0 0 2px #d9d1ff}}
+@keyframes planetfloat{0%,100%{translate:0 0}50%{translate:0 -10px}}
+.star{animation:starshine 3s ease-in-out infinite}.star:nth-of-type(3n){animation-delay:.8s}.star:nth-of-type(4n){animation-delay:1.6s}
+.planet-art{animation:planetfloat 5s ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){.star,.planet-art{animation:none}}
 </style>
 """, unsafe_allow_html=True)
 
 LEVELS = {1: "1º ao 3º ano", 2: "4º e 5º ano", 3: "6º ao 9º ano", 4: "Ensino Médio"}
+game = declare_component('astroquiz_game', path=str(Path(__file__).parent / 'game_frontend'))
 s = st.session_state
 if "stage" not in s:
     s.stage = "home"
@@ -97,7 +105,7 @@ def section(kicker, title, desc=""):
 def stat(label, value):
     html(f'<div class="mini-stat"><span>{escape(str(label))}</span><strong>{escape(str(value))}</strong></div>')
 
-def start(level, mode):
+def start(level, mode, duration):
     pool = DATA[level]
     selected = random.sample([q for q in pool if q[0] == "Astronomia"], 7)
     selected += random.sample([q for q in pool if q[0] == "Astronáutica"], 3)
@@ -109,6 +117,7 @@ def start(level, mode):
         s.questions.append(dict(topic=topic, prompt=prompt, correct=correct, opts=opts, explanation=explanation))
     s.level = level
     s.mode = mode
+    s.duration = duration
     s.idx = 0
     s.answers = []
     s.locked = False
@@ -161,7 +170,9 @@ if s.stage == "home":
         section("02 / Modo de jogo", "Como você quer jogar?")
         mode = st.radio("Modo", ["Treino comentado", "Simulado"], horizontal=True, label_visibility="collapsed")
         html('<div class="small-note">' + ("Aprenda com a explicação logo após cada resposta." if mode == "Treino comentado" else "Responda todas as questões antes de consultar o gabarito.") + '</div>')
-        st.button("Iniciar minha missão  →", type="primary", use_container_width=True, on_click=start, args=(s.selected_level, mode))
+        section("03 / Cronômetro", "Quanto tempo por pergunta?")
+        duration = st.selectbox("Tempo por pergunta", [30, 45, 60, 90, 120, 0], index=2, format_func=lambda n: f"{n} segundos" if n else "Sem limite de tempo", label_visibility="collapsed")
+        st.button("Iniciar minha missão  →", type="primary", use_container_width=True, on_click=start, args=(s.selected_level, mode, duration))
     with right:
         with st.container(border=True):
             section("Guia de bordo", "O que te espera")
@@ -171,44 +182,37 @@ if s.stage == "home":
             st.caption("Questões autorais de preparação para a OBA. Não é uma prova oficial.")
 
 elif s.stage == "quiz":
-    total = len(s.questions)
-    q = s.questions[s.idx]
-    letters = "ABCD"
     left, right = st.columns([2.4, 1], gap="large")
     with left:
-        with st.container(border=True):
-            html(f'<div class="question-header"><span class="question-tag">{escape(q["topic"])}</span><span class="question-index">QUESTÃO {s.idx+1:02d} / {total:02d}</span></div>')
-            segments = "".join('<span class="' + ("done" if i < len(s.answers) else "current" if i == s.idx else "") + '"></span>' for i in range(total))
-            html('<div class="progress-track">' + segments + '</div>')
-            html(f'<div class="question-title">{escape(q["prompt"])}</div>')
-            st.caption("Toque em uma alternativa para registrar sua resposta." if not s.locked else "Resposta registrada.")
-            with st.container(key="choices"):
-                if not s.locked:
-                    for i, option in enumerate(q["opts"]):
-                        st.button(f"{letters[i]}  ·  {option}", key=f"answer_{s.round}_{s.idx}_{i}", on_click=choose, args=(option,), use_container_width=True)
-                else:
-                    answer = s.answers[-1]
-                    for i, option in enumerate(q["opts"]):
-                        style = ""
-                        if s.mode == "Treino comentado":
-                            if option == q["correct"]: style = "good"
-                            elif option == answer["chosen"]: style = "bad"
-                        elif option == answer["chosen"]:
-                            style = "chosen"
-                        html(f'<div class="answer-card {style}"><b>{letters[i]}</b>{escape(option)}</div>')
-                    if s.mode == "Treino comentado":
-                        if answer["ok"]: st.success("Você acertou!")
-                        else: st.error("A alternativa correta está destacada em verde.")
-                        st.info(q["explanation"])
-                    st.button("Ver meu resultado  →" if s.idx+1 == total else "Próxima questão  →", type="primary", on_click=advance, use_container_width=True)
+        result = game(questions=s.questions, round=s.round, level=s.level, mode=s.mode, duration=s.duration, key=f"game_{s.round}", default=None)
+        if isinstance(result, dict) and result.get("round") == s.round:
+            if result.get("action") == "exit":
+                s.stage = "home"
+                st.rerun()
+            elif result.get("action") == "complete":
+                recorded = result.get("answers")
+                if isinstance(recorded, list) and len(recorded) == len(s.questions):
+                    checked = []
+                    for q, a in zip(s.questions, recorded):
+                        choice = a.get("option") if isinstance(a, dict) else None
+                        if choice not in q["opts"]:
+                            choice = None
+                        elapsed = a.get("elapsed", 0) if isinstance(a, dict) else 0
+                        if not isinstance(elapsed, (int, float)) or elapsed < 0:
+                            elapsed = 0
+                        if s.duration:
+                            elapsed = min(s.duration, elapsed)
+                        checked.append(dict(q=q, chosen=choice or "Não respondida", ok=choice == q["correct"], elapsed=elapsed, expired=choice is None))
+                    s.answers = checked
+                    s.stage = "results"
+                    st.rerun()
     with right:
         with st.container(border=True):
             section("Painel da missão", f"Nível {s.level}")
             st.caption(LEVELS[s.level] + " · " + s.mode)
-            stat("Respostas registradas", f"{len(s.answers)}/{total}")
-            if s.mode == "Treino comentado":
-                stat("Acertos", sum(r["ok"] for r in s.answers))
-            st.button("Encerrar e voltar", on_click=home, use_container_width=True)
+            stat("Perguntas", len(s.questions))
+            stat("Tempo por questão", f"{s.duration} s" if s.duration else "Livre")
+            st.caption("Ative ou desative os efeitos sonoros no próprio jogo. Seu resultado será exibido ao concluir a missão.")
 
 else:
     total = len(s.answers)
@@ -225,12 +229,15 @@ else:
                 st.write(f'**Sua resposta:** {r["chosen"]}')
                 st.write(f'**Resposta correta:** {q["correct"]}')
                 st.write(q["explanation"])
+                st.caption(f'Tempo utilizado: {r.get("elapsed", 0)} s')
     with right:
         with st.container(border=True):
             section("Desempenho", "Por área")
             for topic in ["Astronomia", "Astronáutica"]:
                 subset = [r for r in s.answers if r["q"]["topic"] == topic]
                 stat(topic, f'{sum(r["ok"] for r in subset)}/{len(subset)}')
+            stat("Tempo de resposta total", f'{sum(r.get("elapsed", 0) for r in s.answers)} s')
+            stat("Tempo esgotado", sum(r.get("expired", False) for r in s.answers))
             st.button("Nova missão  →", type="primary", on_click=home, use_container_width=True)
 
 st.divider()
