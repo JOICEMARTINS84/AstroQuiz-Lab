@@ -1,1 +1,29 @@
-# AstroQuiz-Lab
+# AstroQuiz Lab
+
+Projeto educacional independente de Matemática & Contexto, por Joice Souza Martins Santos. Preparação para a Olimpíada Brasileira de Astronomia e Astronáutica.
+
+- 48 questões autorais distribuídas pelos quatro níveis escolares.
+- Rodadas de dez questões (sete de astronomia e três de astronáutica).
+- Modo treino com feedback imediato e modo simulado com gabarito no final.
+- Questões e alternativas embaralhadas; pontuação e revisão comentada.
+- Sem cadastro ou armazenamento de dados pessoais.
+
+## Executar no Windows
+
+Abra o PowerShell na pasta do projeto e execute:
+
+```powershell
+py -m pip install -r requirements.txt
+py -m streamlit run app.py
+```
+
+## Publicar
+
+No Streamlit Community Cloud, clique em Create app e selecione o repositório JOICEMARTINS84/AstroQuiz-Lab, a branch main e o arquivo app.py.
+
+## Referências
+
+- [Regulamento e conteúdos da OBA 2025](https://docs.oba.org.br/regulamento-da-28-olimpiada-brasileira-de-astronomia-e-astronautica-28-oba-2025)
+- [Provas e gabaritos oficiais](https://site.oba.org.br/provas-e-gabaritos)
+
+As questões são autorais, alinhadas ao conteúdo programático de 2025; não são cópias de provas oficiais. Este projeto não possui vínculo com a organização da OBA.
