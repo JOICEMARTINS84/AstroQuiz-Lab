@@ -182,7 +182,7 @@ if s.stage == "home":
         stars = "".join(f'<i class="star" style="left:{x}%;top:{y}%"></i>' for x,y in [(8,12),(48,10),(56,74),(69,13),(94,12),(93,82),(61,42),(48,86),(78,90),(99,47),(35,18),(84,27)])
         html('''<div class="hero">''' + stars + '''
         <div class="hero-copy"><div class="hero-kicker">Uma jornada pelo universo</div>
-        <h1>Explore.<br>Questione.<br>Descubra.</h1>
+        <h1>ASTROQUIZ</h1>
         <p>Teste seus conhecimentos de astronomia e astronáutica. Aprenda a cada missão e prepare-se para a OBA.</p>
         <div class="hero-tags"><span>48 questões</span><span>4 níveis</span><span>10 por missão</span></div></div>
         <svg class="planet-art" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
