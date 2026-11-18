@@ -1,4 +1,5 @@
 import random
+import base64
 from html import escape
 from pathlib import Path
 from streamlit.components.v1 import declare_component
@@ -7,6 +8,9 @@ import streamlit as st
 from questions import DATA
 
 st.set_page_config(page_title="AstroQuiz Lab", page_icon="✦", layout="wide")
+
+background_file = Path(__file__).parent / "astroquiz.webp"
+background_uri = "data:image/webp;base64," + base64.b64encode(background_file.read_bytes()).decode("ascii") if background_file.is_file() else ""
 
 st.markdown("""
 <style>
@@ -85,8 +89,36 @@ h1,h2,h3,p,li{letter-spacing:-.025em}
 .star{animation:starshine 3s ease-in-out infinite}.star:nth-of-type(3n){animation-delay:.8s}.star:nth-of-type(4n){animation-delay:1.6s}
 .planet-art{animation:planetfloat 5s ease-in-out infinite}
 @media(prefers-reduced-motion:reduce){.star,.planet-art{animation:none}}
+
+:root{--ink:#edf6ff;--muted:#aabdd8;--line:#355483;--paper:#050a1b;--violet:#6bdcff}
+.stApp{background-color:#050a1b;background-image:radial-gradient(circle at 18% 20%,#49208a77,transparent 33%),radial-gradient(circle at 84% 75%,#134f9888,transparent 41%),radial-gradient(circle,#a9d8ff77 1px,transparent 1.3px);background-size:auto,auto,37px 37px;color:#edf6ff}
+[data-testid="stHeader"]{background:transparent}
+.brand{color:#eaf7ff}.brand-mark{background:#092443;border:1px solid #5edbff;box-shadow:0 0 16px #3ed3ff66;color:#c7f7ff}.brand-tag{color:#a8d9f4}
+.hero{background:radial-gradient(ellipse at 75% 40%,#3c238e88,transparent 60%),linear-gradient(130deg,#050b20,#0c2144);border:1px solid #347cc3;box-shadow:0 0 35px #1768c73b}
+.hero-kicker{color:#7ce6ff}.hero-tags span{background:#0b235f8f;border-color:#458fd3;color:#d4f7ff}
+[data-testid="stVerticalBlockBorderWrapper"]{background:#09152de8!important;border-color:#2d4d78!important}
+.section-kicker{color:#6ce2ff}.section-title,.question-title{color:#f2f7ff}.section-desc,.small-note{color:#b0c3de}
+.stButton button{background:linear-gradient(135deg,#10254b,#192145);border:1px solid #355b96;color:#e6f7ff;box-shadow:0 0 12px #1767b51c}
+.stButton button:hover{background:#1e3b68;color:white;border-color:#5edaff;box-shadow:0 0 15px #4cadef48}
+.stButton button[kind="primary"]{background:linear-gradient(115deg,#244fdb,#6750d9);color:white;border-color:#78b8ff;box-shadow:0 0 24px #3669de52}
+.stButton button[kind="primary"]:hover{background:linear-gradient(115deg,#3269f3,#8266ed);border-color:#a8ecff}
+.st-key-levels .stButton button{background:#0b1934e8;color:#e5f6ff;border-color:#37598a}.st-key-levels .stButton button[kind="primary"]{background:linear-gradient(135deg,#163d78,#362c72);color:#c6f7ff;border:2px solid #5bdaff;box-shadow:0 0 19px #40c8ff35}.st-key-levels .stButton button:hover{background:#183c6d;color:white;border-color:#72e6ff}
+.feature-num{background:#14385e;color:#8de8ff;border:1px solid #326b9f}.feature strong{color:#e8f4ff}.feature p{color:#b3c5df}.mini-stat{background:#0e2240;border-color:#315784}.mini-stat span{color:#b5cbe6}.mini-stat strong{color:#eaf6ff}.footer-note{color:#a9c8e6}
+.result-panel{background:#0b1939ed;border:1px solid #4895c9;box-shadow:0 0 25px #3970d333}.score-core{background:#0b1939}.question-tag{background:#133759;color:#9be9ff}
+.st-key-levels,.st-key-choices{border-radius:16px}.stCaption p{color:#a9c9e9}
+.game-banner{border:1px solid #4697dd;border-radius:22px;overflow:hidden;box-shadow:0 0 35px #2486e34d;position:relative;background:#040a20}
+.game-banner img{display:block;width:100%;height:auto}
+.game-menu{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:14px 0 12px;padding:17px 20px;background:#08152de8;border:1px solid #355d91;border-radius:14px}
+.game-menu strong{color:#c6f4ff;font-size:1.1rem}.game-menu span{font-size:.82rem;color:#b2c8e7}
+@media(max-width:680px){.game-banner{border-radius:14px}.game-menu{display:block}.game-menu span{display:block;margin-top:5px}}
+
 </style>
 """, unsafe_allow_html=True)
+
+if background_uri:
+    st.markdown(f"""<style>
+    .stApp {{background-image:linear-gradient(180deg,rgba(3,8,25,.38),rgba(3,8,25,.86) 65%),url('{background_uri}');background-size:cover;background-position:center top;background-attachment:fixed;}}
+    </style>""", unsafe_allow_html=True)
 
 LEVELS = {1: "1º ao 3º ano", 2: "4º e 5º ano", 3: "6º ao 9º ano", 4: "Ensino Médio"}
 game = declare_component('astroquiz_game', path=str(Path(__file__).parent / 'game_frontend'))
@@ -143,21 +175,25 @@ def home():
 html('<div class="brand"><div class="brand-name"><span class="brand-mark">✦</span> AstroQuiz Lab</div><span class="brand-tag">Matemática &amp; Contexto</span></div>')
 
 if s.stage == "home":
-    stars = "".join(f'<i class="star" style="left:{x}%;top:{y}%"></i>' for x,y in [(8,12),(48,10),(56,74),(69,13),(94,12),(93,82),(61,42),(48,86),(78,90),(99,47),(35,18),(84,27)])
-    html('''<div class="hero">''' + stars + '''
-    <div class="hero-copy"><div class="hero-kicker">Uma jornada pelo universo</div>
-    <h1>Explore.<br>Questione.<br>Descubra.</h1>
-    <p>Teste seus conhecimentos de astronomia e astronáutica. Aprenda a cada missão e prepare-se para a OBA.</p>
-    <div class="hero-tags"><span>48 questões</span><span>4 níveis</span><span>10 por missão</span></div></div>
-    <svg class="planet-art" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <defs><radialGradient id="sphere" cx=".3" cy=".25" r=".8"><stop stop-color="#f3dac0"/><stop offset=".42" stop-color="#c294a0"/><stop offset=".75" stop-color="#7b648f"/><stop offset="1" stop-color="#343957"/></radialGradient><linearGradient id="ring" x1="0" x2="1" y1="1" y2="0"><stop stop-color="#a683c4"/><stop offset=".5" stop-color="#f7ddba"/><stop offset="1" stop-color="#736d9d"/></linearGradient><clipPath id="disk"><circle cx="216" cy="210" r="104"/></clipPath></defs>
-    <g fill="none" stroke="#c6bbef" opacity=".18"><circle cx="216" cy="210" r="171"/><circle cx="216" cy="210" r="150" stroke-dasharray="2 8"/><path d="M55 210H377M216 49V371"/></g>
-    <ellipse cx="216" cy="210" rx="179" ry="47" fill="none" stroke="url(#ring)" stroke-width="21" opacity=".48" transform="rotate(-25 216 210)"/>
-    <circle cx="216" cy="210" r="104" fill="url(#sphere)"/>
-    <g clip-path="url(#disk)" opacity=".31" fill="none" stroke-linecap="round"><path d="M95 156Q220 204 344 137M92 176Q220 218 343 155" stroke="#e5c7bc" stroke-width="13"/><path d="M95 221Q212 263 345 194M93 249Q232 285 342 226M100 286Q230 314 337 263" stroke="#55486f" stroke-width="11"/></g>
-    <g transform="rotate(-25 216 210)" fill="none" stroke="url(#ring)"><path d="M37 210a179 47 0 0 0 358 0" stroke-width="21" opacity=".92"/><path d="M22 210a194 61 0 0 0 388 0" stroke-width="1.8" opacity=".55"/></g>
-    <circle cx="344" cy="95" r="5" fill="#e7d6fd"/><circle cx="344" cy="95" r="11" fill="none" stroke="#c1bce9" opacity=".4"/>
-    </svg></div>''')
+    if background_uri:
+        html(f'<div class="game-banner"><img src="{background_uri}" alt="ASTROQUIZ — cenário espacial com planetas, galáxias e constelações"></div>')
+        html('<div class="game-menu"><strong>Selecione sua missão</strong><span>48 questões · 4 níveis · 10 perguntas por missão</span></div>')
+    else:
+        stars = "".join(f'<i class="star" style="left:{x}%;top:{y}%"></i>' for x,y in [(8,12),(48,10),(56,74),(69,13),(94,12),(93,82),(61,42),(48,86),(78,90),(99,47),(35,18),(84,27)])
+        html('''<div class="hero">''' + stars + '''
+        <div class="hero-copy"><div class="hero-kicker">Uma jornada pelo universo</div>
+        <h1>Explore.<br>Questione.<br>Descubra.</h1>
+        <p>Teste seus conhecimentos de astronomia e astronáutica. Aprenda a cada missão e prepare-se para a OBA.</p>
+        <div class="hero-tags"><span>48 questões</span><span>4 níveis</span><span>10 por missão</span></div></div>
+        <svg class="planet-art" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs><radialGradient id="sphere" cx=".3" cy=".25" r=".8"><stop stop-color="#f3dac0"/><stop offset=".42" stop-color="#c294a0"/><stop offset=".75" stop-color="#7b648f"/><stop offset="1" stop-color="#343957"/></radialGradient><linearGradient id="ring" x1="0" x2="1" y1="1" y2="0"><stop stop-color="#a683c4"/><stop offset=".5" stop-color="#f7ddba"/><stop offset="1" stop-color="#736d9d"/></linearGradient><clipPath id="disk"><circle cx="216" cy="210" r="104"/></clipPath></defs>
+        <g fill="none" stroke="#c6bbef" opacity=".18"><circle cx="216" cy="210" r="171"/><circle cx="216" cy="210" r="150" stroke-dasharray="2 8"/><path d="M55 210H377M216 49V371"/></g>
+        <ellipse cx="216" cy="210" rx="179" ry="47" fill="none" stroke="url(#ring)" stroke-width="21" opacity=".48" transform="rotate(-25 216 210)"/>
+        <circle cx="216" cy="210" r="104" fill="url(#sphere)"/>
+        <g clip-path="url(#disk)" opacity=".31" fill="none" stroke-linecap="round"><path d="M95 156Q220 204 344 137M92 176Q220 218 343 155" stroke="#e5c7bc" stroke-width="13"/><path d="M95 221Q212 263 345 194M93 249Q232 285 342 226M100 286Q230 314 337 263" stroke="#55486f" stroke-width="11"/></g>
+        <g transform="rotate(-25 216 210)" fill="none" stroke="url(#ring)"><path d="M37 210a179 47 0 0 0 358 0" stroke-width="21" opacity=".92"/><path d="M22 210a194 61 0 0 0 388 0" stroke-width="1.8" opacity=".55"/></g>
+        <circle cx="344" cy="95" r="5" fill="#e7d6fd"/><circle cx="344" cy="95" r="11" fill="none" stroke="#c1bce9" opacity=".4"/>
+        </svg></div>''')
     left, right = st.columns([1.65, 1], gap="large")
     with left:
         section("01 / Sua missão", "Escolha seu nível", "Selecione a etapa escolar para começar.")
@@ -184,7 +220,7 @@ if s.stage == "home":
 elif s.stage == "quiz":
     left, right = st.columns([2.4, 1], gap="large")
     with left:
-        result = game(questions=s.questions, round=s.round, level=s.level, mode=s.mode, duration=s.duration, key=f"game_{s.round}", default=None)
+        result = game(questions=s.questions, round=s.round, level=s.level, mode=s.mode, duration=s.duration, background=background_uri, key=f"game_{s.round}", default=None)
         if isinstance(result, dict) and result.get("round") == s.round:
             if result.get("action") == "exit":
                 s.stage = "home"
