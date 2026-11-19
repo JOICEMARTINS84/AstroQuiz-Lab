@@ -1,4 +1,7 @@
 import random
+import math
+import sqlite3
+from uuid import uuid4
 import json
 import base64
 from html import escape
@@ -8,6 +11,7 @@ from streamlit.components.v1 import declare_component
 import streamlit as st
 from questions import DATA
 from scientific_bank import scientific_questions
+from ranking import leaderboard, save_score
 
 DATA = {level: list(pool) for level, pool in DATA.items()}
 DATA[5] = scientific_questions()
@@ -161,6 +165,13 @@ h1,h2,h3,p,li{letter-spacing:-.025em}
 .st-key-levels .stButton button[kind="primary"]{border:2px solid #73f2ff;box-shadow:inset 0 0 25px #3876d866,0 0 14px #52dfff55}
 .hero-tags span{border-radius:3px;background:#08182f;color:#a7f5ff}
 
+
+.ranking-board{width:100%;border:1px solid #355d91;border-radius:12px;overflow:hidden;background:#08152d}
+.ranking-row{display:grid;grid-template-columns:minmax(35px,.5fr) minmax(0,2fr) minmax(50px,1fr) minmax(44px,.85fr) minmax(50px,1fr);gap:10px;padding:14px;border-bottom:1px solid #274368;color:#e0efff;align-items:center;font-variant-numeric:tabular-nums}
+.ranking-row:last-child{border-bottom:0}.ranking-row span{overflow-wrap:anywhere}.ranking-row span:nth-child(3),.ranking-row span:nth-child(5){font-family:Consolas,monospace;font-weight:800}
+.ranking-head{font:800 11px Consolas,monospace;letter-spacing:.08em;color:#90dcff;background:#122845}
+.rank-1{background:#3b302a;color:#ffdfa0}.rank-2{background:#273749;color:#e5efff}.rank-3{background:#332b3b;color:#eac8ab}
+@media(max-width:520px){.ranking-row{font-size:12px;gap:5px;padding:10px 7px;grid-template-columns:30px minmax(0,1.5fr) 47px 45px 44px}.ranking-head{font-size:9px;letter-spacing:0}}
 </style>
 """, unsafe_allow_html=True)
 
@@ -235,6 +246,8 @@ def start(level, mode, duration, sound=True):
     s.locked = False
     s.stage = "quiz"
     s.round = s.get("round", 0) + 1
+    s.mission_id = uuid4().hex
+    s.ranking_saved = False
 
 def choose(choice):
     if not s.locked:
@@ -253,6 +266,12 @@ def home():
     s.stage = "home"
     s.menu_round = s.get("menu_round", 0) + 1
 
+def open_ranking():
+    s.stage = "ranking"
+    s.ranking_level = s.get("level", 3)
+    s.ranking_mode = s.get("mode", "Treino comentado")
+    s.ranking_duration = s.get("duration", 60)
+
 def open_arcade():
     s.stage = "arcade"
     s.arcade_round = s.get("arcade_round", 0) + 1
@@ -263,7 +282,10 @@ if s.stage == "home":
     command = menu(oba_count=OBA_COUNT, science_count=len(DATA[5]), round=s.menu_round, key=f"console_menu_{s.menu_round}", default=None)
     if isinstance(command, dict) and command.get("round") == s.menu_round:
         action = command.get("action")
-        if action == "arcade":
+        if action == "ranking":
+            open_ranking()
+            st.rerun()
+        elif action == "arcade":
             open_arcade()
             st.rerun()
         elif action == "quiz":
@@ -273,6 +295,33 @@ if s.stage == "home":
             if level in LEVELS and mode in ("Treino comentado", "Simulado") and duration in (0, 30, 45, 60, 90, 120):
                 start(level, mode, duration, bool(command.get("sound", True)))
                 st.rerun()
+
+elif s.stage == "ranking":
+    section("Hall da fama", "Ranking ASTROQUIZ", "Os melhores pilotos de cada categoria.")
+    st.button("‹ Voltar ao menu", on_click=home, use_container_width=True)
+    filters = st.columns(3)
+    with filters[0]:
+        rank_level = st.selectbox("Nível", list(LEVELS), format_func=lambda n: f"Nível {n} — {LEVELS[n]}", key="ranking_level")
+    with filters[1]:
+        rank_mode = st.selectbox("Modo", ["Treino comentado", "Simulado"], key="ranking_mode")
+    with filters[2]:
+        rank_duration = st.selectbox("Tempo por questão", [0, 30, 45, 60, 90, 120], format_func=lambda n: f"{n} s" if n else "Sem limite", key="ranking_duration")
+    try:
+        rows = leaderboard(rank_level, rank_mode, rank_duration)
+        if not rows:
+            st.info("Ainda não há resultados nesta categoria. Seja o primeiro a registrar uma missão!")
+        else:
+            markup = ['<div class="ranking-board"><div class="ranking-row ranking-head"><span>POS.</span><span>PILOTO</span><span>PONTOS</span><span>ACERTOS</span><span>TEMPO</span></div>']
+            for pos, row in enumerate(rows, 1):
+                minutes, seconds = divmod(row["elapsed"], 60)
+                css_class = f"ranking-row rank-{pos}" if pos <= 3 else "ranking-row"
+                markup.append(f'<div class="{css_class}"><span>{pos:02d}</span><span>{escape(row["nickname"])}</span><span>{row["hits"]*100:04d}</span><span>{row["hits"]}/10</span><span>{minutes:02d}:{seconds:02d}</span></div>')
+            markup.append("</div>")
+            html("".join(markup))
+        st.caption("Top 20 · melhor resultado por apelido e categoria. Empates são decididos pelo menor tempo de resposta. Apelidos não são contas verificadas.")
+        st.caption("Os registros ficam disponíveis enquanto o banco local da aplicação for preservado.")
+    except (sqlite3.Error, OSError):
+        st.error("O ranking está indisponível neste momento. Você ainda pode jogar.")
 
 elif s.stage == "arcade":
     section("Astro Arcade", "Minijogos espaciais", "Escolha uma missão arcade. A pontuação dos jogos é independente do quiz.")
@@ -305,8 +354,9 @@ elif s.stage == "quiz":
                         if choice not in q["opts"]:
                             choice = None
                         elapsed = a.get("elapsed", 0) if isinstance(a, dict) else 0
-                        if not isinstance(elapsed, (int, float)) or elapsed < 0:
+                        if not isinstance(elapsed, (int, float)) or not math.isfinite(elapsed) or elapsed < 0:
                             elapsed = 0
+                        elapsed = min(86400, max(0, round(elapsed)))
                         if s.duration:
                             elapsed = min(s.duration, elapsed)
                         checked.append(dict(q=q, chosen=choice or "Não respondida", ok=choice == q["correct"], elapsed=elapsed, expired=choice is None))
@@ -327,6 +377,26 @@ else:
     percent = round(100*hits/total)
     message = "Excelente exploração!" if percent >= 80 else "Continue explorando!"
     html(f'<div class="result-panel"><div class="score-ring" style="background:conic-gradient(#a995fb {percent}%,#45465b 0)"><div class="score-core"><strong>{percent}%</strong><span>ACERTOS</span></div></div><div><div class="hero-kicker">Missão concluída</div><h2>{message}</h2><p>Você acertou {hits} de {total} perguntas. Agora revise suas respostas.</p></div></div>')
+    with st.container(border=True):
+        section("Hall da fama", f"{hits*100:04d} pontos", "Registre sua missão no ranking, se quiser.")
+        if s.get("ranking_saved", False):
+            st.success("Resultado registrado no ranking!")
+        else:
+            with st.form(key=f'rank_form_{s.get("mission_id", s.round)}'):
+                nickname = st.text_input("Apelido público", max_chars=24, placeholder="Seu nome de piloto (não use dados pessoais)")
+                submitted = st.form_submit_button("Registrar pontuação", type="primary", use_container_width=True)
+            if submitted:
+                try:
+                    if not s.get("mission_id"):
+                        s.mission_id = uuid4().hex
+                    save_score(s.mission_id, nickname, s.level, s.mode, s.duration, hits, sum(int(r.get("elapsed", 0)) for r in s.answers))
+                    s.ranking_saved = True
+                    st.rerun()
+                except ValueError as exc:
+                    st.warning(str(exc))
+                except (sqlite3.Error, OSError):
+                    st.error("Não foi possível registrar o resultado. Tente novamente.")
+        st.button("Ver ranking", on_click=open_ranking, use_container_width=True)
     left,right = st.columns([2.15,1], gap="large")
     with left:
         section("Relatório de bordo", "Gabarito comentado")
