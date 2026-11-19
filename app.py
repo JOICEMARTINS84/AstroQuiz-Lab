@@ -20,6 +20,13 @@ for item in ILLUSTRATED:
 OBA_EXTRA = json.loads((Path(__file__).parent / "data" / "oba_training_2026.json").read_text(encoding="utf-8"))
 for item in OBA_EXTRA:
     DATA[item["level"]].append((item["topic"], item["prompt"], item["correct"], item["wrong"], item["explanation"]))
+OBA_REFERENCED = json.loads((Path(__file__).parent / "data" / "oba_2025_referenced.json").read_text(encoding="utf-8"))
+OBA_SOURCES = {}
+for item in OBA_REFERENCED:
+    DATA[item["level"]].append((item["topic"], item["prompt"], item["correct"], item["wrong"], item["explanation"]))
+    OBA_SOURCES[item["prompt"]] = item
+    if item.get("figure"):
+        FIGURES[item["prompt"]] = (item["figure"], item["alt"])
 TOTAL_QUESTIONS = sum(len(pool) for pool in DATA.values())
 OBA_COUNT = sum(len(DATA[n]) for n in range(1, 5))
 
@@ -183,8 +190,11 @@ def start(level, mode, duration, sound=True):
         selected = []
         for topic, count in [("Astronomia", 7), ("Astronáutica", 3)]:
             topic_pool = [q for q in pool if q[0] == topic]
-            illustrated = [q for q in topic_pool if q[1] in FIGURES]
-            chosen = random.sample(illustrated, 1) if illustrated else []
+            referenced = [q for q in topic_pool if q[1] in OBA_SOURCES]
+            chosen = random.sample(referenced, min(len(referenced), count))
+            illustrated = [q for q in topic_pool if q[1] in FIGURES and q not in chosen]
+            if illustrated and len(chosen) < count and not any(q[1] in FIGURES for q in chosen):
+                chosen.append(random.choice(illustrated))
             selected.extend(chosen + random.sample([q for q in topic_pool if q not in chosen], count - len(chosen)))
     random.shuffle(selected)
     s.questions = []
@@ -196,6 +206,11 @@ def start(level, mode, duration, sound=True):
             drawing, alt = FIGURES[prompt]
             entry["figure"] = "data:image/svg+xml;base64," + base64.b64encode(drawing.encode("utf-8")).decode("ascii")
             entry["figure_alt"] = alt
+        if prompt in OBA_SOURCES:
+            ref = OBA_SOURCES[prompt]
+            entry["source"] = f'OBA {ref["year"]} · nível {ref["level"]} · questão {ref["question"]} (exercício relacionado)'
+            entry["reference"] = ref["reference"]
+            entry["official_letter"] = ref["official_letter"]
         s.questions.append(entry)
     s.level = level
     s.mode = mode
@@ -304,6 +319,8 @@ else:
                 st.write(f'**Sua resposta:** {r["chosen"]}')
                 st.write(f'**Resposta correta:** {q["correct"]}')
                 st.write(q["explanation"])
+                if q.get("source"):
+                    st.markdown(f'**Referência:** [{q["source"]}]({q["reference"]}). Gabarito da prova original: {q["official_letter"]}. As alternativas no jogo são embaralhadas.')
                 st.caption(f'Tempo utilizado: {r.get("elapsed", 0)} s')
     with right:
         with st.container(border=True):
@@ -318,6 +335,6 @@ else:
 
 st.divider()
 with st.expander("Sobre o projeto e referências"):
-    st.markdown("Níveis 1–4: questões autorais de preparação para a OBA, alinhadas aos conteúdos das edições 2025 e 2026, sem vínculo oficial. Não são transcrições das provas. Nível 5: 17 questões traduzidas e adaptadas do Astro-MCQ, com explicações e atribuição. [Patrick Fleith, Astro-MCQ (2025)](https://huggingface.co/datasets/patrickfleith/astro-mcq) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).")
+    st.markdown("Níveis 1–4: questões autorais de preparação para a OBA, alinhadas aos conteúdos das edições 2025 e 2026, sem vínculo oficial. Inclui exercícios relacionados a questões específicas de 2025, com a referência original e a resposta correspondente conferida no gabarito. Não são transcrições das provas. Nível 5: 17 questões traduzidas e adaptadas do Astro-MCQ, com explicações e atribuição. [Patrick Fleith, Astro-MCQ (2025)](https://huggingface.co/datasets/patrickfleith/astro-mcq) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).")
     st.markdown("[Programa da OBA 2026](https://site.oba.org.br/o-que-e-a-oba) · [Conteúdos oficiais da OBA 2025](https://docs.oba.org.br/regulamento-da-28-olimpiada-brasileira-de-astronomia-e-astronautica-28-oba-2025) · [Provas e gabaritos oficiais](https://site.oba.org.br/provas-e-gabaritos)")
 html('<div class="footer-note">AstroQuiz Lab · Matemática &amp; Contexto · Joice Souza Martins Santos</div>')
