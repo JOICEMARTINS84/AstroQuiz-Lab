@@ -360,6 +360,6 @@ else:
 
 st.divider()
 with st.expander("Sobre o projeto e referências"):
-    st.markdown("Jogo educativo independente, com questões autorais e adaptadas da OBA (2024–2026), conforme o material consultado. Desafio científico adaptado de [Astro-MCQ — Patrick Fleith (2025)](https://huggingface.co/datasets/patrickfleith/astro-mcq), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).")
+    st.markdown("Jogo educativo independente, com questões autorais e adaptadas da OBA (2024–2026). Desafio científico adaptado de [Astro-MCQ — Patrick Fleith (2025)](https://huggingface.co/datasets/patrickfleith/astro-mcq), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).")
     st.markdown("[Programa da OBA 2026](https://site.oba.org.br/o-que-e-a-oba) · [Conteúdos oficiais da OBA 2025](https://docs.oba.org.br/regulamento-da-28-olimpiada-brasileira-de-astronomia-e-astronautica-28-oba-2025) · [Provas e gabaritos oficiais](https://site.oba.org.br/provas-e-gabaritos)")
 html('<div class="footer-note">ASTROQUIZ | @soujoicemartins</div>')
