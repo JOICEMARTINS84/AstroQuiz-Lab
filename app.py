@@ -6,6 +6,10 @@ from streamlit.components.v1 import declare_component
 
 import streamlit as st
 from questions import DATA
+from scientific_bank import scientific_questions
+
+DATA = {**DATA, 5: scientific_questions()}
+TOTAL_QUESTIONS = sum(len(pool) for pool in DATA.values())
 
 st.set_page_config(page_title="AstroQuiz Lab", page_icon="✦", layout="wide")
 
@@ -112,6 +116,24 @@ h1,h2,h3,p,li{letter-spacing:-.025em}
 .game-menu strong{color:#c6f4ff;font-size:1.1rem}.game-menu span{font-size:.82rem;color:#b2c8e7}
 @media(max-width:680px){.game-banner{border-radius:14px}.game-menu{display:block}.game-menu span{display:block;margin-top:5px}}
 
+
+/* Estética de videogame de arcade, inspirada em Pygame. */
+:root{--ink:#e8f6ff;--muted:#b2bbd5;--line:#2c4f93;--violet:#65e2ff}
+.stApp{background-color:#030616;background-image:radial-gradient(ellipse at 80% 15%,#43207888,transparent 40%),radial-gradient(ellipse at 10% 60%,#0e428c66,transparent 38%),radial-gradient(circle,#a3c4ff88 1px,transparent 1.5px),radial-gradient(circle,#cbe9ffbb .7px,transparent 1px);background-size:auto,auto,71px 71px,43px 43px;background-position:0 0,0 0,13px 7px,3px 29px}
+.brand-name,.brand-tag,.section-kicker,.hero-kicker,.mini-stat strong,.game-menu strong,.hero-tags span{font-family:Consolas,'Courier New',monospace;letter-spacing:.065em}
+.brand-name{font-weight:900;text-transform:uppercase;color:#94f3ff;text-shadow:0 0 12px #48caff80}.brand-mark{border-radius:4px}
+.hero,.game-banner{border-radius:5px;border:2px solid #4c8cdb;box-shadow:0 0 26px #4b84fa55,inset 0 0 40px #131f4f}
+.hero h1{font-family:Consolas,'Courier New',monospace;letter-spacing:-.07em;font-weight:950;color:#c5f5ff;text-shadow:3px 3px 0 #7248d5,0 0 28px #39e9ff85}
+.hero:after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 3px,#02061525 3px 4px)}
+.section-title{font-weight:850;letter-spacing:-.03em}.section-kicker{color:#74eaff}
+[data-testid="stVerticalBlockBorderWrapper"],.mini-stat,.game-menu{border-radius:6px!important}
+.stButton button{border-radius:5px!important;min-height:51px;font-weight:800}
+.stButton button[kind="primary"]{background:linear-gradient(110deg,#0a73bd,#6944d8);border:2px solid #85e9ff;box-shadow:0 4px 0 #143c80,0 0 18px #59bcff50;text-shadow:0 1px 2px #1a115a}
+.stButton button:active:not(:disabled){transform:translateY(3px);box-shadow:none}
+.st-key-levels .stButton button{border-radius:4px!important;box-shadow:inset 0 0 16px #14234d}
+.st-key-levels .stButton button[kind="primary"]{border:2px solid #73f2ff;box-shadow:inset 0 0 25px #3876d866,0 0 14px #52dfff55}
+.hero-tags span{border-radius:3px;background:#08182f;color:#a7f5ff}
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -120,7 +142,7 @@ if background_uri:
     .stApp {{background-image:linear-gradient(180deg,rgba(3,8,25,.38),rgba(3,8,25,.86) 65%),url('{background_uri}');background-size:cover;background-position:center top;background-attachment:fixed;}}
     </style>""", unsafe_allow_html=True)
 
-LEVELS = {1: "1º ao 3º ano", 2: "4º e 5º ano", 3: "6º ao 9º ano", 4: "Ensino Médio"}
+LEVELS = {1: "1º ao 3º ano", 2: "4º e 5º ano", 3: "6º ao 9º ano", 4: "Ensino Médio", 5: "Desafio científico"}
 game = declare_component('astroquiz_game', path=str(Path(__file__).parent / 'game_frontend'))
 arcade = declare_component('astro_arcade', path=str(Path(__file__).parent / 'arcade_frontend'))
 s = st.session_state
@@ -140,8 +162,11 @@ def stat(label, value):
 
 def start(level, mode, duration):
     pool = DATA[level]
-    selected = random.sample([q for q in pool if q[0] == "Astronomia"], 7)
-    selected += random.sample([q for q in pool if q[0] == "Astronáutica"], 3)
+    if level == 5:
+        selected = random.sample(pool, min(10, len(pool)))
+    else:
+        selected = random.sample([q for q in pool if q[0] == "Astronomia"], 7)
+        selected += random.sample([q for q in pool if q[0] == "Astronáutica"], 3)
     random.shuffle(selected)
     s.questions = []
     for topic, prompt, correct, wrong, explanation in selected:
@@ -181,14 +206,14 @@ html('<div class="brand"><div class="brand-name"><span class="brand-mark">✦</s
 if s.stage == "home":
     if background_uri:
         html(f'<div class="game-banner"><img src="{background_uri}" alt="ASTROQUIZ — cenário espacial com planetas, galáxias e constelações"></div>')
-        html('<div class="game-menu"><strong>Selecione sua missão</strong><span>48 questões · 4 níveis · 10 perguntas por missão</span></div>')
+        html('<div class="game-menu"><strong>Selecione sua missão</strong><span>65 questões · 5 níveis · 10 perguntas por missão</span></div>')
     else:
         stars = "".join(f'<i class="star" style="left:{x}%;top:{y}%"></i>' for x,y in [(8,12),(48,10),(56,74),(69,13),(94,12),(93,82),(61,42),(48,86),(78,90),(99,47),(35,18),(84,27)])
         html('''<div class="hero">''' + stars + '''
         <div class="hero-copy"><div class="hero-kicker">Uma jornada pelo universo</div>
         <h1>ASTROQUIZ</h1>
         <p>Teste seus conhecimentos de astronomia e astronáutica. Aprenda a cada missão e prepare-se para a OBA.</p>
-        <div class="hero-tags"><span>48 questões</span><span>4 níveis</span><span>10 por missão</span></div></div>
+        <div class="hero-tags"><span>65 questões</span><span>5 níveis</span><span>10 por missão</span></div></div>
         <svg class="planet-art" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <defs><radialGradient id="sphere" cx=".3" cy=".25" r=".8"><stop stop-color="#f3dac0"/><stop offset=".42" stop-color="#c294a0"/><stop offset=".75" stop-color="#7b648f"/><stop offset="1" stop-color="#343957"/></radialGradient><linearGradient id="ring" x1="0" x2="1" y1="1" y2="0"><stop stop-color="#a683c4"/><stop offset=".5" stop-color="#f7ddba"/><stop offset="1" stop-color="#736d9d"/></linearGradient><clipPath id="disk"><circle cx="216" cy="210" r="104"/></clipPath></defs>
         <g fill="none" stroke="#c6bbef" opacity=".18"><circle cx="216" cy="210" r="171"/><circle cx="216" cy="210" r="150" stroke-dasharray="2 8"/><path d="M55 210H377M216 49V371"/></g>
@@ -207,8 +232,8 @@ if s.stage == "home":
     with left:
         section("01 / Sua missão", "Escolha seu nível", "Selecione a etapa escolar para começar.")
         with st.container(key="levels"):
-            for chunk in [(1, 2), (3, 4)]:
-                cols = st.columns(2)
+            for chunk in [(1, 2), (3, 4), (5,)]:
+                cols = st.columns(len(chunk))
                 for col, level in zip(cols, chunk):
                     with col:
                         st.button(f"Nível {level} · {LEVELS[level]}", key=f"level_{level}", type="primary" if s.selected_level == level else "secondary", use_container_width=True, on_click=lambda n=level: s.update(selected_level=n))
@@ -224,7 +249,7 @@ if s.stage == "home":
             html('''<div class="feature"><div class="feature-num">01</div><div><strong>Explore o universo</strong><p>Planetas, estrelas, órbitas, eclipses e outros temas.</p></div></div>
             <div class="feature"><div class="feature-num">02</div><div><strong>Desafie seus conhecimentos</strong><p>Sete perguntas de astronomia e três de astronáutica por rodada.</p></div></div>
             <div class="feature"><div class="feature-num">03</div><div><strong>Aprenda com o resultado</strong><p>Veja sua pontuação e revise o gabarito explicado.</p></div></div>''')
-            st.caption("Questões autorais de preparação para a OBA. Não é uma prova oficial.")
+            st.caption("Níveis 1–4: preparação independente para a OBA. Nível 5: questões científicas adaptadas do Astro-MCQ, em português.")
 
 elif s.stage == "arcade":
     section("Astro Arcade", "Minijogos espaciais", "Escolha uma missão arcade. A pontuação dos jogos é independente do quiz.")
@@ -290,7 +315,7 @@ else:
             section("Desempenho", "Por área")
             for topic in ["Astronomia", "Astronáutica"]:
                 subset = [r for r in s.answers if r["q"]["topic"] == topic]
-                stat(topic, f'{sum(r["ok"] for r in subset)}/{len(subset)}')
+                stat(topic, f'{sum(r["ok"] for r in subset)}/{len(subset)}' if subset else "—")
             stat("Tempo de resposta total", f'{sum(r.get("elapsed", 0) for r in s.answers)} s')
             stat("Tempo esgotado", sum(r.get("expired", False) for r in s.answers))
             st.button("Nova missão  →", type="primary", on_click=home, use_container_width=True)
@@ -298,6 +323,6 @@ else:
 
 st.divider()
 with st.expander("Sobre o projeto e referências"):
-    st.markdown("Questões autorais de treinamento, elaboradas a partir dos conteúdos programáticos da OBA de 2025. Não são transcrições de provas oficiais; projeto independente, sem vínculo com a organização da OBA.")
+    st.markdown("Níveis 1–4: questões autorais de preparação para a OBA de 2025, sem vínculo oficial. Nível 5: 17 questões traduzidas e adaptadas do Astro-MCQ, com explicações e atribuição. [Patrick Fleith, Astro-MCQ (2025)](https://huggingface.co/datasets/patrickfleith/astro-mcq) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).")
     st.markdown("[Conteúdos oficiais da OBA 2025](https://docs.oba.org.br/regulamento-da-28-olimpiada-brasileira-de-astronomia-e-astronautica-28-oba-2025) · [Provas e gabaritos oficiais](https://site.oba.org.br/provas-e-gabaritos)")
 html('<div class="footer-note">AstroQuiz Lab · Matemática &amp; Contexto · Joice Souza Martins Santos</div>')
