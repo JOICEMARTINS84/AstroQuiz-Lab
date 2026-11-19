@@ -1,0 +1,314 @@
+[
+  {
+    "level": 1,
+    "topic": "Astronomia",
+    "prompt": "Ao observar o céu durante a noite, uma criança vê a Lua e vários pontos luminosos. Qual desses astros é o satélite natural da Terra?",
+    "correct": "Lua",
+    "wrong": [
+      "Sol",
+      "Vênus",
+      "Saturno"
+    ],
+    "explanation": "A Lua é o satélite natural da Terra.",
+    "source": "Questão autoral de preparação — programa OBA 2026"
+  },
+  {
+    "level": 1,
+    "topic": "Astronomia",
+    "prompt": "Um aluno observa o nascer do Sol e depois o pôr do Sol. Em quais direções eles ocorrem aproximadamente?",
+    "correct": "Leste e oeste",
+    "wrong": [
+      "Oeste e leste",
+      "Norte e sul",
+      "Sul e norte"
+    ],
+    "explanation": "O Sol nasce aproximadamente a leste e se põe aproximadamente a oeste; a posição varia ao longo do ano.",
+    "source": "Questão autoral de preparação — programa OBA 2026"
+  },
+  {
+    "level": 1,
+    "topic": "Astronomia",
+    "prompt": "Uma lanterna ilumina uma bola. Se a bola não produz luz, por que conseguimos vê-la?",
+    "correct": "Porque reflete parte da luz que recebe",
+    "wrong": [
+      "Porque se transforma em estrela",
+      "Porque produz calor nuclear",
+      "Porque apaga a luz da lanterna"
+    ],
+    "explanation": "Assim como a Lua, uma bola iluminada pode ser vista pela luz que reflete.",
+    "source": "Questão autoral de preparação — programa OBA 2026"
+  },
+  {
+    "level": 1,
+    "topic": "Astronomia",
+    "prompt": "Que movimento da Terra explica a sucessão de dias e noites?",
+    "correct": "Rotação",
+    "wrong": [
+      "Translação",
+      "Mudança de fase da Lua",
+      "Movimento de um foguete"
+    ],
+    "explanation": "A Terra gira em torno de seu próprio eixo.",
+    "source": "Questão autoral de preparação — programa OBA 2026"
+  },
+  {
+    "level": 1,
+    "topic": "Astronáutica",
+    "prompt": "Qual objeto é colocado em órbita por um foguete para transmitir sinais de comunicação?",
+    "correct": "Satélite artificial",
+    "wrong": [
+      "Cometa natural",
+      "Estrela",
+      "Meteoro"
+    ],
+    "explanation": "Satélites artificiais podem transmitir sinais de telecomunicação.",
+    "source": "Questão autoral de preparação — programa OBA 2026"
+  },
+  {
+    "level": 1,
+    "topic": "Astronáutica",
+    "prompt": "Qual foi o destino dos astronautas da missão Apollo 11 em 1969?",
+    "correct": "Lua",
+    "wrong": [
+      "Marte",
+      "Vênus",
+      "Júpiter"
+    ],
+    "explanation": "A Apollo 11 realizou o primeiro pouso tripulado na Lua.",
+    "source": "Questão autoral de preparação — programa OBA 2026"
+  },
+  {
+    "level": 2,
+    "topic": "Astronomia",
+    "prompt": "Em Salvador, no mês de julho, é inverno. Qual estação está ocorrendo em grande parte do hemisfério norte?",
+    "correct": "Verão",
+    "wrong": [
+      "Inverno",
+      "Outono",
+      "Primavera"
+    ],
+    "explanation": "As estações são opostas nos dois hemisférios por causa da inclinação do eixo terrestre.",
+    "source": "Questão autoral de preparação — programa OBA 2026"
+  },
+  {
+    "level": 2,
+    "topic": "Astronomia",
+    "prompt": "Em uma maquete do Sistema Solar, a Terra está na terceira órbita. Que planeta ocupa a segunda órbita, contando a partir do Sol?",
+    "correct": "Vênus",
+    "wrong": [
+      "Marte",
+      "Mercúrio",
+      "Júpiter"
+    ],
+    "explanation": "A ordem dos planetas começa por Mercúrio, Vênus, Terra e Marte.",
+    "source": "Questão autoral de preparação — programa OBA 2026"
+  },
+  {
+    "level": 2,
+    "topic": "Astronomia",
+    "prompt": "Por que nem toda Lua nova é acompanhada por um eclipse solar?",
+    "correct": "O plano da órbita lunar é inclinado em relação ao plano da órbita terrestre",
+    "wrong": [
+      "A Lua para de girar",
+      "O Sol deixa de emitir luz",
+      "A Terra muda de forma"
+    ],
+    "explanation": "A Lua geralmente passa acima ou abaixo do alinhamento necessário para um eclipse.",
+    "source": "Questão autoral de preparação — programa OBA 2026"
+  },
+  {
+    "level": 2,
+    "topic": "Astronomia",
+    "prompt": "Em qual fase a Lua costuma nascer aproximadamente ao pôr do Sol?",
+    "correct": "Lua cheia",
+    "wrong": [
+      "Lua nova",
+      "Quarto crescente",
+      "Quarto minguante"
+    ],
+    "explanation": "Na Lua cheia, a Lua está aproximadamente oposta ao Sol no céu.",
+    "source": "Questão autoral de preparação — programa OBA 2026"
+  },
+  {
+    "level": 2,
+    "topic": "Astronáutica",
+    "prompt": "Uma equipe deseja acompanhar o avanço de queimadas em diferentes estados. Que tipo de equipamento é mais apropriado?",
+    "correct": "Satélite de observação da Terra",
+    "wrong": [
+      "Relógio de pulso",
+      "Telescópio voltado para galáxias distantes",
+      "Bússola manual"
+    ],
+    "explanation": "Sensores a bordo de satélites podem monitorar focos de calor e alterações na cobertura terrestre.",
+    "source": "Questão autoral de preparação — programa OBA 2026"
+  },
+  {
+    "level": 2,
+    "topic": "Astronáutica",
+    "prompt": "Qual país divide com o Brasil o desenvolvimento do programa de satélites CBERS?",
+    "correct": "China",
+    "wrong": [
+      "Canadá",
+      "Japão",
+      "França"
+    ],
+    "explanation": "CBERS significa China–Brazil Earth Resources Satellite, programa de cooperação sino-brasileira.",
+    "source": "Questão autoral de preparação — programa OBA 2026"
+  },
+  {
+    "level": 3,
+    "topic": "Astronomia",
+    "prompt": "Um aluno usa uma escala em que 1 cm corresponde a 15 milhões de km. Aproximadamente quantos centímetros representam 1 UA?",
+    "correct": "10 cm",
+    "wrong": [
+      "1 cm",
+      "15 cm",
+      "100 cm"
+    ],
+    "explanation": "Uma unidade astronômica corresponde a cerca de 150 milhões de km; dividindo por 15 milhões, obtemos 10 cm.",
+    "source": "Questão autoral de preparação — programa OBA 2026"
+  },
+  {
+    "level": 3,
+    "topic": "Astronomia",
+    "prompt": "Uma estrela está a 40 anos-luz da Terra. Se sua luz chega hoje, de aproximadamente quando é a luz recebida?",
+    "correct": "40 anos atrás",
+    "wrong": [
+      "40 dias atrás",
+      "Hoje",
+      "400 anos atrás"
+    ],
+    "explanation": "O ano-luz é a distância que a luz percorre em um ano.",
+    "source": "Questão autoral de preparação — programa OBA 2026"
+  },
+  {
+    "level": 3,
+    "topic": "Astronomia",
+    "prompt": "Se uma pessoa de 60 kg pisa na Lua, qual é aproximadamente sua massa naquele local?",
+    "correct": "60 kg",
+    "wrong": [
+      "10 kg",
+      "360 kg",
+      "0 kg"
+    ],
+    "explanation": "A massa permanece a mesma; o peso muda com a aceleração gravitacional.",
+    "source": "Questão autoral de preparação — programa OBA 2026"
+  },
+  {
+    "level": 3,
+    "topic": "Astronomia",
+    "prompt": "Durante uma observação, duas estrelas parecem igualmente brilhantes. É possível afirmar que possuem a mesma luminosidade?",
+    "correct": "Não, pois podem estar a distâncias diferentes",
+    "wrong": [
+      "Sim, sempre",
+      "Sim, se forem observadas na mesma noite",
+      "Não, porque estrelas não emitem luz"
+    ],
+    "explanation": "O brilho aparente depende da luminosidade e da distância.",
+    "source": "Questão autoral de preparação — programa OBA 2026"
+  },
+  {
+    "level": 3,
+    "topic": "Astronáutica",
+    "prompt": "Por que a Base de Alcântara, próxima da linha do Equador, é vantajosa para certos lançamentos rumo ao leste?",
+    "correct": "A rotação da Terra contribui para a velocidade inicial",
+    "wrong": [
+      "A gravidade é nula no Equador",
+      "Não existe atmosfera no Maranhão",
+      "Os foguetes dispensam combustível"
+    ],
+    "explanation": "A velocidade linear de rotação é maior perto do Equador e pode favorecer lançamentos prógrados.",
+    "source": "Questão autoral de preparação — programa OBA 2026"
+  },
+  {
+    "level": 3,
+    "topic": "Astronáutica",
+    "prompt": "Qual é a principal finalidade de testes com foguetes de garrafa em atividades escolares?",
+    "correct": "Investigar propulsão, estabilidade e movimento de forma experimental",
+    "wrong": [
+      "Alcançar a Lua",
+      "Transformar água em combustível nuclear",
+      "Colocar satélites em órbita"
+    ],
+    "explanation": "O lançamento permite investigar conceitos de física e engenharia em escala didática.",
+    "source": "Questão autoral de preparação — programa OBA 2026"
+  },
+  {
+    "level": 4,
+    "topic": "Astronomia",
+    "prompt": "Um planeta tem período orbital de 8 anos ao redor do Sol. Supondo as unidades ano e UA e uma órbita ideal, qual é seu semieixo maior?",
+    "correct": "4 UA",
+    "wrong": [
+      "2 UA",
+      "8 UA",
+      "16 UA"
+    ],
+    "explanation": "Pela terceira lei de Kepler, a³ = T² = 64, portanto a = 4 UA.",
+    "source": "Questão autoral de preparação — programa OBA 2026"
+  },
+  {
+    "level": 4,
+    "topic": "Astronomia",
+    "prompt": "Duas estrelas têm luminosidade igual. A segunda está a três vezes a distância da primeira. Qual é a razão entre seus fluxos observados F₂/F₁?",
+    "correct": "1/9",
+    "wrong": [
+      "1/3",
+      "3",
+      "9"
+    ],
+    "explanation": "O fluxo diminui com o quadrado da distância, logo F₂/F₁ = (1/3)².",
+    "source": "Questão autoral de preparação — programa OBA 2026"
+  },
+  {
+    "level": 4,
+    "topic": "Astronomia",
+    "prompt": "Uma estrela idealizada tem pico de emissão em 500 nm. Usando a constante de Wien 2,9 × 10⁻³ m·K, qual é a temperatura aproximada?",
+    "correct": "5.800 K",
+    "wrong": [
+      "580 K",
+      "2.900 K",
+      "58.000 K"
+    ],
+    "explanation": "T = (2,9 × 10⁻³)/(500 × 10⁻⁹) = 5.800 K.",
+    "source": "Questão autoral de preparação — programa OBA 2026"
+  },
+  {
+    "level": 4,
+    "topic": "Astronomia",
+    "prompt": "Uma onda eletromagnética tem frequência de 6 × 10¹⁴ Hz. Adotando c = 3 × 10⁸ m/s, qual é seu comprimento de onda?",
+    "correct": "500 nm",
+    "wrong": [
+      "50 nm",
+      "5.000 nm",
+      "200 nm"
+    ],
+    "explanation": "λ = c/f = 5 × 10⁻⁷ m = 500 nm.",
+    "source": "Questão autoral de preparação — programa OBA 2026"
+  },
+  {
+    "level": 4,
+    "topic": "Astronáutica",
+    "prompt": "Um foguete expele massa a alta velocidade. Desprezando forças externas, qual princípio explica a mudança de sua quantidade de movimento?",
+    "correct": "Conservação da quantidade de movimento",
+    "wrong": [
+      "Conservação da temperatura",
+      "Lei de Hubble",
+      "Lei de Wien"
+    ],
+    "explanation": "Os gases recebem quantidade de movimento em um sentido e o foguete no sentido oposto.",
+    "source": "Questão autoral de preparação — programa OBA 2026"
+  },
+  {
+    "level": 4,
+    "topic": "Astronáutica",
+    "prompt": "Um satélite passa de uma órbita circular de raio r para uma órbita circular de raio 2r, em torno da mesma massa. Qual é a razão entre as velocidades orbitais finais e iniciais?",
+    "correct": "1/√2",
+    "wrong": [
+      "1/2",
+      "√2",
+      "2"
+    ],
+    "explanation": "Em órbita circular v = √(GM/r); dobrar o raio reduz a velocidade por √2.",
+    "source": "Questão autoral de preparação — programa OBA 2026"
+  }
+]
