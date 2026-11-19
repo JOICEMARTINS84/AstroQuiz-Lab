@@ -9,7 +9,8 @@ import streamlit as st
 from questions import DATA
 from scientific_bank import scientific_questions
 
-DATA = {**DATA, 5: scientific_questions()}
+DATA = {level: list(pool) for level, pool in DATA.items()}
+DATA[5] = scientific_questions()
 ILLUSTRATED = json.loads((Path(__file__).parent / "data" / "illustrated_questions.json").read_text(encoding="utf-8"))
 FIGURES = {}
 for item in ILLUSTRATED:
