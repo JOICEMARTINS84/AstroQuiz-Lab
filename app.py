@@ -122,6 +122,7 @@ if background_uri:
 
 LEVELS = {1: "1º ao 3º ano", 2: "4º e 5º ano", 3: "6º ao 9º ano", 4: "Ensino Médio"}
 game = declare_component('astroquiz_game', path=str(Path(__file__).parent / 'game_frontend'))
+arcade = declare_component('astro_arcade', path=str(Path(__file__).parent / 'arcade_frontend'))
 s = st.session_state
 if "stage" not in s:
     s.stage = "home"
@@ -172,6 +173,9 @@ def advance():
 def home():
     s.stage = "home"
 
+def open_arcade():
+    s.stage = "arcade"
+
 html('<div class="brand"><div class="brand-name"><span class="brand-mark">✦</span> AstroQuiz Lab</div><span class="brand-tag">Matemática &amp; Contexto</span></div>')
 
 if s.stage == "home":
@@ -194,6 +198,11 @@ if s.stage == "home":
         <g transform="rotate(-25 216 210)" fill="none" stroke="url(#ring)"><path d="M37 210a179 47 0 0 0 358 0" stroke-width="21" opacity=".92"/><path d="M22 210a194 61 0 0 0 388 0" stroke-width="1.8" opacity=".55"/></g>
         <circle cx="344" cy="95" r="5" fill="#e7d6fd"/><circle cx="344" cy="95" r="11" fill="none" stroke="#c1bce9" opacity=".4"/>
         </svg></div>''')
+    nav_quiz, nav_arcade = st.columns(2)
+    with nav_quiz:
+        st.button("QUIZ · Desafio de conhecimentos", type="primary", use_container_width=True, disabled=True)
+    with nav_arcade:
+        st.button("ASTRO ARCADE · Minijogos", use_container_width=True, on_click=open_arcade)
     left, right = st.columns([1.65, 1], gap="large")
     with left:
         section("01 / Sua missão", "Escolha seu nível", "Selecione a etapa escolar para começar.")
@@ -216,6 +225,16 @@ if s.stage == "home":
             <div class="feature"><div class="feature-num">02</div><div><strong>Desafie seus conhecimentos</strong><p>Sete perguntas de astronomia e três de astronáutica por rodada.</p></div></div>
             <div class="feature"><div class="feature-num">03</div><div><strong>Aprenda com o resultado</strong><p>Veja sua pontuação e revise o gabarito explicado.</p></div></div>''')
             st.caption("Questões autorais de preparação para a OBA. Não é uma prova oficial.")
+
+elif s.stage == "arcade":
+    section("Astro Arcade", "Minijogos espaciais", "Escolha uma missão arcade. A pontuação dos jogos é independente do quiz.")
+    a1, a2 = st.columns(2)
+    with a1:
+        st.button("Voltar ao AstroQuiz", on_click=home, use_container_width=True)
+    with a2:
+        selected_game = st.selectbox("Escolha o minijogo", ["Space Shooter", "Cinturão de Asteroides"], label_visibility="collapsed", key="arcade_mode")
+    arcade(mode="shooter" if selected_game == "Space Shooter" else "dodge", key="astro_arcade_client", default=None)
+    st.caption("Space Shooter: adaptação para navegador inspirada no código Pygame fornecido pela autora do projeto. Cinturão de Asteroides: desafio de sobrevivência e coleta de amostras.")
 
 elif s.stage == "quiz":
     left, right = st.columns([2.4, 1], gap="large")
@@ -275,6 +294,7 @@ else:
             stat("Tempo de resposta total", f'{sum(r.get("elapsed", 0) for r in s.answers)} s')
             stat("Tempo esgotado", sum(r.get("expired", False) for r in s.answers))
             st.button("Nova missão  →", type="primary", on_click=home, use_container_width=True)
+            st.button("Jogar Astro Arcade", on_click=open_arcade, use_container_width=True)
 
 st.divider()
 with st.expander("Sobre o projeto e referências"):
