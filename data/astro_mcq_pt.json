@@ -1,0 +1,257 @@
+[
+  {
+    "id": 0,
+    "topic": "Astronomia",
+    "question": "Se um corpo não está acelerando, podemos concluir que nenhuma força atua sobre ele?",
+    "correct": "Não. A força resultante é nula.",
+    "wrong": [
+      "Sim, nenhuma força atua.",
+      "Sim, se estiver em movimento.",
+      "Não, a força resultante necessariamente aumenta."
+    ],
+    "explanation": "Pela segunda lei de Newton, aceleração nula implica força resultante nula; forças individuais podem se equilibrar.",
+    "source": "Patrick Fleith, Astro-MCQ (2025), CC BY 4.0",
+    "reference": "https://huggingface.co/datasets/patrickfleith/astro-mcq",
+    "adaptation": "Tradução e adaptação ao formato de resposta única; explicação original do AstroQuiz."
+  },
+  {
+    "id": 1,
+    "topic": "Astronomia",
+    "question": "Em uma órbita elíptica, o que acontece com a velocidade orbital de um planeta enquanto ele se afasta do Sol?",
+    "correct": "Diminui.",
+    "wrong": [
+      "Aumenta.",
+      "Permanece constante.",
+      "Torna-se necessariamente zero."
+    ],
+    "explanation": "A conservação da energia orbital e a segunda lei de Kepler explicam por que o planeta se desloca mais lentamente longe do Sol.",
+    "source": "Patrick Fleith, Astro-MCQ (2025), CC BY 4.0",
+    "reference": "https://huggingface.co/datasets/patrickfleith/astro-mcq",
+    "adaptation": "Tradução e adaptação ao formato de resposta única; explicação original do AstroQuiz."
+  },
+  {
+    "id": 2,
+    "topic": "Astronomia",
+    "question": "Adotando energia potencial gravitacional nula no infinito, qual é o sinal da energia potencial de um corpo atraído pela Terra?",
+    "correct": "Negativo.",
+    "wrong": [
+      "Positivo.",
+      "Nulo em qualquer altitude.",
+      "Independente da distância."
+    ],
+    "explanation": "A energia potencial gravitacional é U = −GMm/r, com a referência no infinito.",
+    "source": "Patrick Fleith, Astro-MCQ (2025), CC BY 4.0",
+    "reference": "https://huggingface.co/datasets/patrickfleith/astro-mcq",
+    "adaptation": "Tradução e adaptação ao formato de resposta única; explicação original do AstroQuiz."
+  },
+  {
+    "id": 6,
+    "topic": "Astronáutica",
+    "question": "Um foguete lançado de Kourou, na Guiana Francesa, atravessa quais camadas da atmosfera, da superfície para cima?",
+    "correct": "Troposfera, estratosfera, mesosfera e termosfera.",
+    "wrong": [
+      "Troposfera, mesosfera, estratosfera e termosfera.",
+      "Troposfera, mesosfera, termosfera e estratosfera.",
+      "Termosfera, troposfera, estratosfera e mesosfera."
+    ],
+    "explanation": "Essa é a ordem das quatro primeiras grandes camadas atmosféricas; acima da termosfera fica a exosfera.",
+    "source": "Patrick Fleith, Astro-MCQ (2025), CC BY 4.0",
+    "reference": "https://huggingface.co/datasets/patrickfleith/astro-mcq",
+    "adaptation": "Tradução e adaptação ao formato de resposta única; explicação original do AstroQuiz."
+  },
+  {
+    "id": 7,
+    "topic": "Astronomia",
+    "question": "O que são os cinturões de Van Allen?",
+    "correct": "Cinturões de radiação.",
+    "wrong": [
+      "Regiões de baixa radiação.",
+      "Uma camada entre 90 e 100 km de altitude.",
+      "Órbitas reservadas para telecomunicações."
+    ],
+    "explanation": "São regiões da magnetosfera nas quais partículas carregadas ficam aprisionadas pelo campo magnético terrestre.",
+    "source": "Patrick Fleith, Astro-MCQ (2025), CC BY 4.0",
+    "reference": "https://huggingface.co/datasets/patrickfleith/astro-mcq",
+    "adaptation": "Tradução e adaptação ao formato de resposta única; explicação original do AstroQuiz."
+  },
+  {
+    "id": 9,
+    "topic": "Astronomia",
+    "question": "O número de manchas solares varia em um ciclo de duração média de aproximadamente quanto tempo?",
+    "correct": "11 anos.",
+    "wrong": [
+      "7 anos.",
+      "9 anos.",
+      "13 anos."
+    ],
+    "explanation": "O ciclo de atividade das manchas solares dura, em média, cerca de 11 anos, com variações entre ciclos.",
+    "source": "Patrick Fleith, Astro-MCQ (2025), CC BY 4.0",
+    "reference": "https://huggingface.co/datasets/patrickfleith/astro-mcq",
+    "adaptation": "Tradução e adaptação ao formato de resposta única; explicação original do AstroQuiz."
+  },
+  {
+    "id": 11,
+    "topic": "Astronáutica",
+    "question": "Como o máximo de atividade solar pode afetar satélites em órbita terrestre baixa?",
+    "correct": "Aumenta a densidade da alta atmosfera, o arrasto e reduz a vida orbital.",
+    "wrong": [
+      "Reduz a densidade atmosférica e o arrasto.",
+      "Elimina o arrasto atmosférico.",
+      "Aumenta necessariamente o tempo de permanência na órbita."
+    ],
+    "explanation": "A atividade solar aquece e expande a alta atmosfera, aumentando o arrasto em muitas órbitas baixas.",
+    "source": "Patrick Fleith, Astro-MCQ (2025), CC BY 4.0",
+    "reference": "https://huggingface.co/datasets/patrickfleith/astro-mcq",
+    "adaptation": "Tradução e adaptação ao formato de resposta única; explicação original do AstroQuiz."
+  },
+  {
+    "id": 14,
+    "topic": "Astronomia",
+    "question": "Qual fator determina principalmente a forma das proeminências solares?",
+    "correct": "Os campos magnéticos do Sol.",
+    "wrong": [
+      "Os cinturões de Van Allen.",
+      "As forças orbitais de Mercúrio.",
+      "A Terra."
+    ],
+    "explanation": "O campo magnético organiza o plasma solar e pode sustentá-lo em estruturas de arco.",
+    "source": "Patrick Fleith, Astro-MCQ (2025), CC BY 4.0",
+    "reference": "https://huggingface.co/datasets/patrickfleith/astro-mcq",
+    "adaptation": "Tradução e adaptação ao formato de resposta única; explicação original do AstroQuiz."
+  },
+  {
+    "id": 21,
+    "topic": "Astronomia",
+    "question": "Quando uma ejeção de massa coronal chega às proximidades da Terra, o que pode ser detectado?",
+    "correct": "Uma perturbação com partículas carregadas e campo magnético.",
+    "wrong": [
+      "Um escurecimento global do Sol.",
+      "Nenhum efeito, pois está distante demais.",
+      "A interrupção da luz solar."
+    ],
+    "explanation": "Uma ejeção coronal transporta plasma magnetizado e pode perturbar o ambiente espacial terrestre.",
+    "source": "Patrick Fleith, Astro-MCQ (2025), CC BY 4.0",
+    "reference": "https://huggingface.co/datasets/patrickfleith/astro-mcq",
+    "adaptation": "Tradução e adaptação ao formato de resposta única; explicação original do AstroQuiz."
+  },
+  {
+    "id": 22,
+    "topic": "Astronomia",
+    "question": "O que é a magnetosfera?",
+    "correct": "Região ao redor de um corpo dominada por seu campo magnético.",
+    "wrong": [
+      "Uma esfera formada apenas por materiais magnéticos.",
+      "Uma região localizada na Indonésia.",
+      "Uma camada que conduz exclusivamente partículas neutras."
+    ],
+    "explanation": "A magnetosfera resulta da interação do campo magnético de um corpo com o ambiente de plasma que o cerca.",
+    "source": "Patrick Fleith, Astro-MCQ (2025), CC BY 4.0",
+    "reference": "https://huggingface.co/datasets/patrickfleith/astro-mcq",
+    "adaptation": "Tradução e adaptação ao formato de resposta única; explicação original do AstroQuiz."
+  },
+  {
+    "id": 23,
+    "topic": "Astronomia",
+    "question": "Mantendo a mesma iluminação incidente, o que acontece com a luz refletida por uma superfície da Terra quando seu albedo aumenta?",
+    "correct": "A quantidade de luz refletida aumenta.",
+    "wrong": [
+      "A quantidade diminui.",
+      "A quantidade não muda.",
+      "A superfície deixa de refletir luz."
+    ],
+    "explanation": "O albedo representa a fração da radiação incidente refletida pela superfície.",
+    "source": "Patrick Fleith, Astro-MCQ (2025), CC BY 4.0",
+    "reference": "https://huggingface.co/datasets/patrickfleith/astro-mcq",
+    "adaptation": "Tradução e adaptação ao formato de resposta única; explicação original do AstroQuiz."
+  },
+  {
+    "id": 24,
+    "topic": "Astronáutica",
+    "question": "Por que a passagem de um satélite pela Anomalia do Atlântico Sul pode comprometer seu funcionamento?",
+    "correct": "A maior exposição à radiação pode causar falhas eletrônicas.",
+    "wrong": [
+      "A região permanece sempre na sombra.",
+      "A ausência de radiação impede a geração de energia.",
+      "O campo gravitacional desaparece nessa região."
+    ],
+    "explanation": "Nessa região, partículas aprisionadas no cinturão de radiação interno podem atingir altitudes relativamente baixas, aumentando os riscos para a eletrônica.",
+    "source": "Patrick Fleith, Astro-MCQ (2025), CC BY 4.0",
+    "reference": "https://huggingface.co/datasets/patrickfleith/astro-mcq",
+    "adaptation": "Tradução e adaptação ao formato de resposta única; explicação original do AstroQuiz."
+  },
+  {
+    "id": 25,
+    "topic": "Astronáutica",
+    "question": "Dois objetos ocupam órbitas na mesma altitude. X tem coeficiente de arrasto 2,0 e Y tem 2,2. Apenas com esses dados, qual retorna primeiro à Terra?",
+    "correct": "Não é possível determinar.",
+    "wrong": [
+      "X.",
+      "Y.",
+      "Ambos retornam simultaneamente."
+    ],
+    "explanation": "O decaimento também depende da massa, área transversal, velocidade, densidade atmosférica e características orbitais.",
+    "source": "Patrick Fleith, Astro-MCQ (2025), CC BY 4.0",
+    "reference": "https://huggingface.co/datasets/patrickfleith/astro-mcq",
+    "adaptation": "Tradução e adaptação ao formato de resposta única; explicação original do AstroQuiz."
+  },
+  {
+    "id": 28,
+    "topic": "Astronáutica",
+    "question": "Em uma órbita hipotética da ISS, com apogeu a 417 km e perigeu a 401 km de altitude, qual é aproximadamente a aceleração gravitacional no perigeu?",
+    "correct": "8,68 m/s².",
+    "wrong": [
+      "1,72 m/s².",
+      "7,78 m/s².",
+      "0 m/s²."
+    ],
+    "explanation": "Usando g = GM/r², com raio terrestre próximo de 6.371 km e altitude de 401 km, obtemos cerca de 8,69 m/s².",
+    "source": "Patrick Fleith, Astro-MCQ (2025), CC BY 4.0",
+    "reference": "https://huggingface.co/datasets/patrickfleith/astro-mcq",
+    "adaptation": "Tradução e adaptação ao formato de resposta única; explicação original do AstroQuiz."
+  },
+  {
+    "id": 29,
+    "topic": "Astronomia",
+    "question": "Qual é aproximadamente a velocidade de escape da superfície de Europa, lua de Júpiter, com massa 4,8 × 10²² kg e raio de 1.560 km?",
+    "correct": "2 km/s.",
+    "wrong": [
+      "1 km/s.",
+      "3 km/s.",
+      "4 km/s."
+    ],
+    "explanation": "Pela expressão v = √(2GM/r), o valor é aproximadamente 2,03 km/s.",
+    "source": "Patrick Fleith, Astro-MCQ (2025), CC BY 4.0",
+    "reference": "https://huggingface.co/datasets/patrickfleith/astro-mcq",
+    "adaptation": "Tradução e adaptação ao formato de resposta única; explicação original do AstroQuiz."
+  },
+  {
+    "id": 33,
+    "topic": "Astronáutica",
+    "question": "Qual é aproximadamente a velocidade de escape terrestre na altitude de uma órbita geoestacionária, a 35.786 km da superfície?",
+    "correct": "4,35 km/s.",
+    "wrong": [
+      "3,07 km/s.",
+      "5,30 km/s.",
+      "11,20 km/s."
+    ],
+    "explanation": "Com r ≈ 42.157 km, v = √(2GM/r) ≈ 4,35 km/s. O gabarito original indicava 4,7 km/s; este item foi corrigido pelo cálculo.",
+    "source": "Patrick Fleith, Astro-MCQ (2025), CC BY 4.0",
+    "reference": "https://huggingface.co/datasets/patrickfleith/astro-mcq",
+    "adaptation": "Tradução e adaptação ao formato de resposta única; explicação original do AstroQuiz."
+  },
+  {
+    "id": 34,
+    "topic": "Astronomia",
+    "question": "Qual é o trabalho por unidade de massa necessário para levar um corpo da superfície terrestre até o infinito, sem considerar a atmosfera e chegando em repouso?",
+    "correct": "g₀R.",
+    "wrong": [
+      "g₀R².",
+      "g₀Rp.",
+      "g₀Rp²."
+    ],
+    "explanation": "Por unidade de massa, ΔU/m = GM/R. Como g₀ = GM/R², segue GM/R = g₀R. R é o raio terrestre e p a pressão atmosférica.",
+    "source": "Patrick Fleith, Astro-MCQ (2025), CC BY 4.0",
+    "reference": "https://huggingface.co/datasets/patrickfleith/astro-mcq",
+    "adaptation": "Tradução e adaptação ao formato de resposta única; explicação original do AstroQuiz."
+  }
+]
