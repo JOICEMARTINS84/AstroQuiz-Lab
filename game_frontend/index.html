@@ -50,7 +50,21 @@ body{font-family:system-ui,Arial,sans-serif;color:#e3f4ff}
 .feedback.success{background:#113d29;border:1px solid #5dff9b;color:#e1ffeb}.feedback.success strong{color:#82ffad}
 .feedback.error{background:#481c2b;border:1px solid #ff6678;color:#ffe7eb}.feedback.error strong{color:#ff8b96}
 .feedback.timeout{background:#473520;border:1px solid #ffc878;color:#fff0cf}.feedback.timeout strong{color:#ffce8c}
-.quiz-figure{margin:4px 0 17px;border:1px solid #416bad;border-radius:6px;padding:5px;background:#08182c}.quiz-figure img{display:block;width:100%;height:auto;max-height:250px;object-fit:contain}</style></head>
+.quiz-figure{margin:4px 0 17px;border:1px solid #416bad;border-radius:6px;padding:5px;background:#08182c}.quiz-figure img{display:block;width:100%;height:auto;max-height:250px;object-fit:contain}
+.console-hud{display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px;margin:-3px 0 13px;padding:4px;background:#020712;border:1px solid #456995}
+.console-hud>div{border:1px solid #314b6d;background:linear-gradient(145deg,#182948,#091326);padding:8px 10px;min-width:0}
+.console-hud small{display:block;color:#aac7e5;font-size:10px;letter-spacing:.16em;font-weight:800}
+.console-hud b{display:block;font:900 clamp(19px,4vw,30px) Consolas,monospace;letter-spacing:-.055em;color:#d5f3ff;text-shadow:0 0 12px #6db7ff88}
+.console-hud>div:nth-child(2) b{color:#ffda8c}
+.game{border-color:#6486b1;background:linear-gradient(145deg,#050b17f5,#101a2de8);box-shadow:inset 0 0 0 3px #09111f}
+.option{background:linear-gradient(130deg,#182c46,#091322);border:1px solid #4b729b;border-left-width:3px;box-shadow:0 4px 9px #0003}
+.option:not(:disabled):hover{background:linear-gradient(130deg,#26598c,#152d49);border-color:#a5e4ff}
+.option .letter{border:1px solid #597eaa;background:#07172b;color:#d0ebff;border-radius:3px}
+.option.good,.option.good:disabled{background:#124c32;border:2px solid #62ff9b}
+.option.bad,.option.bad:disabled{background:#581d2d;border:2px solid #ff626e}
+.primary,.intro .primary{background:linear-gradient(110deg,#2053a9,#365d9e);border-color:#a2d6f9}
+@media(max-width:470px){.console-hud>div{padding:6px}.console-hud small{font-size:9px}}
+</style></head>
 <body><main id="root" aria-label="Jogo AstroQuiz"></main>
 <script>
 "use strict";
@@ -70,14 +84,17 @@ function tune(kind){if(!sound||!audio)return;if(audio.state!=="running"){audio.r
 function soundButton(){return '<button class="sound" id="sound" type="button" aria-pressed="'+sound+'">'+(sound?"Som ligado":"Som desligado")+'</button>'}
 function wireSound(){const b=document.querySelector("#sound");if(b)b.onclick=()=>{sound=!sound;unlock();if(sound)tune("click");b.textContent=sound?"Som ligado":"Som desligado";b.setAttribute("aria-pressed",String(sound));};}
 function clearTimers(){clearInterval(ticker);clearInterval(countdown);ticker=null;countdown=null;}
-function intro(){phase="intro";root.innerHTML='<div class="game"><div class="top"><span class="tag">Preparar lançamento · Nível '+esc(cfg.level)+'</span>'+soundButton()+'</div><div class="intro"><div class="orbital"><div class="planet"></div><div class="satellite"></div><div class="arcade-ship"></div></div><h1>PREPARAR LANÇAMENTO</h1><p>'+cfg.questions.length+' perguntas · '+(cfg.duration?cfg.duration+' segundos por pergunta':'sem limite de tempo')+'. O cronômetro começa após a contagem regressiva.</p><button class="primary" id="launch">Iniciar missão e ativar som</button></div><div class="footer"><button class="exit" id="exit">Voltar</button></div></div>';wireSound();document.querySelector("#launch").onclick=()=>{unlock();launch();};document.querySelector("#exit").onclick=exit;resize();}
+function intro(){phase="intro";root.innerHTML='<div class="game"><div class="top"><span class="tag">Preparar lançamento · Nível '+esc(cfg.level)+'</span>'+soundButton()+'</div><div class="intro"><div class="orbital"><div class="planet"></div><div class="satellite"></div><div class="arcade-ship"></div></div><h1>PREPARAR LANÇAMENTO</h1><p>'+cfg.questions.length+' perguntas · '+(cfg.duration?cfg.duration+' segundos por pergunta':'sem limite de tempo')+'. O cronômetro começa após a contagem regressiva.</p><button class="primary" id="launch">Iniciar missão</button></div><div class="footer"><button class="exit" id="exit">Voltar</button></div></div>';wireSound();document.querySelector("#launch").onclick=()=>{unlock();launch();};document.querySelector("#exit").onclick=exit;resize();}
 function launch(){phase="countdown";let n=3;clearTimers();function draw(){root.innerHTML='<div class="game"><div class="intro"><div class="tag" style="color:#c9b9fa">Contagem regressiva</div><div class="count">'+n+'</div><p>Preparando sua missão...</p></div></div>';tune("tick");resize();}draw();countdown=setInterval(()=>{n--;if(n>0)draw();else{clearInterval(countdown);tune("begin");showQuestion();}},1000);}
 function exit(){clearTimers();phase="finished";post("streamlit:setComponentValue",{value:{round:activeRound,action:"exit"},dataType:"json"});}
 function timeText(seconds){return String(Math.floor(seconds/60)).padStart(2,"0")+":"+String(seconds%60).padStart(2,"0");}
 function showQuestion(){clearTimers();phase="question";warning=false;startedAt=performance.now();deadline=startedAt+cfg.duration*1000;
  const q=cfg.questions[idx],letters="ABCD";
+ const hits=answers.filter((a,i)=>a.option===cfg.questions[i].correct).length;
+ let streak=0;
+ for(let j=answers.length-1;j>=0&&answers[j].option===cfg.questions[j].correct;j--)streak++;
  const markers=cfg.questions.map((_,i)=>{let cls=i===idx?"current":"";if(i<answers.length)cls=answers[i].option===cfg.questions[i].correct?"correct":"wrong";return '<i class="'+cls+'"></i>';}).join("");
- root.innerHTML='<div class="game" style="position:relative"><div class="top"><span class="tag">Questão '+(idx+1)+' de '+cfg.questions.length+' · '+esc(q.topic)+'</span>'+soundButton()+'</div><div class="steps">'+markers+'</div>'+(cfg.duration?'<div class="meter" id="meter"><div class="rail" role="progressbar" aria-label="Tempo restante" aria-valuemin="0" aria-valuemax="'+cfg.duration+'" aria-valuenow="'+cfg.duration+'"><div class="fill" id="fill"></div></div><div class="time" id="time">'+timeText(cfg.duration)+'</div></div>':'<p class="small">Modo sem limite de tempo</p>')+'<div class="question"><h2>'+esc(q.prompt)+'</h2>'+(q.figure?'<figure class="quiz-figure"><img src="'+esc(q.figure)+'" alt="'+esc(q.figure_alt||'Ilustração da questão')+'"></figure>':'')+'<div class="options">'+q.opts.map((item,i)=>'<button type="button" class="option" data-i="'+i+'"><span class="letter">'+letters[i]+'</span><span>'+esc(item)+'</span></button>').join("")+'</div><div id="feedback" aria-live="polite"></div></div><div class="footer"><span class="small">Nível '+esc(cfg.level)+' · '+esc(cfg.mode)+'</span><span class="score" id="score">'+(answers.filter((a,i)=>a.option===cfg.questions[i].correct).length+" acertos")+'</span><button class="exit" id="exit">Encerrar</button></div><div id="particles" class="particles"></div></div>';
+ root.innerHTML='<div class="game" style="position:relative"><div class="top"><span class="tag">Questão '+(idx+1)+' de '+cfg.questions.length+' · '+esc(q.topic)+'</span>'+soundButton()+'</div><div class="console-hud"><div><small>PONTOS</small><b id="points">'+String(hits*100).padStart(4,"0")+'</b></div><div><small>COMBO</small><b id="streak">×'+streak+'</b></div><div><small>MISSÃO</small><b>'+String(idx+1).padStart(2,"0")+'/'+String(cfg.questions.length).padStart(2,"0")+'</b></div></div><div class="steps">'+markers+'</div>'+(cfg.duration?'<div class="meter" id="meter"><div class="rail" role="progressbar" aria-label="Tempo restante" aria-valuemin="0" aria-valuemax="'+cfg.duration+'" aria-valuenow="'+cfg.duration+'"><div class="fill" id="fill"></div></div><div class="time" id="time">'+timeText(cfg.duration)+'</div></div>':'<p class="small">Modo sem limite de tempo</p>')+'<div class="question"><h2>'+esc(q.prompt)+'</h2>'+(q.figure?'<figure class="quiz-figure"><img src="'+esc(q.figure)+'" alt="'+esc(q.figure_alt||'Ilustração da questão')+'"></figure>':'')+'<div class="options">'+q.opts.map((item,i)=>'<button type="button" class="option" data-i="'+i+'"><span class="letter">'+letters[i]+'</span><span>'+esc(item)+'</span></button>').join("")+'</div><div id="feedback" aria-live="polite"></div></div><div class="footer"><span class="small">Nível '+esc(cfg.level)+' · '+esc(cfg.mode)+'</span><span class="score" id="score">'+(answers.filter((a,i)=>a.option===cfg.questions[i].correct).length+" acertos")+'</span><button class="exit" id="exit">Encerrar</button></div><div id="particles" class="particles"></div></div>';
  wireSound();root.querySelectorAll(".option").forEach(b=>b.onclick=()=>{unlock();const value=q.opts[Number(b.dataset.i)];if(cfg.duration&&performance.now()>=deadline)finishAnswer(null);else finishAnswer(value);});document.querySelector("#exit").onclick=exit;
  let lastSecond=-1;
  if(cfg.duration){ticker=setInterval(()=>{if(phase!=="question")return;const remaining=Math.max(0,deadline-performance.now()),seconds=Math.ceil(remaining/1000);
@@ -98,8 +115,12 @@ function finishAnswer(option){if(phase!=="question")return;phase="feedback";clea
  const title=expired?"TEMPO ESGOTADO!":correct?"RESPOSTA CORRETA!":"RESPOSTA INCORRETA!";
  const text=training?q.explanation:expired?"Questão contabilizada como não respondida.":"A explicação completa aparece no gabarito final.";
  document.querySelector("#feedback").innerHTML='<div class="feedback '+(expired?'timeout':correct?'success':'error')+'"><strong>'+esc(title)+'</strong>'+esc(text)+'</div><button class="primary" id="next">'+(idx+1===cfg.questions.length?"Concluir missão":"Próxima questão →")+'</button>';
- document.querySelector("#score").textContent=answers.filter((a,i)=>a.option===cfg.questions[i].correct).length+" acertos";
+ const hitsNow=answers.filter((a,i)=>a.option===cfg.questions[i].correct).length;
+ document.querySelector("#score").textContent=hitsNow+" acertos";
+ document.querySelector("#points").textContent=String(hitsNow*100).padStart(4,"0");
+ let streakNow=0;for(let j=answers.length-1;j>=0&&answers[j].option===cfg.questions[j].correct;j--)streakNow++;
+ document.querySelector("#streak").textContent="×"+streakNow;
  document.querySelector("#next").onclick=()=>{unlock();if(idx+1===cfg.questions.length){phase="finished";tune("end");document.querySelector("#next").disabled=true;document.querySelector("#next").textContent="Calculando resultado...";setTimeout(()=>post("streamlit:setComponentValue",{value:{round:activeRound,action:"complete",answers},dataType:"json"}),650);}else{idx++;showQuestion();}};resize();}
-window.addEventListener("message",e=>{if(e.source!==window.parent||!e.data||e.data.type!=="streamlit:render")return;const a=e.data.args;if(!a||!Array.isArray(a.questions))return;if(a.round!==activeRound){clearTimers();cfg=a;activeRound=a.round;idx=0;answers=[];intro();}else resize();});
+window.addEventListener("message",e=>{if(e.source!==window.parent||!e.data||e.data.type!=="streamlit:render")return;const a=e.data.args;if(!a||!Array.isArray(a.questions))return;if(a.round!==activeRound){clearTimers();cfg=a;sound=a.sound!==false;activeRound=a.round;idx=0;answers=[];intro();}else resize();});
 post("streamlit:componentReady",{apiVersion:1});resize();
 </script></body></html>
