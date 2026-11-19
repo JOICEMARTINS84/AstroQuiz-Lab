@@ -257,7 +257,7 @@ def open_arcade():
     s.stage = "arcade"
     s.arcade_round = s.get("arcade_round", 0) + 1
 
-html('<div class="brand"><div class="brand-name"><span class="brand-mark" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 15.5 4l3.2 6.1-12.5 6.5z"/><path d="m15.5 4 3-1.5 3.2 6.1-3 1.5M3 10.5l-1.2.6 3.2 6.1 1.2-.6M11 14l1 3m0 0-5 5m5-5 5 5m-5-5v5"/></svg></span> ASTROQUIZ</div><span class="brand-tag">Matemática &amp; Contexto</span></div>')
+html('<div class="brand"><div class="brand-name"><span class="brand-mark" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 15.5 4l3.2 6.1-12.5 6.5z"/><path d="m15.5 4 3-1.5 3.2 6.1-3 1.5M3 10.5l-1.2.6 3.2 6.1 1.2-.6M11 14l1 3m0 0-5 5m5-5 5 5m-5-5v5"/></svg></span> ASTROQUIZ</div></div>')
 
 if s.stage == "home":
     command = menu(oba_count=OBA_COUNT, science_count=len(DATA[5]), round=s.menu_round, key=f"console_menu_{s.menu_round}", default=None)
