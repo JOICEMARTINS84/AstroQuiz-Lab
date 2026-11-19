@@ -2,7 +2,7 @@
 
 Projeto educacional independente de Matemática & Contexto, por Joice Souza Martins Santos. Preparação para a Olimpíada Brasileira de Astronomia e Astronáutica.
 
-- 48 questões autorais distribuídas pelos quatro níveis escolares e 17 questões científicas adaptadas em português (65 no total).
+- 80 questões autorais de preparação para a OBA nos quatro níveis escolares (8 ilustradas) e 17 questões científicas adaptadas em português (97 no total).
 - Rodadas de dez questões (sete de astronomia e três de astronáutica).
 - Modo treino com feedback imediato e modo simulado com gabarito no final.
 - Questões e alternativas embaralhadas; pontuação e revisão comentada.
@@ -33,3 +33,7 @@ As questões são autorais, alinhadas ao conteúdo programático de 2025; não s
 - Space Shooter e Cinturão de Asteroides: minijogos Canvas com som e controles por teclado e toque.
 - Nível 5: 17 questões científicas traduzidas/adaptadas, armazenadas localmente em JSON e consultadas com SQLite; não dependem de uma API durante a partida.
 - Fonte: P. Fleith, *Astro-MCQ: A Multiple-Choice Question Benchmark Dataset for Evaluating LLMs in Space Mission Engineering and Astronautics* (2025), [dataset](https://huggingface.co/datasets/patrickfleith/astro-mcq), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Traduções, adaptações, explicações e eventuais correções foram acrescentadas pelo projeto. Importação parcial.
+
+## Campanha OBA e menu de console
+
+Menu em Canvas com cenário animado e nave low-poly em perspectiva, inspirado em jogos da era PlayStation 2. Campanha principal com 10 perguntas por missão: sete de astronomia e três de astronáutica. Pontuação de 100 pontos por acerto, sequência de acertos e cronômetro. Questões escolares autorais, não transcrições oficiais. [Programa oficial da OBA](https://site.oba.org.br/o-que-e-a-oba).
