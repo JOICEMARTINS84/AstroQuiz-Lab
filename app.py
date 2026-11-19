@@ -1,4 +1,5 @@
 import random
+import json
 import base64
 from html import escape
 from pathlib import Path
@@ -9,6 +10,12 @@ from questions import DATA
 from scientific_bank import scientific_questions
 
 DATA = {**DATA, 5: scientific_questions()}
+ILLUSTRATED = json.loads((Path(__file__).parent / "data" / "illustrated_questions.json").read_text(encoding="utf-8"))
+FIGURES = {}
+for item in ILLUSTRATED:
+    question = (item["topic"], item["prompt"], item["correct"], item["wrong"], item["explanation"])
+    DATA[item["level"]].append(question)
+    FIGURES[item["prompt"]] = (item["figure"], item["alt"])
 TOTAL_QUESTIONS = sum(len(pool) for pool in DATA.values())
 
 st.set_page_config(page_title="AstroQuiz Lab", page_icon="✦", layout="wide")
@@ -165,14 +172,23 @@ def start(level, mode, duration):
     if level == 5:
         selected = random.sample(pool, min(10, len(pool)))
     else:
-        selected = random.sample([q for q in pool if q[0] == "Astronomia"], 7)
-        selected += random.sample([q for q in pool if q[0] == "Astronáutica"], 3)
+        selected = []
+        for topic, count in [("Astronomia", 7), ("Astronáutica", 3)]:
+            topic_pool = [q for q in pool if q[0] == topic]
+            illustrated = [q for q in topic_pool if q[1] in FIGURES]
+            chosen = random.sample(illustrated, 1) if illustrated else []
+            selected.extend(chosen + random.sample([q for q in topic_pool if q not in chosen], count - len(chosen)))
     random.shuffle(selected)
     s.questions = []
     for topic, prompt, correct, wrong, explanation in selected:
         opts = [correct, *wrong]
         random.shuffle(opts)
-        s.questions.append(dict(topic=topic, prompt=prompt, correct=correct, opts=opts, explanation=explanation))
+        entry = dict(topic=topic, prompt=prompt, correct=correct, opts=opts, explanation=explanation)
+        if prompt in FIGURES:
+            drawing, alt = FIGURES[prompt]
+            entry["figure"] = "data:image/svg+xml;base64," + base64.b64encode(drawing.encode("utf-8")).decode("ascii")
+            entry["figure_alt"] = alt
+        s.questions.append(entry)
     s.level = level
     s.mode = mode
     s.duration = duration
@@ -206,14 +222,14 @@ html('<div class="brand"><div class="brand-name"><span class="brand-mark">✦</s
 if s.stage == "home":
     if background_uri:
         html(f'<div class="game-banner"><img src="{background_uri}" alt="ASTROQUIZ — cenário espacial com planetas, galáxias e constelações"></div>')
-        html('<div class="game-menu"><strong>Selecione sua missão</strong><span>65 questões · 5 níveis · 10 perguntas por missão</span></div>')
+        html('<div class="game-menu"><strong>Selecione sua missão</strong><span>73 questões · 5 níveis · 10 perguntas por missão</span></div>')
     else:
         stars = "".join(f'<i class="star" style="left:{x}%;top:{y}%"></i>' for x,y in [(8,12),(48,10),(56,74),(69,13),(94,12),(93,82),(61,42),(48,86),(78,90),(99,47),(35,18),(84,27)])
         html('''<div class="hero">''' + stars + '''
         <div class="hero-copy"><div class="hero-kicker">Uma jornada pelo universo</div>
         <h1>ASTROQUIZ</h1>
         <p>Teste seus conhecimentos de astronomia e astronáutica. Aprenda a cada missão e prepare-se para a OBA.</p>
-        <div class="hero-tags"><span>65 questões</span><span>5 níveis</span><span>10 por missão</span></div></div>
+        <div class="hero-tags"><span>73 questões</span><span>5 níveis</span><span>10 por missão</span></div></div>
         <svg class="planet-art" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <defs><radialGradient id="sphere" cx=".3" cy=".25" r=".8"><stop stop-color="#f3dac0"/><stop offset=".42" stop-color="#c294a0"/><stop offset=".75" stop-color="#7b648f"/><stop offset="1" stop-color="#343957"/></radialGradient><linearGradient id="ring" x1="0" x2="1" y1="1" y2="0"><stop stop-color="#a683c4"/><stop offset=".5" stop-color="#f7ddba"/><stop offset="1" stop-color="#736d9d"/></linearGradient><clipPath id="disk"><circle cx="216" cy="210" r="104"/></clipPath></defs>
         <g fill="none" stroke="#c6bbef" opacity=".18"><circle cx="216" cy="210" r="171"/><circle cx="216" cy="210" r="150" stroke-dasharray="2 8"/><path d="M55 210H377M216 49V371"/></g>
@@ -306,6 +322,8 @@ else:
         for i, r in enumerate(s.answers, 1):
             q = r["q"]
             with st.expander(f'{i:02d} · {"Acertou" if r["ok"] else "Revisar"} — {q["prompt"]}'):
+                if q.get("figure"):
+                    html(f'<img style="width:100%;max-width:560px" src="{q["figure"]}" alt="{escape(q["figure_alt"])}">')
                 st.write(f'**Sua resposta:** {r["chosen"]}')
                 st.write(f'**Resposta correta:** {q["correct"]}')
                 st.write(q["explanation"])
