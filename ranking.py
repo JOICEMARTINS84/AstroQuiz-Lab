@@ -1,6 +1,8 @@
-"""Ranking compartilhado entre sessões da mesma instância do AstroQuiz."""
+"""Ranking persistente no PostgreSQL; SQLite apenas sem configuração externa."""
 import os
 import sqlite3
+import threading
+import streamlit as st
 import unicodedata
 from contextlib import contextmanager
 from pathlib import Path
@@ -9,8 +11,65 @@ DB_PATH = Path(os.environ.get("ASTROQUIZ_RANKING_DB", str(Path(__file__).resolve
 MODES = ("Treino comentado", "Simulado")
 DURATIONS = (0, 30, 45, 60, 90, 120)
 
+class RankingStorageError(OSError):
+    """Falha de armazenamento sem expor credenciais."""
+
+_migration_lock = threading.Lock()
+_migrated = set()
+
+def settings():
+    try:
+        return st.secrets.get("ranking_db")
+    except FileNotFoundError:
+        return None
+
+def persistent_enabled():
+    return settings() is not None
+
+def migrate_existing(db, destination):
+    # Idempotent import of any old local file that still exists.
+    with _migration_lock:
+        if destination in _migrated:
+            return
+        if DB_PATH.is_file():
+            with sqlite3.connect(str(DB_PATH), timeout=10) as old:
+                rows = old.execute("""SELECT mission, nickname, nickname_key, level,
+                    mode, duration, hits, elapsed, created_at FROM scores""").fetchall()
+            if rows:
+                with db.cursor() as cursor:
+                    cursor.executemany("""INSERT INTO public.scores
+                        (mission,nickname,nickname_key,level,mode,duration,hits,elapsed,created_at)
+                        VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)
+                        ON CONFLICT(mission) DO NOTHING""", rows)
+        db.commit()
+        _migrated.add(destination)
+
 @contextmanager
 def database():
+    config = settings()
+    if config is not None:
+        try:
+            import psycopg
+            from psycopg.rows import dict_row
+        except ImportError:
+            raise RankingStorageError("Driver PostgreSQL indisponível.") from None
+        try:
+            conninfo = str(config["connection"]).replace("[YOUR-PASSWORD]", "placeholder").replace("[YOUR-DATABASE-PASSWORD]", "placeholder")
+            password = str(config["password"])
+            if not password:
+                raise RankingStorageError("Senha não configurada.")
+            with psycopg.connect(conninfo, password=password, sslmode="require",
+                                 connect_timeout=10, row_factory=dict_row) as db:
+                migrate_existing(db, conninfo)
+                yield db, "%s", "public.scores"
+        except (psycopg.Error, sqlite3.Error, KeyError, TypeError, ValueError):
+            raise RankingStorageError("Banco externo indisponível.") from None
+        return
+    with local_database() as db:
+        yield db, "?", "scores"
+
+@contextmanager
+def local_database():
     DB_PATH.parent.mkdir(parents=True, exist_ok=True)
     db = sqlite3.connect(DB_PATH, timeout=10)
     db.row_factory = sqlite3.Row
@@ -47,27 +106,27 @@ def save_score(mission, nickname, level, mode, duration, hits, elapsed):
         raise ValueError("Categoria de ranking inválida.")
     if not isinstance(hits, int) or not 0 <= hits <= 10 or not isinstance(elapsed, int) or elapsed < 0:
         raise ValueError("Resultado inválido.")
-    with database() as db:
-        cursor = db.execute("""INSERT INTO scores
+    with database() as (db, placeholder, table):
+        cursor = db.execute(f"""INSERT INTO {table}
             (mission, nickname, nickname_key, level, mode, duration, hits, elapsed)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            VALUES ({", ".join([placeholder]*8)})
             ON CONFLICT(mission) DO NOTHING""",
             (mission, nickname, nickname.casefold(), level, mode, duration, hits, elapsed))
         return cursor.rowcount == 1
 
 def leaderboard(level, mode, duration, limit=20):
     # One best attempt per nickname in each category; faster time breaks ties.
-    with database() as db:
-        rows = db.execute("""WITH best AS (
+    with database() as (db, placeholder, table):
+        rows = db.execute(f"""WITH best AS (
             SELECT nickname, hits, elapsed, created_at, mission,
             ROW_NUMBER() OVER (
                 PARTITION BY nickname_key
                 ORDER BY hits DESC, elapsed ASC, created_at ASC, mission ASC
             ) AS attempt
-            FROM scores WHERE level=? AND mode=? AND duration=?
+            FROM {table} WHERE level={placeholder} AND mode={placeholder} AND duration={placeholder}
         )
         SELECT nickname, hits, elapsed FROM best
         WHERE attempt=1
         ORDER BY hits DESC, elapsed ASC, created_at ASC, mission ASC
-        LIMIT ?""", (level, mode, duration, limit)).fetchall()
+        LIMIT {placeholder}""", (level, mode, duration, limit)).fetchall()
         return [dict(row) for row in rows]
