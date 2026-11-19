@@ -135,7 +135,7 @@ function finishAnswer(option){if(phase!=="question")return;phase="feedback";clea
  root.querySelectorAll(".option").forEach((b,i)=>{b.disabled=true;const value=q.opts[i];if(value===option)b.classList.add(correct?"good":"bad");else if(training&&value===q.correct)b.classList.add("good","correction");else b.classList.add("dim");if(value===option)b.setAttribute("aria-label",value+(correct?" — correta":" — incorreta"));});
  if(expired)tune("timeout");else{tune(correct?"ok":"no");if(correct)sparks();}
  const title=expired?"TEMPO ESGOTADO!":correct?"RESPOSTA CORRETA!":"RESPOSTA INCORRETA!";
- const text=training?q.explanation:expired?"Questão contabilizada como não respondida.":"A explicação completa aparece no gabarito final.";
+ const text=training?q.correct:expired?"Questão não respondida.":"Resposta registrada.";
  document.querySelector("#feedback").innerHTML='<div class="feedback '+(expired?'timeout':correct?'success':'error')+'"><strong>'+esc(title)+'</strong>'+esc(text)+'</div><button class="primary" id="next">'+(idx+1===cfg.questions.length?"Concluir missão":"Próxima questão →")+'</button>';
  const hitsNow=answers.filter((a,i)=>a.option===cfg.questions[i].correct).length;
  document.querySelector("#score").textContent=hitsNow+" acertos";
