@@ -27,6 +27,14 @@ for item in OBA_REFERENCED:
     OBA_SOURCES[item["prompt"]] = item
     if item.get("figure"):
         FIGURES[item["prompt"]] = (item["figure"], item["alt"])
+OBA_PDF = json.loads((Path(__file__).parent / "data" / "oba_pdf_2024_2026.json").read_text(encoding="utf-8"))
+for item in OBA_PDF:
+    # The source identifier prevents collisions between identical short prompts.
+    unique_prompt = f'{item["prompt"]} [OBA {item["year"]}/{item["level"]}/{item["question"]}]'
+    DATA[item["level"]].append((item["topic"], unique_prompt, item["correct"], item["wrong"], item["explanation"]))
+    OBA_SOURCES[unique_prompt] = item
+    if item.get("figure"):
+        FIGURES[unique_prompt] = (item["figure"], item["alt"])
 TOTAL_QUESTIONS = sum(len(pool) for pool in DATA.values())
 OBA_COUNT = sum(len(DATA[n]) for n in range(1, 5))
 
@@ -191,7 +199,7 @@ def start(level, mode, duration, sound=True):
         for topic, count in [("Astronomia", 7), ("Astronáutica", 3)]:
             topic_pool = [q for q in pool if q[0] == topic]
             referenced = [q for q in topic_pool if q[1] in OBA_SOURCES]
-            chosen = random.sample(referenced, min(len(referenced), count))
+            chosen = random.sample(referenced, min(len(referenced), max(0, count - 1)))
             illustrated = [q for q in topic_pool if q[1] in FIGURES and q not in chosen]
             if illustrated and len(chosen) < count and not any(q[1] in FIGURES for q in chosen):
                 chosen.append(random.choice(illustrated))
@@ -208,7 +216,13 @@ def start(level, mode, duration, sound=True):
             entry["figure_alt"] = alt
         if prompt in OBA_SOURCES:
             ref = OBA_SOURCES[prompt]
-            entry["source"] = f'OBA {ref["year"]} · nível {ref["level"]} · questão {ref["question"]} (exercício relacionado)'
+            from_pdf = prompt.endswith(f'[OBA {ref["year"]}/{ref["level"]}/{ref["question"]}]')
+            entry["source"] = f'OBA {ref["year"]} · nível {ref["level"]} · questão {ref["question"]}' + (" (material fornecido)" if from_pdf else " (exercício relacionado)")
+            entry["from_pdf"] = from_pdf
+            if from_pdf:
+                entry["prompt"] = ref["prompt"]
+                if ref.get("statements"):
+                    entry["statements"] = list(ref["statements"])
             entry["reference"] = ref["reference"]
             entry["official_letter"] = ref["official_letter"]
         s.questions.append(entry)
@@ -314,13 +328,17 @@ else:
         for i, r in enumerate(s.answers, 1):
             q = r["q"]
             with st.expander(f'{i:02d} · {"Acertou" if r["ok"] else "Revisar"} — {q["prompt"]}'):
+                if q.get("statements"):
+                    for j, statement in enumerate(q["statements"], 1):
+                        st.write(f"{j}. {statement}")
                 if q.get("figure"):
                     html(f'<img style="width:100%;max-width:560px" src="{q["figure"]}" alt="{escape(q["figure_alt"])}">')
                 st.write(f'**Sua resposta:** {r["chosen"]}')
                 st.write(f'**Resposta correta:** {q["correct"]}')
                 st.write(q["explanation"])
                 if q.get("source"):
-                    st.markdown(f'**Referência:** [{q["source"]}]({q["reference"]}). Gabarito da prova original: {q["official_letter"]}. As alternativas no jogo são embaralhadas.')
+                    label = "Gabarito informado no PDF" if q.get("from_pdf") else "Gabarito da prova original"
+                    st.markdown(f'**Referência:** [{q["source"]}]({q["reference"]}). {label}: {q["official_letter"]}. As alternativas no jogo são embaralhadas.')
                 st.caption(f'Tempo utilizado: {r.get("elapsed", 0)} s')
     with right:
         with st.container(border=True):
@@ -335,6 +353,6 @@ else:
 
 st.divider()
 with st.expander("Sobre o projeto e referências"):
-    st.markdown("Níveis 1–4: questões autorais de preparação para a OBA, alinhadas aos conteúdos das edições 2025 e 2026, sem vínculo oficial. Inclui exercícios relacionados a questões específicas de 2025, com a referência original e a resposta correspondente conferida no gabarito. Não são transcrições das provas. Nível 5: 17 questões traduzidas e adaptadas do Astro-MCQ, com explicações e atribuição. [Patrick Fleith, Astro-MCQ (2025)](https://huggingface.co/datasets/patrickfleith/astro-mcq) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).")
+    st.markdown("Níveis 1–4: questões autorais de preparação para a OBA, alinhadas aos conteúdos das edições 2025 e 2026, sem vínculo oficial. Inclui exercícios relacionados a provas de 2025 e questões importadas do material fornecido de 2024, 2025 e 2026. As respostas importadas seguem o gabarito do PDF, sem conferência externa independente. As sequências de verdadeiro ou falso têm alternativas geradas pelo jogo; algumas figuras foram reconstruídas. Nível 5: 17 questões traduzidas e adaptadas do Astro-MCQ, com explicações e atribuição. [Patrick Fleith, Astro-MCQ (2025)](https://huggingface.co/datasets/patrickfleith/astro-mcq) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).")
     st.markdown("[Programa da OBA 2026](https://site.oba.org.br/o-que-e-a-oba) · [Conteúdos oficiais da OBA 2025](https://docs.oba.org.br/regulamento-da-28-olimpiada-brasileira-de-astronomia-e-astronautica-28-oba-2025) · [Provas e gabaritos oficiais](https://site.oba.org.br/provas-e-gabaritos)")
 html('<div class="footer-note">AstroQuiz Lab · Matemática &amp; Contexto · Joice Souza Martins Santos</div>')
