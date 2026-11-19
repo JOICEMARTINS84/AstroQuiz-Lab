@@ -1,0 +1,1498 @@
+[
+  {
+    "year": 2026,
+    "level": 1,
+    "question": 1,
+    "official_letter": "D",
+    "topic": "Astronomia",
+    "prompt": "Qual é o nome do astro? Dicas: é o astro mais próximo da Terra; doze homens já caminharam sobre ele entre 1969 e 1972; a cada noite tem aparência diferente, visto da Terra; há um dia em que não o vemos nem de dia nem de noite.",
+    "correct": "Lua",
+    "wrong": [
+      "Marte",
+      "Titã",
+      "Sol",
+      "Terra"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: Lua.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2026,
+    "level": 1,
+    "question": 2,
+    "official_letter": "E",
+    "topic": "Astronomia",
+    "prompt": "A Lua é o astro mais próximo da Terra. Assinale a única alternativa errada.",
+    "correct": "A Lua é plana, tal como uma pizza",
+    "wrong": [
+      "Na Lua tem muitas crateras e são de todos os tamanhos",
+      "A Lua tem a forma de uma bola e só vemos um lado dela",
+      "Na Lua Cheia todo seu lado iluminado pelo Sol é visto da Terra",
+      "Doze astronautas caminharam sobre a Lua entre 1969 e 1972"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: A Lua é plana, tal como uma pizza.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2026,
+    "level": 1,
+    "question": 3,
+    "official_letter": "C",
+    "topic": "Astronomia",
+    "prompt": "Qual é o nome do planeta que está entre Júpiter e Netuno e tem quase o mesmo tamanho de Netuno? É gasoso e seu nome começa com uma das vogais.",
+    "correct": "Urano",
+    "wrong": [
+      "Júpiter",
+      "Saturno",
+      "Netuno",
+      "Plutão"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: Urano.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2026,
+    "level": 1,
+    "question": 4,
+    "official_letter": "E",
+    "topic": "Astronomia",
+    "prompt": "As vogais são a, e, i, o, u. Assinale a alternativa em que o 1º astro só tem uma vogal, o 2º só duas, o 3º só três e o 4º quatro vogais.",
+    "correct": "Sol, Lua, Urano, Mercúrio",
+    "wrong": [
+      "Sol, Lua, Vênus, Júpiter",
+      "Lua, Sol, Urano, Mercúrio",
+      "Sol, Lua, Terra, Mercúrio",
+      "Sol, Marte, Urano, Netuno"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: Sol, Lua, Urano, Mercúrio.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2026,
+    "level": 1,
+    "question": 5,
+    "official_letter": "A",
+    "topic": "Astronomia",
+    "prompt": "A missão Artemis II (3 a 10 de abril de 2026) levou 4 pessoas para um sobrevoo ao redor da Lua, na cápsula Órion. Assinale a alternativa correta.",
+    "correct": "Na cápsula Órion tinha 3 homens e 1 mulher",
+    "wrong": [
+      "Na cápsula Órion tinha 2 homens e 2 mulheres",
+      "Na cápsula Órion tinha 1 homem e 3 mulheres",
+      "Na cápsula Órion tinha 4 homens",
+      "Na cápsula Órion tinha 4 mulheres"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: Na cápsula Órion tinha 3 homens e 1 mulher.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2026,
+    "level": 1,
+    "question": 6,
+    "official_letter": "C",
+    "topic": "Astronomia",
+    "prompt": "Coloque C (certo) ou E (errado) e assinale a sequência correta.",
+    "correct": "C – C – C – C – E",
+    "wrong": [
+      "E – C – C – C – E",
+      "C – E – C – C – E",
+      "C – C – E – C – E",
+      "C – C – C – E – E"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: C – C – C – C – E",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa.",
+    "statements": [
+      "O Sol é a única estrela do Sistema Solar.",
+      "A luz do Sol ilumina os planetas, luas, asteroides e até os cometas.",
+      "Os quatro menores planetas do Sistema Solar são rochosos.",
+      "O lado oculto da Lua foi fotografado pelos astronautas da cápsula Órion.",
+      "O lado da Lua que não vemos da Terra nunca é iluminado pelo Sol."
+    ]
+  },
+  {
+    "year": 2026,
+    "level": 1,
+    "question": 7,
+    "official_letter": "C",
+    "topic": "Astronomia",
+    "prompt": "Faça um X na afirmação correta.",
+    "correct": "A Lua tem 4 fases principais",
+    "wrong": [
+      "A Terra tem 5 estações do ano",
+      "O planeta Marte tem 3 luas",
+      "O Sistema Solar tem 9 planetas",
+      "Dos planetas do Sistema Solar, 5 são rochosos como a Terra"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: A Lua tem 4 fases principais.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2026,
+    "level": 1,
+    "question": 10,
+    "official_letter": "D",
+    "topic": "Astronáutica",
+    "prompt": "Características dos foguetes. Coloque C ou E e assinale a sequência correta.",
+    "correct": "C – E – C – C – C",
+    "wrong": [
+      "E – E – C – C – C",
+      "C – C – C – C – C",
+      "C – E – E – C – C",
+      "C – E – C – E – C"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: C – E – C – C – C",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa.",
+    "statements": [
+      "A ponta do foguete é arredondada para diminuir a resistência do ar.",
+      "Nunca explodiu foguete da NASA.",
+      "Um foguete russo levou o astronauta brasileiro à Estação Espacial Internacional.",
+      "Foguetes até de garrafa PET também podem explodir.",
+      "Foguetes da NASA são mais caros e rápidos do que aviões, carros e trens."
+    ]
+  },
+  {
+    "year": 2026,
+    "level": 2,
+    "question": 1,
+    "official_letter": "D",
+    "topic": "Astronomia",
+    "prompt": "Qual é o nome do astro? É maior do que Plutão e um pouco menor do que Mercúrio; quatro astronautas passaram perto da sua superfície em abril de 2026; de vez em quando passa na frente do Sol causando um eclipse solar; a cada 29,5 dias há um dia em que não o vemos nem de dia nem de noite.",
+    "correct": "Lua",
+    "wrong": [
+      "Mercúrio",
+      "Io",
+      "Vênus",
+      "Marte"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: Lua.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2026,
+    "level": 2,
+    "question": 2,
+    "official_letter": "E",
+    "topic": "Astronomia",
+    "prompt": "Qual é o nome do planeta? É um pouco maior do que a Lua; sem atmosfera como a da Terra; muitas crateras; de noite −180 °C e de dia +430 °C; único planeta com quatro das cinco vogais no nome.",
+    "correct": "Mercúrio",
+    "wrong": [
+      "Saturno",
+      "Júpiter",
+      "Marte",
+      "Vênus"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: Mercúrio.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2026,
+    "level": 2,
+    "question": 3,
+    "official_letter": "A",
+    "topic": "Astronomia",
+    "prompt": "Quais os nomes dos planetas A e B? Estão entre Vênus e Netuno; A é muito menor que B; A tem só duas luas pequenas e B tem 95 luas; A é rochoso e B é gasoso e não tem a vogal O no nome; A é avermelhado e B tem uma grande mancha vermelha.",
+    "correct": "A é Marte e B é Júpiter",
+    "wrong": [
+      "A é a Terra e B é Júpiter",
+      "A é Júpiter e B é Saturno",
+      "A é Marte e B é Saturno",
+      "A é Marte e B é Urano"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: A é Marte e B é Júpiter.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2026,
+    "level": 2,
+    "question": 4,
+    "official_letter": "D",
+    "topic": "Astronomia",
+    "prompt": "Entre 3 e 10 de abril de 2026 os 4 astronautas da cápsula Órion sobrevoaram a superfície lunar e passaram pelo lado oculto da Lua. Assinale a única alternativa errada.",
+    "correct": "Vemos sempre a mesma face da Lua porque ela não tem rotação",
+    "wrong": [
+      "Vista da Lua a Terra tem cerca de 4 vezes o diâmetro da Lua vista da Terra",
+      "Eles observaram que o lado oculto da Lua tem mais crateras",
+      "O lado oculto da Lua também recebe a luz solar quando é Lua Nova",
+      "O lado oculto da Lua só não recebe luz solar quando é Lua Cheia"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: Vemos sempre a mesma face da Lua porque ela não tem rotação.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2026,
+    "level": 2,
+    "question": 5,
+    "official_letter": "D",
+    "topic": "Astronomia",
+    "prompt": "Observe o esquema da órbita do cometa. O periélio é a posição mais próxima do Sol (F), onde o cometa tem maior velocidade orbital. Qual ponto indica o periélio?",
+    "correct": "No ponto D",
+    "wrong": [
+      "No ponto A",
+      "No ponto B",
+      "No ponto C",
+      "No ponto E"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: No ponto D.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa.",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 230\"><rect width=\"560\" height=\"230\" rx=\"8\" fill=\"#07162c\"/><ellipse cx=\"280\" cy=\"110\" rx=\"218\" ry=\"76\" fill=\"none\" stroke=\"#8cc8ef\" stroke-width=\"2\"/><circle cx=\"484\" cy=\"110\" r=\"13\" fill=\"#ffd176\"/><g fill=\"#73dfff\" stroke=\"#d8f5ff\"><circle cx=\"280\" cy=\"34\" r=\"6\"/><circle cx=\"62\" cy=\"110\" r=\"6\"/><circle cx=\"280\" cy=\"186\" r=\"6\"/><circle cx=\"498\" cy=\"110\" r=\"6\"/><circle cx=\"280\" cy=\"110\" r=\"4\" fill=\"#899fb9\"/></g><g font-family=\"Arial\" font-size=\"16\" fill=\"#e3f5ff\"><text x=\"274\" y=\"23\">A</text><text x=\"41\" y=\"114\">B</text><text x=\"274\" y=\"209\">C</text><text x=\"516\" y=\"115\">D</text><text x=\"266\" y=\"99\">E</text><text x=\"445\" y=\"83\">Sol (F)</text></g></svg>",
+    "alt": "Elipse com pontos A, B, C, D na trajetória; Sol próximo da extremidade direita, perto do ponto D; E no centro."
+  },
+  {
+    "year": 2026,
+    "level": 2,
+    "question": 6,
+    "official_letter": "C",
+    "topic": "Astronomia",
+    "prompt": "Examine o esquema da órbita de um planeta, com o Sol em F. Classifique as afirmações como certas (C) ou erradas (E).",
+    "correct": "C – C – C – C – E",
+    "wrong": [
+      "E – C – C – C – E",
+      "C – E – C – C – E",
+      "C – C – E – C – E",
+      "C – C – C – E – E"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: C – C – C – C – E",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa.",
+    "statements": [
+      "O periélio do planeta está no ponto D.",
+      "O afélio do planeta está no ponto B.",
+      "A velocidade do planeta é máxima no ponto D.",
+      "O planeta se move mais devagar no ponto B.",
+      "O planeta passa pelo ponto E."
+    ],
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 230\"><rect width=\"560\" height=\"230\" rx=\"8\" fill=\"#07162c\"/><ellipse cx=\"280\" cy=\"110\" rx=\"218\" ry=\"76\" fill=\"none\" stroke=\"#8cc8ef\" stroke-width=\"2\"/><circle cx=\"484\" cy=\"110\" r=\"13\" fill=\"#ffd176\"/><g fill=\"#73dfff\" stroke=\"#d8f5ff\"><circle cx=\"280\" cy=\"34\" r=\"6\"/><circle cx=\"62\" cy=\"110\" r=\"6\"/><circle cx=\"280\" cy=\"186\" r=\"6\"/><circle cx=\"498\" cy=\"110\" r=\"6\"/><circle cx=\"280\" cy=\"110\" r=\"4\" fill=\"#899fb9\"/></g><g font-family=\"Arial\" font-size=\"16\" fill=\"#e3f5ff\"><text x=\"274\" y=\"23\">A</text><text x=\"41\" y=\"114\">B</text><text x=\"274\" y=\"209\">C</text><text x=\"516\" y=\"115\">D</text><text x=\"266\" y=\"99\">E</text><text x=\"445\" y=\"83\">Sol (F)</text></g></svg>",
+    "alt": "Órbita elíptica: D perto do Sol, B no lado oposto; A e C na elipse, E no interior."
+  },
+  {
+    "year": 2026,
+    "level": 2,
+    "question": 7,
+    "official_letter": "E",
+    "topic": "Astronomia",
+    "prompt": "Direções cardeais. Assinale a única alternativa errada.",
+    "correct": "Só os planetas nascem do lado Oeste e se põem do lado Leste",
+    "wrong": [
+      "O Sol sempre nasce no lado Leste e sempre se põe do lado Oeste",
+      "Quatro são as direções cardeais principais: Norte, Sul, Leste e Oeste",
+      "As estrelas nascem no lado Leste e se põem no lado Oeste",
+      "A Lua também nasce no lado Leste e se põe no lado Oeste"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: Só os planetas nascem do lado Oeste e se põem do lado Leste.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2026,
+    "level": 2,
+    "question": 8,
+    "official_letter": "B",
+    "topic": "Astronáutica",
+    "prompt": "Coloque C ou E e assinale a sequência correta.",
+    "correct": "C – C – C – C – E",
+    "wrong": [
+      "E – C – C – C – E",
+      "C – E – C – C – E",
+      "C – C – E – C – E",
+      "C – C – C – E – E"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: C – C – C – C – E",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa.",
+    "statements": [
+      "O ar da atmosfera dificulta o voo dos foguetes.",
+      "Os gases quentes lançados para trás, em alta velocidade, produzem a força que os impulsiona para cima.",
+      "A força peso sempre dificulta o movimento do foguete quando ele sobe.",
+      "A força que impulsiona o foguete para cima é chamada de empuxo.",
+      "Entre a Terra e a Lua não existe a força peso."
+    ]
+  },
+  {
+    "year": 2026,
+    "level": 2,
+    "question": 9,
+    "official_letter": "B",
+    "topic": "Astronáutica",
+    "prompt": "Coloque C ou E e assinale a sequência correta.",
+    "correct": "C – C – C – C – C",
+    "wrong": [
+      "E – C – C – C – C",
+      "C – E – C – C – C",
+      "C – C – E – C – C",
+      "C – C – C – E – C"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: C – C – C – C – C",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa.",
+    "statements": [
+      "Em 1906 voou Santos Dumont pela primeira vez com o 14-Bis.",
+      "Em 1961 um foguete russo levou Yuri Gagarin ao espaço.",
+      "Em 1969 dois astronautas pousaram na Lua.",
+      "Em 2006 um foguete russo levou o astronauta brasileiro Marcos Pontes à Estação Espacial Internacional.",
+      "Em 2026 o foguete da Missão Artemis II, com 4 astronautas, sobrevoou a Lua."
+    ]
+  },
+  {
+    "year": 2026,
+    "level": 2,
+    "question": 10,
+    "official_letter": "B",
+    "topic": "Astronáutica",
+    "prompt": "Características dos foguetes. Coloque C ou E e assinale a sequência correta.",
+    "correct": "C – E – C – C – C",
+    "wrong": [
+      "E – E – C – C – C",
+      "C – C – C – C – C",
+      "C – E – E – C – C",
+      "C – E – C – E – C"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: C – E – C – C – C",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa.",
+    "statements": [
+      "A ponta do foguete é arredondada para diminuir a resistência do ar.",
+      "Os foguetes da NASA ou Space X nunca explodiram.",
+      "As empenas (“asas”) do foguete dão estabilidade ao voo.",
+      "Foguetes até de garrafa PET também podem explodir.",
+      "Foguetes da NASA são mais caros e rápidos do que aviões, carros e trens."
+    ]
+  },
+  {
+    "year": 2026,
+    "level": 3,
+    "question": 1,
+    "official_letter": "C",
+    "topic": "Astronomia",
+    "prompt": "Os astronautas da cápsula Órion (Artemis II, sobrevoo lunar em 08/04/2026, a 10.300 km da superfície) eram constituídos de:",
+    "correct": "Três homens e uma mulher, sendo um canadense e os demais norte-americanos",
+    "wrong": [
+      "Três homens, norte-americanos",
+      "Quatro homens, norte-americanos",
+      "Dois homens e duas mulheres, sendo dois canadenses e duas russas",
+      "Um homem e três mulheres, todos chineses"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: Três homens e uma mulher, sendo um canadense e os demais norte-americanos.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2026,
+    "level": 3,
+    "question": 2,
+    "official_letter": "A",
+    "topic": "Astronomia",
+    "prompt": "Num certo momento a distância entre as superfícies da Terra e da Lua é 395.002 km; o diâmetro da Terra é ≈ 12.742 km. a) Quantas Terras enfileiradas caberiam nessa separação? b) Sendo o diâmetro da Lua ≈ ¼ do da Terra, quantas Luas caberiam?",
+    "correct": "31 e 124",
+    "wrong": [
+      "31 e 114",
+      "32 e 128",
+      "30 e 120",
+      "31 e 134"
+    ],
+    "explanation": "a) 395.002 ÷ 12.742 ≈ 31. b) Diâmetro da Lua ≈ 12.742 ÷ 4 ≈ 3.185 km; 395.002 ÷ 3.185 ≈ 124.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2026,
+    "level": 3,
+    "question": 5,
+    "official_letter": "D",
+    "topic": "Astronomia",
+    "prompt": "A rosa dos ventos indica o norte (N) e o leste (L). Associe os números de 1 a 6 às direções cardeais e colaterais.",
+    "correct": "1 (NE) – 2 (NO) – 3 (O) – 4 (SO) – 5 (S) – 6 (SE)",
+    "wrong": [
+      "1 (NE) – 2 (NO) – 3 (SO) – 4 (S) – 5 (S) – 6 (SE)",
+      "1 (NE) – 2 (SE) – 3 (O) – 4 (SO) – 5 (S) – 6 (NO)",
+      "1 (NO) – 2 (NE) – 3 (O) – 4 (SO) – 5 (S) – 6 (SE)",
+      "1 (SE) – 2 (NO) – 3 (O) – 4 (SO) – 5 (S) – 6 (NE)"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: 1 (NE) – 2 (NO) – 3 (O) – 4 (SO) – 5 (S) – 6 (SE).",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa.",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 230\"><rect width=\"560\" height=\"230\" rx=\"8\" fill=\"#07162c\"/><circle cx=\"280\" cy=\"115\" r=\"78\" stroke=\"#365b86\" stroke-width=\"1.5\" fill=\"none\"/><g stroke=\"#79cefa\" stroke-width=\"2\" fill=\"#163e67\"><path d=\"M280 115L280 37 289 106Z M280 115L335 60 293 110Z M280 115L358 115 289 124Z M280 115L335 170 285 128Z M280 115L280 193 271 124Z M280 115L225 170 267 120Z M280 115L202 115 271 106Z M280 115L225 60 275 102Z\"/></g><g fill=\"#e6faff\" font-family=\"Arial\" font-size=\"17\" font-weight=\"bold\" text-anchor=\"middle\"><text x=\"280\" y=\"23\">N</text><text x=\"349\" y=\"51\">1</text><text x=\"211\" y=\"51\">2</text><text x=\"187\" y=\"120\">3</text><text x=\"211\" y=\"190\">4</text><text x=\"280\" y=\"216\">5</text><text x=\"349\" y=\"190\">6</text><text x=\"374\" y=\"120\">L</text></g></svg>",
+    "alt": "Rosa dos ventos com N no topo, L à direita, números 1 no nordeste, 2 no noroeste, 3 a oeste, 4 a sudoeste, 5 ao sul e 6 a sudeste."
+  },
+  {
+    "year": 2026,
+    "level": 3,
+    "question": 6,
+    "official_letter": "D",
+    "topic": "Astronomia",
+    "prompt": "Use a Rosa dos Ventos. Coloque C ou E e assinale a sequência correta.",
+    "correct": "C – C – C – C – E",
+    "wrong": [
+      "E – C – C – C – E",
+      "C – E – C – C – E",
+      "C – C – E – C – E",
+      "C – C – C – E – E"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: C – C – C – C – E",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa.",
+    "statements": [
+      "Só nos equinócios o Sol nasce no ponto L e se põe no ponto O.",
+      "A linha Norte–Sul define o Meridiano Local.",
+      "O ângulo entre o Norte e o Nordeste é de 45°.",
+      "Com zero em N crescendo no sentido horário, o ângulo entre N e SE é de 135°.",
+      "O ângulo entre SO e SE é de 45°."
+    ]
+  },
+  {
+    "year": 2026,
+    "level": 3,
+    "question": 8,
+    "official_letter": "A",
+    "topic": "Astronáutica",
+    "prompt": "Foguetes de garrafa PET (água e ar comprimido), de vinagre e bicarbonato, e de propulsão sólida se movem quando algo é ejetado para trás em alta velocidade. Assinale a Lei da Física que explica o movimento.",
+    "correct": "A Lei da Ação-Reação, de Sir Isaac Newton",
+    "wrong": [
+      "A Lei da Inércia, de Sir Isaac Newton",
+      "A Lei Fundamental da Mecânica que diz que força é igual a aceleração",
+      "A Primeira Lei da Termodinâmica",
+      "A Teoria da Relatividade Geral, de Albert Einstein"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: A Lei da Ação-Reação, de Sir Isaac Newton.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2026,
+    "level": 3,
+    "question": 9,
+    "official_letter": "C",
+    "topic": "Astronáutica",
+    "prompt": "Missão Centenário (2006): Marcos Pontes decolou do Cosmódromo de Baikonur (Cazaquistão) na Soyuz TMA-8 e passou ≈ 10 dias na ISS. Assinale a alternativa correta.",
+    "correct": "A nave utilizada foi a Soyuz TMA-8, de fabricação russa, partindo do Cosmódromo de Baikonur",
+    "wrong": [
+      "O astronauta decolou do Centro de Lançamento de Alcântara (Maranhão)",
+      "O retorno da Soyuz ocorreu com pouso suave no Oceano Atlântico, perto da costa brasileira",
+      "O objetivo principal foi levar o primeiro satélite meteorológico brasileiro para ser colocado em órbita por Marcos Pontes pessoalmente",
+      "Marcos Pontes permaneceu no espaço um ano, fazendo manutenções externas nos painéis solares da Lua"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: A nave utilizada foi a Soyuz TMA-8, de fabricação russa, partindo do Cosmódromo de Baikonur.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2026,
+    "level": 3,
+    "question": 10,
+    "official_letter": "B",
+    "topic": "Astronáutica",
+    "prompt": "Os satélites CBERS (sino-brasileiro) e AMAZONIA-1, do INPE. Sobre a principal utilidade desses satélites:",
+    "correct": "São satélites de sensoriamento remoto, usados principalmente para monitorar desmatamento, agricultura e desastres ambientais",
+    "wrong": [
+      "São satélites de defesa militar equipados com armas para proteger as fronteiras",
+      "São satélites de comunicações para transmitir rádio e TV para Europa e Ásia",
+      "São satélites tripulados que servem como estações espaciais",
+      "São satélites de navegação como o GPS, apenas para navios no Oceano Antártico"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: São satélites de sensoriamento remoto, usados principalmente para monitorar desmatamento, agricultura e desastres ambientais.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2026,
+    "level": 4,
+    "question": 1,
+    "official_letter": "C",
+    "topic": "Astronomia",
+    "prompt": "Remanescente de Supernova (bolha de diâmetro D = 17,52 anos-luz, expandindo com v = 9,5 milhões de km/h, velocidade constante). Há quantos anos o SNR está nesta fase de expansão? Dados: 1 ano-luz ≈ 9,5 × 10¹² km e 1 ano = 365 dias.",
+    "correct": "1.000 anos",
+    "wrong": [
+      "950 anos",
+      "1.752 anos",
+      "876 anos",
+      "1.500 anos"
+    ],
+    "explanation": "T = R/v = (17,52/2 × 9,5 × 10¹² km) / (9,5 × 10⁶ km/h) = 8,76 × 10⁶ h. Como 1 ano = 8.760 h, T = 1.000 anos.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2026,
+    "level": 4,
+    "question": 4,
+    "official_letter": "A",
+    "topic": "Astronomia",
+    "prompt": "Sonda interestelar em linha reta do Sol até uma anã vermelha a 5,2 anos-luz, com L_E = 0,0016 L_Sol e brilho aparente b = L/(4πd²). A que distância X do Sol os dois brilhos são idênticos?",
+    "correct": "5,0 anos-luz",
+    "wrong": [
+      "5,1 anos-luz",
+      "4,9 anos-luz",
+      "4,8 anos-luz",
+      "4,7 anos-luz"
+    ],
+    "explanation": "L_Sol/x² = L_E/(D−x)² ⇒ (D−x)/x = √0,0016 = 0,04 ⇒ 5,2 = 1,04x ⇒ x = 5,0 anos-luz (a sonda ficaria a 0,2 ano-luz da anã vermelha).",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2026,
+    "level": 4,
+    "question": 9,
+    "official_letter": "B",
+    "topic": "Astronáutica",
+    "prompt": "Estágio ICPS (motor RL10C-3, empuxo 105.900 N). Massa inicial ≈ 30.000 kg; massa final ≈ 10.000 kg. a) aceleração inicial; b) aceleração final; c) quantas vezes a final é maior que a inicial.",
+    "correct": "3,53 m/s², 10,59 m/s², 3,00",
+    "wrong": [
+      "3,53 m/s², 11,60 m/s², 3,29",
+      "3,53 m/s², 12,60 m/s², 3,57",
+      "10,60 m/s², 3,53 m/s², 0,33",
+      "10,60 m/s², 4,53 m/s², 0,43"
+    ],
+    "explanation": "a = F/m: a_i = 105.900/30.000 = 3,53 m/s²; a_f = 105.900/10.000 = 10,59 m/s²; razão = 3,00.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2026,
+    "level": 4,
+    "question": 10,
+    "official_letter": "C",
+    "topic": "Astronáutica",
+    "prompt": "Foguete de garrafa PET lançado a 45° com V₀ = 80 m/s (g = 10 m/s², cos 45° = sen 45° = 0,7). Alcance máximo X_max e altura máxima Y_max.",
+    "correct": "627,2 m e 156,8 m",
+    "wrong": [
+      "637,2 m e 157,8 m",
+      "627,8 m e 156,0 m",
+      "607,8 m e 146,8 m",
+      "650,0 m e 1550,0 m"
+    ],
+    "explanation": "t_subida = V₀·sen45°/g = 80·0,7/10 = 5,6 s. Y_max = 56·5,6 − 5·5,6² = 156,8 m. X_max = V₀·cos45°·2t_s = 56·11,2 = 627,2 m.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2025,
+    "level": 1,
+    "question": 4,
+    "official_letter": "C",
+    "topic": "Astronomia",
+    "prompt": "As vogais são a, e, i, o, u. Assinale a alternativa em que os nomes dos astros têm o mesmo número de vogais.",
+    "correct": "Júpiter, Saturno, Urano, Netuno, Plutão",
+    "wrong": [
+      "Júpiter, Vênus, Saturno, Júpiter, Urano",
+      "Mercúrio, Vênus, Saturno, Júpiter, Urano",
+      "Marte, Saturno, Júpiter, Netuno, Urano",
+      "Vênus, Terra, Marte, Lua, Sol"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: Júpiter, Saturno, Urano, Netuno, Plutão.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2025,
+    "level": 1,
+    "question": 5,
+    "official_letter": "B",
+    "topic": "Astronomia",
+    "prompt": "Assinale a única alternativa onde está tudo errado.",
+    "correct": "O astronauta brasileiro Marcos Pontes também esteve na Lua",
+    "wrong": [
+      "Quando não vemos a Lua nem de dia nem de noite ela está na fase Nova",
+      "A Terra tem quatro estações: Verão, Inverno, Outono e Primavera",
+      "Na Lua os astronautas pesam menos do que na Terra",
+      "A Lua tem quatro fases principais: Cheia, Nova, Quarto-crescente e Quarto-minguante"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: O astronauta brasileiro Marcos Pontes também esteve na Lua.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2025,
+    "level": 1,
+    "question": 6,
+    "official_letter": "A",
+    "topic": "Astronomia",
+    "prompt": "Coloque V (verdadeiro) ou F (falso) e assinale a sequência correta.",
+    "correct": "V – V – V – V – F",
+    "wrong": [
+      "F – V – V – V – F",
+      "V – F – V – V – F",
+      "V – V – F – V – F",
+      "V – V – V – F – F"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: V – V – V – V – F",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa.",
+    "statements": [
+      "A luz do Sol chega em todos os planetas do Sistema Solar.",
+      "Todos os planetas giram em torno do Sol no mesmo sentido.",
+      "Os quatro maiores planetas do Sistema Solar são gasosos.",
+      "Quanto mais perto do Sol, menor é o “ano” do planeta.",
+      "O lado da Lua que não vemos da Terra nunca é iluminado pelo Sol."
+    ]
+  },
+  {
+    "year": 2025,
+    "level": 1,
+    "question": 7,
+    "official_letter": "B",
+    "topic": "Astronomia",
+    "prompt": "Quanto mais longe do Sol, mais devagar o planeta se move. Coloque V ou F.",
+    "correct": "F – V – V – V – V",
+    "wrong": [
+      "V – V – V – V – V",
+      "F – F – V – V – V",
+      "F – V – F – V – V",
+      "F – V – V – F – V"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: F – V – V – V – V",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa.",
+    "statements": [
+      "É o Sol que gira em torno da Terra.",
+      "A distância entre o Sol e a Terra chamamos de Unidade Astronômica.",
+      "Santos Dumont inventou o avião, mas não foi um astronauta.",
+      "O astronauta brasileiro Marcos Pontes esteve na ISS, mas não na Lua.",
+      "Na Lua Nova o lado dela que não vemos da Terra está todo iluminado pelo Sol."
+    ]
+  },
+  {
+    "year": 2025,
+    "level": 1,
+    "question": 8,
+    "official_letter": "D",
+    "topic": "Astronáutica",
+    "prompt": "Coloque V ou F.",
+    "correct": "V – V – V – V – F",
+    "wrong": [
+      "F – V – V – V – F",
+      "V – F – V – V – F",
+      "V – V – F – V – F",
+      "V – V – V – F – F"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: V – V – V – V – F",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa.",
+    "statements": [
+      "Tal como um trem, um foguete é um veículo de transporte.",
+      "Foguetes não precisam de asas como os aviões.",
+      "Foguetes são os veículos mais rápidos já construídos.",
+      "A maior parte do peso de um foguete ao iniciar o voo é de “combustível”.",
+      "Os foguetes já levaram 12 pessoas para o planeta Marte."
+    ]
+  },
+  {
+    "year": 2025,
+    "level": 2,
+    "question": 1,
+    "official_letter": "A",
+    "topic": "Astronomia",
+    "prompt": "O planeta mais bem estudado é a Terra. Assinale a única alternativa onde está tudo errado.",
+    "correct": "A Terra tem quatro estações, porque a Lua tem quatro fases",
+    "wrong": [
+      "A Terra tem rios, mares, lagos, oceanos, vulcões e atmosfera",
+      "Tal como a Terra, todo planeta tem eixo de rotação",
+      "No Sistema Solar temos uma só estrela, oito planetas e centenas de luas",
+      "A Terra é o maior planeta entre os 4 mais próximos do Sol"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: A Terra tem quatro estações, porque a Lua tem quatro fases.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2025,
+    "level": 2,
+    "question": 2,
+    "official_letter": "B",
+    "topic": "Astronomia",
+    "prompt": "Mostre que você sabe muitas coisas sobre Astronomia. Assinale a única alternativa onde está tudo errado.",
+    "correct": "No eclipse lunar a Lua entra na sombra da Terra e fica invisível",
+    "wrong": [
+      "A Lua não tem vulcões ativos, mas teve no passado",
+      "Somente 12 astronautas norte-americanos caminharam sobre a Lua",
+      "A Lua está na fase “Nova” quando não a vemos nem de dia e nem de noite",
+      "A Lua é a principal responsável pelas marés"
+    ],
+    "explanation": "No eclipse total a Lua não fica invisível: fica avermelhada pela luz refratada na atmosfera terrestre.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2025,
+    "level": 2,
+    "question": 5,
+    "official_letter": "C",
+    "topic": "Astronomia",
+    "prompt": "As quatro direções cardeais principais são Leste, Oeste, Norte e Sul. Assinale a única alternativa onde está tudo errado.",
+    "correct": "Algumas estrelas nascem no Norte e se põem no Sul",
+    "wrong": [
+      "O Sol sempre nasce no lado Leste e sempre se põe do lado Oeste",
+      "Quatro são as direções cardeais principais: Norte, Sul, Leste e Oeste",
+      "As estrelas nascem no lado Leste e se põem no lado Oeste",
+      "A Lua nasce no lado Leste e se põe no lado Oeste"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: Algumas estrelas nascem no Norte e se põem no Sul.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2025,
+    "level": 2,
+    "question": 8,
+    "official_letter": "E",
+    "topic": "Astronáutica",
+    "prompt": "Coloque V ou F.",
+    "correct": "V – V – V – V – F",
+    "wrong": [
+      "F – V – V – V – F",
+      "V – F – V – V – F",
+      "V – V – F – V – F",
+      "V – V – V – F – F"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: V – V – V – V – F",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa.",
+    "statements": [
+      "A ponta de um foguete é chamada de coifa ou “nariz”.",
+      "As empenas ou aletas do foguete ajudam na estabilização do voo.",
+      "Peso é a força que sempre puxa o foguete para baixo.",
+      "Empuxo é o nome da força que impulsiona o foguete para a frente.",
+      "Para o foguete ir para frente ele precisa lançar algo para frente também."
+    ]
+  },
+  {
+    "year": 2025,
+    "level": 2,
+    "question": 9,
+    "official_letter": "C",
+    "topic": "Astronáutica",
+    "prompt": "Utilidades dos foguetes. Coloque V ou F.",
+    "correct": "V – V – V – V – F",
+    "wrong": [
+      "F – V – V – V – F",
+      "V – F – V – V – F",
+      "V – V – F – V – F",
+      "V – V – V – F – F"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: V – V – V – V – F",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa.",
+    "statements": [
+      "O foguete Saturno 5 levou os primeiros astronautas à Lua em 1969.",
+      "Foguetes colocam em órbita satélites de comunicação, observação da Terra, meteorológicos, de navegação (GPS) e científicos.",
+      "São usados para enviar sondas para exploração de outros planetas, luas, asteroides e cometas.",
+      "São usados para levar missões tripuladas à órbita terrestre (como à ISS) e à Lua.",
+      "Só são usados para se fazer turismo no espaço."
+    ]
+  },
+  {
+    "year": 2025,
+    "level": 2,
+    "question": 10,
+    "official_letter": "D",
+    "topic": "Astronáutica",
+    "prompt": "Para um foguete sair da Terra ele queima “combustível” e joga os gases bem fortes para baixo. Coloque V ou F.",
+    "correct": "F – V – V – V – V",
+    "wrong": [
+      "V – V – V – V – V",
+      "F – F – V – V – V",
+      "F – V – F – V – V",
+      "F – V – V – F – V"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: F – V – V – V – V",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa.",
+    "statements": [
+      "O foguete sobe porque a Lua o puxa para o espaço.",
+      "Os gases da queima do “combustível” são muito quentes.",
+      "Os gases da queima têm altíssimas velocidades.",
+      "Quando termina o “combustível” do foguete termina a força propulsora dele.",
+      "O foguete sobe porque os gases da queima são jogados para baixo."
+    ]
+  },
+  {
+    "year": 2025,
+    "level": 3,
+    "question": 7,
+    "official_letter": "A",
+    "topic": "Astronomia",
+    "prompt": "Escreva o nome do planeta para cada descrição: 1º) diâmetro ≈ 4.879 km, quase sem atmosfera, 430 °C / −180 °C, ano de 88 dias; 2º) terceiro maior em diâmetro, único a girar “de lado” (eixo inclinado ≈ 98°); 3º) a 1,52 UA do Sol, 11% da massa da Terra, eixo inclinado 25°; 4º) planeta mais brilhante, atmosfera mais densa dos planetas terrestres, 92 vezes a pressão da Terra; 5º) segundo maior, densidade menor que a da água, rotação de 10,7 h.",
+    "correct": "Mercúrio – Urano – Marte – Vênus – Saturno",
+    "wrong": [
+      "Mercúrio – Saturno – Vênus – Marte – Júpiter",
+      "Netuno – Júpiter – Marte – Terra – Saturno",
+      "Mercúrio – Júpiter – Marte – Vênus – Saturno",
+      "Mercúrio – Júpiter – Marte – Vênus – Urano"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: Mercúrio – Urano – Marte – Vênus – Saturno.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2025,
+    "level": 3,
+    "question": 8,
+    "official_letter": "D",
+    "topic": "Astronáutica",
+    "prompt": "A força de empuxo depende da quantidade de massa de propelente queimado por segundo e da velocidade de ejeção dos gases. Qual foguete terá maior empuxo ao ser lançado?",
+    "correct": "Um foguete que queima muito propelente e lança os gases com muita velocidade",
+    "wrong": [
+      "Um foguete que queima pouco propelente e lança os gases devagar",
+      "Um foguete que queima muito propelente, mas lança os gases bem devagar",
+      "Um foguete que queima pouco propelente, mas lança os gases muito rápido",
+      "Um foguete que não queima propelente, mas gira muito rápido"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: Um foguete que queima muito propelente e lança os gases com muita velocidade.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2025,
+    "level": 3,
+    "question": 9,
+    "official_letter": "E",
+    "topic": "Astronáutica",
+    "prompt": "Satélites de órbita baixa (400 a 600 km) dão várias voltas por dia; a ≈ 300 km, uma volta leva ≈ 90 min (até 16 voltas por dia). Assinale a alternativa correta.",
+    "correct": "Satélites em órbitas baixas completam uma volta a cada 90 minutos e podem dar até 16 voltas por dia",
+    "wrong": [
+      "Satélites em órbitas baixas servem apenas para fazer filmes no espaço",
+      "Satélites em órbita baixa demoram 24 horas para dar uma volta na Terra, como os geoestacionários",
+      "Quanto mais baixo o satélite, mais devagar ele gira ao redor da Terra",
+      "Um satélite em órbita baixa só consegue dar uma volta na Terra por semana"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: Satélites em órbitas baixas completam uma volta a cada 90 minutos e podem dar até 16 voltas por dia.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2025,
+    "level": 3,
+    "question": 10,
+    "official_letter": "C",
+    "topic": "Astronáutica",
+    "prompt": "O SGDC, primeiro satélite brasileiro geoestacionário (35.786 km de altitude sobre o Equador). Assinale a alternativa correta.",
+    "correct": "A órbita geoestacionária permite ao SGDC cobrir cerca de um terço do planeta, mantendo comunicações contínuas sobre o Brasil",
+    "wrong": [
+      "Satélites geoestacionários, como o SGDC, giram mais rápido que a Terra",
+      "Satélites como o SGDC são usados apenas para fins científicos",
+      "O SGDC está em uma órbita baixa, o que facilita seu controle por radares",
+      "O SGDC precisa de várias voltas ao redor da Terra por dia para manter comunicação no Brasil"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: A órbita geoestacionária permite ao SGDC cobrir cerca de um terço do planeta, mantendo comunicações contínuas sobre o Brasil.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2025,
+    "level": 4,
+    "question": 3,
+    "official_letter": "C",
+    "topic": "Astronomia",
+    "prompt": "Planeta OBA a uma distância do Sol 100 vezes maior que a da Terra. Pela 3ª Lei de Kepler (P² = r³, P em anos e r em UA), qual o período?",
+    "correct": "1.000 anos",
+    "wrong": [
+      "100 anos",
+      "316 anos",
+      "3.162 anos",
+      "10.000 anos"
+    ],
+    "explanation": "P = √(100³) = 10³ = 1.000 anos.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2025,
+    "level": 4,
+    "question": 4,
+    "official_letter": "E",
+    "topic": "Astronomia",
+    "prompt": "Período sinódico: 1/S = 1/P₁ − 1/P₂. Marte (687 dias) começou o movimento retrógrado em dezembro de 2024. Quando você espera que comece novamente?",
+    "correct": "Janeiro de 2027",
+    "wrong": [
+      "Dezembro de 2025",
+      "Maio de 2026",
+      "Outubro de 2026",
+      "Dezembro de 2026"
+    ],
+    "explanation": "1/S = 1/365 − 1/687 ⇒ S ≈ 779 dias ≈ 2 anos + 1 mês + 19 dias ⇒ janeiro de 2027.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2025,
+    "level": 4,
+    "question": 5,
+    "official_letter": "D",
+    "topic": "Astronomia",
+    "prompt": "Dia solar × dia sideral (as estrelas nascem ≈ 4 min mais cedo a cada dia). Canopus nasce às 23 h. A que horas nascerá depois de 45 dias?",
+    "correct": "20h",
+    "wrong": [
+      "0h",
+      "2h",
+      "19h",
+      "23h"
+    ],
+    "explanation": "45 dias × 4 min = 180 min = 3 h ⇒ 23 h − 3 h = 20 h.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2025,
+    "level": 4,
+    "question": 8,
+    "official_letter": "C",
+    "topic": "Astronáutica",
+    "prompt": "A sonda New Horizons passou por Plutão (≈ 40 UA) a ≈ 3,0 UA/ano. Quanto tempo leva para chegar ao início da Nuvem de Oort (≈ 1.000 UA)?",
+    "correct": "320 anos",
+    "wrong": [
+      "14,2 anos",
+      "40 anos",
+      "333 anos",
+      "960 anos"
+    ],
+    "explanation": "D = 1.000 − 40 = 960 UA; t = 960 / 3,0 = 320 anos.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2025,
+    "level": 4,
+    "question": 9,
+    "official_letter": "A",
+    "topic": "Astronáutica",
+    "prompt": "Projeto Lessonia-1 (satélites brasileiros de sensoriamento remoto óptico em órbita baixa heliossíncrona). Assinale a alternativa correta.",
+    "correct": "Satélites em órbita heliossíncrona como os do Lessonia-1 são ideais para obter imagens consistentes da Terra, com boa resolução e frequência de revisita",
+    "wrong": [
+      "O Lessonia-1 é composto por satélites geoestacionários que transmitem sinal de TV",
+      "O sensoriamento remoto por satélites de baixa órbita só funciona durante a noite, com infravermelho",
+      "A principal função dos satélites do Lessonia-1 é fornecer dados meteorológicos para redes de TV",
+      "Satélites heliossíncronos só são úteis para observação astronômica fora da Via Láctea"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: Satélites em órbita heliossíncrona como os do Lessonia-1 são ideais para obter imagens consistentes da Terra, com boa resolução e frequência de revisita.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2024,
+    "level": 1,
+    "question": 1,
+    "official_letter": "C",
+    "topic": "Astronomia",
+    "prompt": "O planeta mais bem estudado é a Terra. Marque a afirmação que está toda errada.",
+    "correct": "A Terra é plana, não gira ao redor do Sol e tem 4 luas",
+    "wrong": [
+      "A Terra gira ao redor do Sol e a Lua gira ao redor da Terra",
+      "A atmosfera da Terra permite a vida na Terra",
+      "Vista do espaço a Terra tem a forma de uma esfera (bola)",
+      "A Lua é satélite natural da Terra e já foi visitada por astronautas"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: A Terra é plana, não gira ao redor do Sol e tem 4 luas.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2024,
+    "level": 1,
+    "question": 2,
+    "official_letter": "B",
+    "topic": "Astronomia",
+    "prompt": "Sabemos muito sobre a nossa Lua. Marque a afirmação que está toda errada.",
+    "correct": "A Lua tem mar, floresta e os astronautas moram lá",
+    "wrong": [
+      "Na Lua não tem atmosfera como na Terra",
+      "O céu da Lua não é azul como o da Terra",
+      "A Lua tem crateras e montanhas como na Terra",
+      "A Lua é menor do que a Terra e do que o Sol"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: A Lua tem mar, floresta e os astronautas moram lá.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2024,
+    "level": 1,
+    "question": 3,
+    "official_letter": "D",
+    "topic": "Astronomia",
+    "prompt": "Sobre Mercúrio, Vênus, Terra, Marte e Lua, assinale a alternativa onde está tudo certo.",
+    "correct": "A Terra é maior do que Mercúrio e Mercúrio é maior do que a Lua",
+    "wrong": [
+      "Mercúrio tem uma lua, Vênus tem duas luas e Marte tem 3 luas",
+      "A Terra e Marte têm atmosferas. A Lua e Mercúrio também têm atmosferas",
+      "A Terra e Marte têm calotas polares. A Lua também tem calota polar",
+      "A Lua e Mercúrio têm atmosferas, mas Vênus, Marte e a Terra não têm"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: A Terra é maior do que Mercúrio e Mercúrio é maior do que a Lua.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2024,
+    "level": 1,
+    "question": 4,
+    "official_letter": "E",
+    "topic": "Astronomia",
+    "prompt": "Marque a alternativa que tem os planetas na ordem correta de afastamento do Sol.",
+    "correct": "Mercúrio, Vênus, Terra, Marte, Júpiter, Saturno, Urano, Netuno",
+    "wrong": [
+      "Mercúrio, Vênus, Terra, Marte, Júpiter, Saturno, Plutão e Netuno",
+      "Mercúrio, Terra, Vênus, Marte, Saturno, Júpiter, Urano e Netuno",
+      "Mercúrio, Vênus, Marte, Terra, Saturno, Júpiter, Urano e Netuno",
+      "Vênus, Marte, Mercúrio, Terra, Saturno, Júpiter, Netuno e Urano"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: Mercúrio, Vênus, Terra, Marte, Júpiter, Saturno, Urano, Netuno.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2024,
+    "level": 1,
+    "question": 5,
+    "official_letter": "C",
+    "topic": "Astronomia",
+    "prompt": "Um astronauta passou perto de um planeta avermelhado, rochoso, com atmosfera e duas luazinhas. Qual é o nome deste planeta? (Dica: começa com M.)",
+    "correct": "Marte",
+    "wrong": [
+      "Mercúrio",
+      "Vênus",
+      "Júpiter",
+      "Urano"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: Marte.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2024,
+    "level": 1,
+    "question": 6,
+    "official_letter": "A",
+    "topic": "Astronomia",
+    "prompt": "Coloque V ou F.",
+    "correct": "V – V – V – V – F",
+    "wrong": [
+      "F – V – V – V – F",
+      "V – F – V – V – F",
+      "V – V – F – V – F",
+      "V – V – V – F – F"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: V – V – V – V – F",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa.",
+    "statements": [
+      "O Sol aquece a Terra.",
+      "O Sol ilumina a Terra, a qual gira em torno do Sol.",
+      "Graças ao Sol parte da água da Terra evapora e depois cai como chuva.",
+      "A Terra gasta cerca de 365 dias para dar uma volta ao redor do Sol.",
+      "A Lua e o Sol giram ao redor da Terra todo dia."
+    ]
+  },
+  {
+    "year": 2024,
+    "level": 1,
+    "question": 7,
+    "official_letter": "B",
+    "topic": "Astronomia",
+    "prompt": "Quanto mais longe do Sol, mais devagar o planeta se move. Coloque V ou F.",
+    "correct": "F – V – V – V – V",
+    "wrong": [
+      "V – V – V – V – V",
+      "F – F – V – V – V",
+      "F – V – F – V – V",
+      "F – V – V – F – V"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: F – V – V – V – V",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa.",
+    "statements": [
+      "A Terra não gira ao redor do Sol, logo ela está parada.",
+      "O ano de Mercúrio é menor do que o da Terra.",
+      "Plutão, o planeta anão, é mais lento do que qualquer planeta.",
+      "Mercúrio é o mais rápido dos planetas.",
+      "Marte gira ao redor do Sol, mas leva mais tempo do que a Terra."
+    ]
+  },
+  {
+    "year": 2024,
+    "level": 2,
+    "question": 1,
+    "official_letter": "D",
+    "topic": "Astronomia",
+    "prompt": "Exiba os seus conhecimentos de Astronomia. Assinale a única alternativa onde está tudo certo.",
+    "correct": "No Sistema Solar temos uma estrela e oito planetas",
+    "wrong": [
+      "A Lua, Marte e Mercúrio já foram visitados por astronautas",
+      "A Terra tem 4 Luas",
+      "No Sistema Solar temos muitas estrelas e mais de 10 planetas",
+      "Astronautas estão morando na Lua, mas precisam plantar batatas"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: No Sistema Solar temos uma estrela e oito planetas.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2024,
+    "level": 2,
+    "question": 2,
+    "official_letter": "C",
+    "topic": "Astronomia",
+    "prompt": "Mostre que você sabe muitas coisas sobre Astronomia. Assinale a única alternativa onde está TUDO ERRADO.",
+    "correct": "Na Lua tem uma cidade chamada Lunar",
+    "wrong": [
+      "O Sol é a estrela mais próxima da Terra",
+      "A Lua é o astro mais próximo da Terra",
+      "Só não vemos a Lua quando ela está na fase “Nova”",
+      "Na fase “Cheia” é quando a Lua está mais longe do Sol"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: Na Lua tem uma cidade chamada Lunar.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2024,
+    "level": 2,
+    "question": 3,
+    "official_letter": "E",
+    "topic": "Astronomia",
+    "prompt": "Quanto mais distante do Sol, mais lento o planeta. Assinale a única alternativa onde está tudo certo.",
+    "correct": "Mercúrio é o planeta mais rápido do Sistema Solar",
+    "wrong": [
+      "Todos os planetas têm dia de 24 horas e ano de 365 dias",
+      "Júpiter é o maior dos planetas, logo, ele é o mais lento dos planetas",
+      "Saturno tem os mais lindos anéis, logo, é o mais rápido",
+      "Plutão, o planeta anão, não se move, porque é muito pequeno"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: Mercúrio é o planeta mais rápido do Sistema Solar.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2024,
+    "level": 2,
+    "question": 4,
+    "official_letter": "A",
+    "topic": "Astronomia",
+    "prompt": "Mostre que você já sabe quase tudo de Astronomia. Assinale a única alternativa onde está TUDO ERRADO.",
+    "correct": "Júpiter só tem as 4 luas: Io, Ganimedes, Calisto e Europa",
+    "wrong": [
+      "Júpiter é o maior dos planetas, tem anéis, é gasoso, tem mais de 90 luas",
+      "No Sistema Solar Júpiter é o maior dos planetas",
+      "Quanto mais longe do Sol, maior é a duração do ano do planeta",
+      "Vênus é o mais quente dos planetas do Sistema Solar"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: Júpiter só tem as 4 luas: Io, Ganimedes, Calisto e Europa.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2024,
+    "level": 2,
+    "question": 5,
+    "official_letter": "A",
+    "topic": "Astronomia",
+    "prompt": "Direções cardeais. Coloque V ou F.",
+    "correct": "V – V – V – V – F",
+    "wrong": [
+      "F – V – V – V – F",
+      "V – F – V – V – F",
+      "V – V – F – V – F",
+      "V – V – V – F – F"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: V – V – V – V – F",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa.",
+    "statements": [
+      "O Sol sempre nasce no lado Leste e sempre se põe do lado Oeste.",
+      "Quatro são as direções cardeais principais.",
+      "A Lua nasce no lado Leste e se põe no lado Oeste.",
+      "As estrelas nascem no lado Leste e se põem no lado Oeste.",
+      "Algumas estrelas nascem no Norte e se põem no Sul."
+    ]
+  },
+  {
+    "year": 2024,
+    "level": 2,
+    "question": 6,
+    "official_letter": "B",
+    "topic": "Astronomia",
+    "prompt": "Eclipses. Coloque V ou F.",
+    "correct": "F – V – V – V – V",
+    "wrong": [
+      "V – V – V – V – V",
+      "F – F – V – V – V",
+      "F – V – F – V – V",
+      "F – V – V – F – V"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: F – V – V – V – V",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa.",
+    "statements": [
+      "No eclipse solar o Sol fica entre a Terra e a Lua.",
+      "Se você está na sombra da Lua, para você está ocorrendo um eclipse solar.",
+      "Se a Lua está na sombra da Terra, está ocorrendo um eclipse lunar.",
+      "No eclipse lunar a Terra está entre o Sol e a Lua.",
+      "Se o seu gato está na sua sombra, para ele está ocorrendo um eclipse solar."
+    ]
+  },
+  {
+    "year": 2024,
+    "level": 2,
+    "question": 7,
+    "official_letter": "D",
+    "topic": "Astronomia",
+    "prompt": "Coloque V ou F.",
+    "correct": "V – V – V – F – F",
+    "wrong": [
+      "F – V – V – F – F",
+      "V – F – V – F – F",
+      "V – V – F – F – F",
+      "V – V – V – V – F"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: V – V – V – F – F",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa.",
+    "statements": [
+      "A Lua é a principal responsável pelas marés na Terra.",
+      "Dos quatro planetas rochosos, três têm atmosferas.",
+      "Todo ano tem 12 meses e fevereiro é sempre o mais curtinho.",
+      "Fevereiro sempre tem 29 dias, mas no ano bissexto tem 28 dias.",
+      "Todo mês tem 30 dias, exceto fevereiro que tem sempre 29 dias."
+    ]
+  },
+  {
+    "year": 2024,
+    "level": 2,
+    "question": 8,
+    "official_letter": "E",
+    "topic": "Astronáutica",
+    "prompt": "Coloque V ou F.",
+    "correct": "V – V – F – V – F",
+    "wrong": [
+      "F – V – F – V – F",
+      "V – F – F – V – F",
+      "V – V – V – V – F",
+      "V – V – F – F – F"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: V – V – F – V – F",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa.",
+    "statements": [
+      "Todo satélite artificial foi levado ao espaço por um foguete.",
+      "O Brasil tem dezenas de satélites em órbita da Terra.",
+      "O Brasil tem foguetes para colocar satélites em órbita da Terra.",
+      "O Brasil só tem um astronauta, chamado Marcos Pontes.",
+      "O Brasil colocou o telescópio Hubble em órbita da Terra."
+    ]
+  },
+  {
+    "year": 2024,
+    "level": 2,
+    "question": 10,
+    "official_letter": "B",
+    "topic": "Astronáutica",
+    "prompt": "Segurança no lançamento de foguetes. Coloque V ou F.",
+    "correct": "V – V – V – V – F",
+    "wrong": [
+      "F – V – V – V – F",
+      "V – F – V – V – F",
+      "V – V – F – V – F",
+      "V – V – V – F – F"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: V – V – V – V – F",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa.",
+    "statements": [
+      "Não pode ter pessoas no local onde os foguetes cairão.",
+      "É preciso fixar a base no chão para não se mover quando o foguete sair.",
+      "Lançamentos de foguetes só podem ocorrer com a presença de adultos.",
+      "Antes de lançar o foguete veja se ninguém entrou no local de queda dele.",
+      "Os foguetes de garrafa PET são leves e não causam acidentes."
+    ]
+  },
+  {
+    "year": 2024,
+    "level": 3,
+    "question": 1,
+    "official_letter": "D",
+    "topic": "Astronomia",
+    "prompt": "Luminosidade das estrelas L = 4πR²σT⁴. Se duas estrelas têm a mesma temperatura superficial, a de maior luminosidade será:",
+    "correct": "A maior delas",
+    "wrong": [
+      "A mais próxima da Terra",
+      "A que tiver mais massa",
+      "A de maior densidade",
+      "A mais brilhante"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: A maior delas.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2024,
+    "level": 3,
+    "question": 2,
+    "official_letter": "E",
+    "topic": "Astronomia",
+    "prompt": "A luminosidade depende de R e T; o brilho depende também da distância d. Para uma mesma estrela:",
+    "correct": "O seu brilho é maior quanto mais perto a estrela estiver de nós",
+    "wrong": [
+      "A luminosidade e o brilho da estrela não dependem da distância dela à Terra",
+      "A luminosidade será maior quanto mais próxima estiver a estrela de nós",
+      "O brilho de uma estrela só depende da luminosidade dela",
+      "Quanto maior a temperatura da estrela maior será o seu brilho"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: O seu brilho é maior quanto mais perto a estrela estiver de nós.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2024,
+    "level": 3,
+    "question": 3,
+    "official_letter": "C",
+    "topic": "Astronomia",
+    "prompt": "Quantos minutos, aproximadamente, um sinal (300.000 km/s) leva para ir da Terra a um rover em Marte quando ele está a 55 milhões de km?",
+    "correct": "3 min",
+    "wrong": [
+      "1 min",
+      "2 min",
+      "4 min",
+      "5 min"
+    ],
+    "explanation": "t = 55.000.000/300.000 ≈ 183 s ≈ 3 min.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2024,
+    "level": 3,
+    "question": 7,
+    "official_letter": "D",
+    "topic": "Astronomia",
+    "prompt": "Escreva o nome do planeta: 1º) o mais veloz, órbita mais excêntrica, visível só ao amanhecer ou entardecer; 2º) menos de um milésimo da massa do Sol, rotação de 10 h, ≈ 95 satélites; 3º) óxido de ferro, Monte Olimpo, rover chinês Zhurong; 4º) planeta mais brilhante, atmosfera mais densa, 92 vezes a pressão da Terra; 5º) hidrogênio e hélio, menos denso que a água, ≈ 95 massas terrestres.",
+    "correct": "Mercúrio – Júpiter – Marte – Vênus – Saturno",
+    "wrong": [
+      "Mercúrio – Netuno – Marte – Terra – Urano",
+      "Mercúrio – Saturno – Vênus – Marte – Júpiter",
+      "Plutão – Júpiter – Marte – Terra – Saturno",
+      "Mercúrio – Júpiter – Marte – Vênus – Urano"
+    ],
+    "explanation": "Resposta indicada pelo gabarito do material: Mercúrio – Júpiter – Marte – Vênus – Saturno.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2024,
+    "level": 3,
+    "question": 8,
+    "official_letter": "B",
+    "topic": "Astronáutica",
+    "prompt": "Foguete Starship (121 m; 1º estágio com 71 m). a) Quanto mede o 2º estágio? b) Um satélite leva 1,5 h para completar uma órbita de 42.000 km; calcule a velocidade em km/h.",
+    "correct": "50 metros e 28.000 km/h",
+    "wrong": [
+      "50 metros e 25.000 km/h",
+      "71 metros e 42.000 km/h",
+      "71 metros e 28.000 km/h",
+      "121 metros e 28.000 km/h"
+    ],
+    "explanation": "a) 121 − 71 = 50 m. b) v = 42.000 km / 1,5 h = 28.000 km/h.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2024,
+    "level": 3,
+    "question": 9,
+    "official_letter": "D",
+    "topic": "Astronáutica",
+    "prompt": "Sonda Parker: lançada em 12/08/2018 e em órbita solar por volta de 12/01/2019. a) Quantos meses levou? b) Parker (600 kg) e foguete Delta IV Heavy (750.000 kg no total): qual o percentual da massa da sonda?",
+    "correct": "5 meses e 0,08%",
+    "wrong": [
+      "5 meses e 0,01%",
+      "5 meses e 0,04%",
+      "5 meses e 0,07%",
+      "4 meses e 0,08%"
+    ],
+    "explanation": "a) ≈ 5 meses. b) 600/750.000 = 0,0008 = 0,08%.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2024,
+    "level": 3,
+    "question": 10,
+    "official_letter": "A",
+    "topic": "Astronáutica",
+    "prompt": "Desmatamento na Amazônia Legal (ago/2022 a jul/2023: 9.001 km²). Áreas (km²): AC 597, AM 1.553, AP 12, MA 285, MT 2.086, PA 3.272, RO 873, RR 297, TO 26. a) maior desmatamento; b) menor; c) área desmatada pelos 3 maiores; d) percentual desses 3 no total.",
+    "correct": "PA, AP, 6.911 km², 76,8%",
+    "wrong": [
+      "PA, AM, 6.011 km², 73,8%",
+      "AP, PA, 6.911 km², 76,8%",
+      "PA, MA, 5.911 km², 76,0%",
+      "AP, PA, 3.272 km², 66,8%"
+    ],
+    "explanation": "Maior: Pará (3.272); menor: Amapá (12). Três maiores: PA + MT + AM = 3.272 + 2.086 + 1.553 = 6.911 km²; 6.911/9.001 ≈ 76,8%.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2024,
+    "level": 4,
+    "question": 1,
+    "official_letter": "B",
+    "topic": "Astronomia",
+    "prompt": "Período sinódico: 1/S = 1/P₁ − 1/P₂. Qual o intervalo entre duas oposições consecutivas de um asteroide do Cinturão Principal com período orbital de 6 anos?",
+    "correct": "1,2 ano",
+    "wrong": [
+      "1,0 ano",
+      "2,5 anos",
+      "5,0 anos",
+      "6,0 anos"
+    ],
+    "explanation": "1/S = 1/1 − 1/6 = 5/6 ⇒ S = 6/5 = 1,2 ano.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2024,
+    "level": 4,
+    "question": 3,
+    "official_letter": "B",
+    "topic": "Astronomia",
+    "prompt": "Em uma história, a Lua encontra o mesmo cometa nos anos de 1944, 1969, 1994 e 2019, sempre após uma órbita completa. Qual é o período orbital do cometa?",
+    "correct": "25 anos",
+    "wrong": [
+      "15 anos",
+      "65 anos",
+      "75 anos",
+      "95 anos"
+    ],
+    "explanation": "Entre quadrinhos: 1969 − 1944 = 25 anos (e igual nos demais).",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  },
+  {
+    "year": 2024,
+    "level": 4,
+    "question": 7,
+    "official_letter": "E",
+    "topic": "Astronomia",
+    "prompt": "A Voyager 1 se move a ≈ 17 km/s (≈ 1.500.000 km por dia). Quantos quilômetros ela se afastou do Sol em 5 meses (1 mês = 30 dias)?",
+    "correct": "225 milhões de quilômetros",
+    "wrong": [
+      "7,5 milhões de quilômetros",
+      "15 milhões de quilômetros",
+      "22,5 milhões de quilômetros",
+      "45 milhões de quilômetros"
+    ],
+    "explanation": "150 dias × 1.500.000 km/dia = 225.000.000 km.",
+    "reference": "https://site.oba.org.br/provas-e-gabaritos",
+    "source_type": "Material PDF enviado pela usuária; gabarito conforme o documento, sem conferência externa."
+  }
+]
