@@ -255,6 +255,7 @@ def home():
 
 def open_arcade():
     s.stage = "arcade"
+    s.arcade_round = s.get("arcade_round", 0) + 1
 
 html('<div class="brand"><div class="brand-name"><span class="brand-mark">✦</span> AstroQuiz Lab</div><span class="brand-tag">Matemática &amp; Contexto</span></div>')
 
@@ -280,7 +281,11 @@ elif s.stage == "arcade":
         st.button("Voltar ao AstroQuiz", on_click=home, use_container_width=True)
     with a2:
         selected_game = st.selectbox("Escolha o minijogo", ["Space Shooter", "Cinturão de Asteroides"], label_visibility="collapsed", key="arcade_mode")
-    arcade(mode="shooter" if selected_game == "Space Shooter" else "dodge", key="astro_arcade_client", default=None)
+    arcade_round = s.get("arcade_round", 0)
+    arcade_result = arcade(mode="shooter" if selected_game == "Space Shooter" else "dodge", round=arcade_round, key=f"astro_arcade_client_{arcade_round}", default=None)
+    if isinstance(arcade_result, dict) and arcade_result.get("round") == arcade_round and arcade_result.get("action") == "exit":
+        home()
+        st.rerun()
     st.caption("Space Shooter: adaptação para navegador inspirada no código Pygame fornecido pela autora do projeto. Cinturão de Asteroides: desafio de sobrevivência e coleta de amostras.")
 
 elif s.stage == "quiz":
