@@ -340,7 +340,9 @@ else:
                     html(f'<img style="width:100%;max-width:560px" src="{q["figure"]}" alt="{escape(q["figure_alt"])}">')
                 st.write(f'**Sua resposta:** {r["chosen"]}')
                 st.write(f'**Resposta correta:** {q["correct"]}')
-                st.write(q["explanation"])
+                explanation = q.get("explanation", "")
+                if explanation and not explanation.startswith("Resposta indicada pelo gabarito do material:"):
+                    st.write(explanation)
                 if q.get("source"):
                     label = "Gabarito informado no PDF" if q.get("from_pdf") else "Gabarito da prova original"
                     st.markdown(f'**Referência:** [{q["source"]}]({q["reference"]}). {label}: {q["official_letter"]}. As alternativas no jogo são embaralhadas.')
