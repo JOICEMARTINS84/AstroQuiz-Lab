@@ -11,7 +11,7 @@ from streamlit.components.v1 import declare_component
 import streamlit as st
 from questions import DATA
 from scientific_bank import scientific_questions
-from ranking import leaderboard, save_score
+from ranking import leaderboard, save_score, persistent_enabled
 
 DATA = {level: list(pool) for level, pool in DATA.items()}
 DATA[5] = scientific_questions()
@@ -319,7 +319,7 @@ elif s.stage == "ranking":
             markup.append("</div>")
             html("".join(markup))
         st.caption("Top 20 · melhor resultado por apelido e categoria. Empates são decididos pelo menor tempo de resposta. Apelidos não são contas verificadas.")
-        st.caption("Os registros ficam disponíveis enquanto o banco local da aplicação for preservado.")
+        st.caption("Ranking armazenado no Supabase." if persistent_enabled() else "Ranking local temporário: banco externo ainda não configurado.")
     except (sqlite3.Error, OSError):
         st.error("O ranking está indisponível neste momento. Você ainda pode jogar.")
 
