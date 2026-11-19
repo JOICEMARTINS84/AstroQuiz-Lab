@@ -41,6 +41,15 @@ body{font-family:system-ui,Arial,sans-serif;color:#e3f4ff}
 .game.has-art{background:linear-gradient(145deg,rgba(5,14,35,.89),rgba(14,16,49,.83)),var(--astro-bg) center/cover}
 @media(prefers-reduced-motion:reduce){.arcade-ship,.hud-stars{animation:none!important}}
 
+
+.option.good,.option.good:disabled{background:#124c32;border:2px solid #62ff9b;color:#effff3;box-shadow:0 0 16px #52ff8c55;opacity:1}
+.option.good .letter{background:#216d43;border-color:#60ffa0;color:#f4fff6}
+.option.bad,.option.bad:disabled{background:#581d2d;border:2px solid #ff626e;color:#fff1f2;box-shadow:0 0 16px #ff4d6455;opacity:1}
+.option.bad .letter{background:#831c36;border-color:#ff7b83;color:#fff1f2}
+.option.correction{box-shadow:none;border-style:dashed}
+.feedback.success{background:#113d29;border:1px solid #5dff9b;color:#e1ffeb}.feedback.success strong{color:#82ffad}
+.feedback.error{background:#481c2b;border:1px solid #ff6678;color:#ffe7eb}.feedback.error strong{color:#ff8b96}
+.feedback.timeout{background:#473520;border:1px solid #ffc878;color:#fff0cf}.feedback.timeout strong{color:#ffce8c}
 </style></head>
 <body><main id="root" aria-label="Jogo AstroQuiz"></main>
 <script>
@@ -54,10 +63,10 @@ window.addEventListener("resize",resize);
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 let cfg=null,activeRound=null,idx=0,answers=[],phase="intro",deadline=0,ticker=null,countdown=null,warning=false,sound=true,audio=null,startedAt=0;
 function unlock(){if(!sound)return;try{audio=audio||new (window.AudioContext||window.webkitAudioContext)();if(audio.state==="suspended")audio.resume().catch(()=>{});}catch(e){}}
-function tune(kind){if(!sound||!audio||audio.state!=="running")return;
- const patterns={begin:[[392,0,.10],[523,.13,.12],[659,.27,.17]],tick:[[540,0,.07]],ok:[[523,0,.12],[659,.12,.12],[784,.24,.22]],no:[[300,0,.15],[210,.16,.22]],timeout:[[440,0,.12],[320,.15,.12],[180,.3,.23]],click:[[470,0,.07]],end:[[392,0,.12],[523,.12,.12],[659,.25,.12],[880,.38,.3]]};
+function tune(kind){if(!sound||!audio)return;if(audio.state!=="running"){audio.resume().then(()=>{if(audio.state==="running"&&sound)tune(kind)}).catch(()=>{});return;}
+ const patterns={begin:[[392,0,.10],[523,.13,.12],[659,.27,.17]],tick:[[540,0,.07]],ok:[[523,0,.12],[659,.11,.13],[784,.22,.14],[1046,.34,.26]],no:[[330,0,.17],[196,.17,.3]],timeout:[[440,0,.12],[320,.15,.12],[180,.3,.23]],click:[[470,0,.07]],end:[[392,0,.12],[523,.12,.12],[659,.25,.12],[880,.38,.3]]};
  const start=audio.currentTime;
- (patterns[kind]||patterns.click).forEach(([freq,delay,duration])=>{const o=audio.createOscillator(),g=audio.createGain(),t=start+delay;o.type="sine";o.frequency.value=freq;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.075,t+.018);g.gain.exponentialRampToValueAtTime(.0001,t+duration);o.connect(g).connect(audio.destination);o.start(t);o.stop(t+duration+.02);});}
+ (patterns[kind]||patterns.click).forEach(([freq,delay,duration])=>{const o=audio.createOscillator(),g=audio.createGain(),t=start+delay;o.type=kind==="no"?"triangle":"sine";o.frequency.value=freq;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.075,t+.018);g.gain.exponentialRampToValueAtTime(.0001,t+duration);o.connect(g).connect(audio.destination);o.start(t);o.stop(t+duration+.02);});}
 function soundButton(){return '<button class="sound" id="sound" type="button" aria-pressed="'+sound+'">'+(sound?"Som ligado":"Som desligado")+'</button>'}
 function wireSound(){const b=document.querySelector("#sound");if(b)b.onclick=()=>{sound=!sound;unlock();if(sound)tune("click");b.textContent=sound?"Som ligado":"Som desligado";b.setAttribute("aria-pressed",String(sound));};}
 function clearTimers(){clearInterval(ticker);clearInterval(countdown);ticker=null;countdown=null;}
@@ -67,8 +76,8 @@ function exit(){clearTimers();phase="finished";post("streamlit:setComponentValue
 function timeText(seconds){return String(Math.floor(seconds/60)).padStart(2,"0")+":"+String(seconds%60).padStart(2,"0");}
 function showQuestion(){clearTimers();phase="question";warning=false;startedAt=performance.now();deadline=startedAt+cfg.duration*1000;
  const q=cfg.questions[idx],letters="ABCD";
- const markers=cfg.questions.map((_,i)=>{let cls=i===idx?"current":"";if(i<answers.length)cls=cfg.mode==="Treino comentado"?(answers[i].option===cfg.questions[i].correct?"correct":"wrong"):"done";return '<i class="'+cls+'"></i>';}).join("");
- root.innerHTML='<div class="game" style="position:relative"><div class="top"><span class="tag">Questão '+(idx+1)+' de '+cfg.questions.length+' · '+esc(q.topic)+'</span>'+soundButton()+'</div><div class="steps">'+markers+'</div>'+(cfg.duration?'<div class="meter" id="meter"><div class="rail" role="progressbar" aria-label="Tempo restante" aria-valuemin="0" aria-valuemax="'+cfg.duration+'" aria-valuenow="'+cfg.duration+'"><div class="fill" id="fill"></div></div><div class="time" id="time">'+timeText(cfg.duration)+'</div></div>':'<p class="small">Modo sem limite de tempo</p>')+'<div class="question"><h2>'+esc(q.prompt)+'</h2><div class="options">'+q.opts.map((item,i)=>'<button type="button" class="option" data-i="'+i+'"><span class="letter">'+letters[i]+'</span><span>'+esc(item)+'</span></button>').join("")+'</div><div id="feedback" aria-live="polite"></div></div><div class="footer"><span class="small">Nível '+esc(cfg.level)+' · '+esc(cfg.mode)+'</span><span class="score" id="score">'+(cfg.mode==="Treino comentado"?answers.filter((a,i)=>a.option===cfg.questions[i].correct).length+" acertos":"Simulado")+'</span><button class="exit" id="exit">Encerrar</button></div><div id="particles" class="particles"></div></div>';
+ const markers=cfg.questions.map((_,i)=>{let cls=i===idx?"current":"";if(i<answers.length)cls=answers[i].option===cfg.questions[i].correct?"correct":"wrong";return '<i class="'+cls+'"></i>';}).join("");
+ root.innerHTML='<div class="game" style="position:relative"><div class="top"><span class="tag">Questão '+(idx+1)+' de '+cfg.questions.length+' · '+esc(q.topic)+'</span>'+soundButton()+'</div><div class="steps">'+markers+'</div>'+(cfg.duration?'<div class="meter" id="meter"><div class="rail" role="progressbar" aria-label="Tempo restante" aria-valuemin="0" aria-valuemax="'+cfg.duration+'" aria-valuenow="'+cfg.duration+'"><div class="fill" id="fill"></div></div><div class="time" id="time">'+timeText(cfg.duration)+'</div></div>':'<p class="small">Modo sem limite de tempo</p>')+'<div class="question"><h2>'+esc(q.prompt)+'</h2><div class="options">'+q.opts.map((item,i)=>'<button type="button" class="option" data-i="'+i+'"><span class="letter">'+letters[i]+'</span><span>'+esc(item)+'</span></button>').join("")+'</div><div id="feedback" aria-live="polite"></div></div><div class="footer"><span class="small">Nível '+esc(cfg.level)+' · '+esc(cfg.mode)+'</span><span class="score" id="score">'+(answers.filter((a,i)=>a.option===cfg.questions[i].correct).length+" acertos")+'</span><button class="exit" id="exit">Encerrar</button></div><div id="particles" class="particles"></div></div>';
  wireSound();root.querySelectorAll(".option").forEach(b=>b.onclick=()=>{unlock();const value=q.opts[Number(b.dataset.i)];if(cfg.duration&&performance.now()>=deadline)finishAnswer(null);else finishAnswer(value);});document.querySelector("#exit").onclick=exit;
  let lastSecond=-1;
  if(cfg.duration){ticker=setInterval(()=>{if(phase!=="question")return;const remaining=Math.max(0,deadline-performance.now()),seconds=Math.ceil(remaining/1000);
@@ -84,12 +93,12 @@ function finishAnswer(option){if(phase!=="question")return;phase="feedback";clea
  const elapsed=Math.max(0,Math.round((performance.now()-startedAt)/1000));answers.push({option,elapsed:cfg.duration?Math.min(cfg.duration,elapsed):elapsed});
  if(expired&&cfg.duration){document.querySelector("#fill").style.width="0%";document.querySelector("#time").textContent="00:00";document.querySelector(".rail").setAttribute("aria-valuenow","0");}
  if(cfg.duration)document.querySelector("#meter").classList.remove("urgent");
- root.querySelectorAll(".option").forEach((b,i)=>{b.disabled=true;const value=q.opts[i];if(training&&value===q.correct)b.classList.add("good");else if(training&&value===option)b.classList.add("bad");else if(!training&&value===option)b.classList.add("selected");else b.classList.add("dim");});
- if(expired)tune("timeout");else if(training){tune(correct?"ok":"no");if(correct)sparks();}else tune("click");
- const title=expired?"Tempo esgotado!":training?(correct?"Resposta certa!":"Não foi dessa vez."):"Resposta registrada.";
- const text=training?q.explanation:expired?"Questão contabilizada como não respondida.":"O gabarito será apresentado ao final do simulado.";
- document.querySelector("#feedback").innerHTML='<div class="feedback"><strong>'+esc(title)+'</strong>'+esc(text)+'</div><button class="primary" id="next">'+(idx+1===cfg.questions.length?"Concluir missão":"Próxima questão →")+'</button>';
- if(training)document.querySelector("#score").textContent=answers.filter((a,i)=>a.option===cfg.questions[i].correct).length+" acertos";
+ root.querySelectorAll(".option").forEach((b,i)=>{b.disabled=true;const value=q.opts[i];if(value===option)b.classList.add(correct?"good":"bad");else if(training&&value===q.correct)b.classList.add("good","correction");else b.classList.add("dim");if(value===option)b.setAttribute("aria-label",value+(correct?" — correta":" — incorreta"));});
+ if(expired)tune("timeout");else{tune(correct?"ok":"no");if(correct)sparks();}
+ const title=expired?"TEMPO ESGOTADO!":correct?"RESPOSTA CORRETA!":"RESPOSTA INCORRETA!";
+ const text=training?q.explanation:expired?"Questão contabilizada como não respondida.":"A explicação completa aparece no gabarito final.";
+ document.querySelector("#feedback").innerHTML='<div class="feedback '+(expired?'timeout':correct?'success':'error')+'"><strong>'+esc(title)+'</strong>'+esc(text)+'</div><button class="primary" id="next">'+(idx+1===cfg.questions.length?"Concluir missão":"Próxima questão →")+'</button>';
+ document.querySelector("#score").textContent=answers.filter((a,i)=>a.option===cfg.questions[i].correct).length+" acertos";
  document.querySelector("#next").onclick=()=>{unlock();if(idx+1===cfg.questions.length){phase="finished";tune("end");document.querySelector("#next").disabled=true;document.querySelector("#next").textContent="Calculando resultado...";setTimeout(()=>post("streamlit:setComponentValue",{value:{round:activeRound,action:"complete",answers},dataType:"json"}),650);}else{idx++;showQuestion();}};resize();}
 window.addEventListener("message",e=>{if(e.source!==window.parent||!e.data||e.data.type!=="streamlit:render")return;const a=e.data.args;if(!a||!Array.isArray(a.questions))return;if(a.round!==activeRound){clearTimers();cfg=a;activeRound=a.round;idx=0;answers=[];intro();}else resize();});
 post("streamlit:componentReady",{apiVersion:1});resize();
