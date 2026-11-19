@@ -1,0 +1,208 @@
+[
+  {
+    "year": 2025,
+    "level": 1,
+    "question": 1,
+    "official_letter": "A",
+    "topic": "Astronomia",
+    "prompt": "O robô do planetário está escrevendo legendas para uma exposição. Qual legenda precisa ser corrigida?",
+    "correct": "A Lua fabrica a luz que vemos.",
+    "wrong": [
+      "O Sol aquece a superfície terrestre.",
+      "A Lua é um corpo rochoso.",
+      "A Terra é um planeta."
+    ],
+    "explanation": "O brilho lunar vem principalmente da luz solar refletida. O erro corresponde ao identificado no gabarito oficial.",
+    "reference": "https://sistema.oba.org.br/sisglob/sisglob_arquivos/downloads/Prova%20nivel%201%20da%2028%20OBA%20DE%202025%20GABARITO_compressed.pdf",
+    "source_type": "Exercício original relacionado a questão da OBA; gabarito equivalente em conteúdo, não em letra."
+  },
+  {
+    "year": 2025,
+    "level": 1,
+    "question": 2,
+    "official_letter": "E",
+    "topic": "Astronomia",
+    "prompt": "Quatro crianças fizeram comentários durante uma observação do céu. Qual delas confundiu tamanho aparente com tamanho real?",
+    "correct": "A Lua e o Sol têm quase o mesmo diâmetro real.",
+    "wrong": [
+      "A Lua parece mudar de forma.",
+      "O Sol é uma estrela.",
+      "A Lua pode ser observada durante o dia."
+    ],
+    "explanation": "Apesar de parecerem semelhantes em tamanho angular no céu, o Sol tem um diâmetro real cerca de 400 vezes maior.",
+    "reference": "https://sistema.oba.org.br/sisglob/sisglob_arquivos/downloads/Prova%20nivel%201%20da%2028%20OBA%20DE%202025%20GABARITO_compressed.pdf",
+    "source_type": "Exercício original relacionado a questão da OBA; gabarito equivalente em conteúdo, não em letra."
+  },
+  {
+    "year": 2025,
+    "level": 1,
+    "question": 3,
+    "official_letter": "D",
+    "topic": "Astronomia",
+    "prompt": "Em um jogo de corridas ao redor do Sol, cada nave representa a órbita de um planeta. Qual regra representa corretamente o Sistema Solar?",
+    "correct": "Os oito planetas percorrem suas órbitas no mesmo sentido.",
+    "wrong": [
+      "Cada planeta tem uma estrela própria.",
+      "Os planetas percorrem a órbita em linha reta.",
+      "As órbitas de todos os planetas têm o mesmo tamanho."
+    ],
+    "explanation": "Vistos do lado norte do plano orbital terrestre, todos os oito planetas orbitam o Sol no sentido anti-horário.",
+    "reference": "https://sistema.oba.org.br/sisglob/sisglob_arquivos/downloads/Prova%20nivel%201%20da%2028%20OBA%20DE%202025%20GABARITO_compressed.pdf",
+    "source_type": "Exercício original relacionado a questão da OBA; gabarito equivalente em conteúdo, não em letra."
+  },
+  {
+    "year": 2025,
+    "level": 2,
+    "question": 3,
+    "official_letter": "E",
+    "topic": "Astronomia",
+    "prompt": "Uma exposição digital tem quatro placas com curiosidades sobre planetas. Qual placa contém uma informação falsa?",
+    "correct": "O dia de rotação de qualquer planeta dura 24 horas.",
+    "wrong": [
+      "Urano possui um eixo de rotação muito inclinado.",
+      "Vênus é mais quente em sua superfície que Mercúrio.",
+      "Netuno está mais distante do Sol que a Terra."
+    ],
+    "explanation": "O período de rotação varia entre os planetas; cerca de 24 horas é o valor do dia terrestre.",
+    "reference": "https://sistema.oba.org.br/sisglob/sisglob_arquivos/downloads/Prova%20nivel%202%20da%2028%20OBA%20DE%202025%20GABARITO_compressed.pdf",
+    "source_type": "Exercício original relacionado a questão da OBA; gabarito equivalente em conteúdo, não em letra."
+  },
+  {
+    "year": 2025,
+    "level": 2,
+    "question": 4,
+    "official_letter": "D",
+    "topic": "Astronomia",
+    "prompt": "Ao programar uma maquete da Lua, quatro equipes sugeriram regras. Qual regra faria o modelo representar de forma errada a Lua real?",
+    "correct": "Impedir a Lua de girar em torno do próprio eixo.",
+    "wrong": [
+      "Fazer a Lua orbitar a Terra.",
+      "Iluminar o modelo da Lua pelo lado voltado ao Sol.",
+      "Mostrar uma superfície com crateras."
+    ],
+    "explanation": "A Lua gira em torno do próprio eixo aproximadamente no mesmo tempo em que completa uma órbita em torno da Terra. Por isso vemos quase sempre a mesma face.",
+    "reference": "https://sistema.oba.org.br/sisglob/sisglob_arquivos/downloads/Prova%20nivel%202%20da%2028%20OBA%20DE%202025%20GABARITO_compressed.pdf",
+    "source_type": "Exercício original relacionado a questão da OBA; gabarito equivalente em conteúdo, não em letra."
+  },
+  {
+    "year": 2025,
+    "level": 2,
+    "question": 7,
+    "official_letter": "E",
+    "topic": "Astronomia",
+    "prompt": "Identifique os destinos de cinco sondas fictícias, na ordem dos cartões: (1) o mundo do monte Olimpo; (2) o planeta de Titã; (3) o planeta do ano de cerca de 88 dias; (4) o planeta de Tritão; (5) o segundo planeta a partir do Sol.",
+    "correct": "Marte, Saturno, Mercúrio, Netuno, Vênus",
+    "wrong": [
+      "Marte, Júpiter, Mercúrio, Urano, Vênus",
+      "Vênus, Saturno, Terra, Netuno, Marte",
+      "Mercúrio, Urano, Marte, Netuno, Vênus"
+    ],
+    "explanation": "O monte Olimpo está em Marte, Titã orbita Saturno, Mercúrio tem o menor ano planetário, Tritão orbita Netuno e Vênus é o segundo planeta.",
+    "reference": "https://sistema.oba.org.br/sisglob/sisglob_arquivos/downloads/Prova%20nivel%202%20da%2028%20OBA%20DE%202025%20GABARITO_compressed.pdf",
+    "source_type": "Exercício original relacionado a questão da OBA; gabarito equivalente em conteúdo, não em letra."
+  },
+  {
+    "year": 2025,
+    "level": 3,
+    "question": 1,
+    "official_letter": "A",
+    "topic": "Astronomia",
+    "prompt": "Uma missão científica precisa investigar o intenso vulcanismo de uma das quatro grandes luas descobertas por Galileu em torno de Júpiter. Qual deve ser o alvo?",
+    "correct": "Io",
+    "wrong": [
+      "Europa",
+      "Ganimedes",
+      "Calisto"
+    ],
+    "explanation": "Io apresenta vulcanismo intenso, alimentado principalmente pelo aquecimento de maré provocado pela interação gravitacional com Júpiter e outras luas.",
+    "reference": "https://sistema.oba.org.br/sisglob/sisglob_arquivos/downloads/Prova%20n%C3%ADvel%203%20da%2028%20OBA%20de%202025%20GABARITO-2_compressed.pdf",
+    "source_type": "Exercício original relacionado a questão da OBA; gabarito equivalente em conteúdo, não em letra."
+  },
+  {
+    "year": 2025,
+    "level": 3,
+    "question": 2,
+    "official_letter": "E",
+    "topic": "Astronomia",
+    "prompt": "Um espectrômetro de uma sonda encontra partículas de gelo e vapor de água ejetadas por fraturas próximas ao polo sul de uma lua de Saturno. Qual lua ela está sobrevoando?",
+    "correct": "Encélado",
+    "wrong": [
+      "Titã",
+      "Mimas",
+      "Jápeto"
+    ],
+    "explanation": "Encélado apresenta plumas associadas ao oceano sob sua crosta de gelo.",
+    "reference": "https://sistema.oba.org.br/sisglob/sisglob_arquivos/downloads/Prova%20n%C3%ADvel%203%20da%2028%20OBA%20de%202025%20GABARITO-2_compressed.pdf",
+    "source_type": "Exercício original relacionado a questão da OBA; gabarito equivalente em conteúdo, não em letra."
+  },
+  {
+    "year": 2025,
+    "level": 3,
+    "question": 3,
+    "official_letter": "C",
+    "topic": "Astronomia",
+    "prompt": "No simulador de missão, um rover marciano recebe um comando enviado da Terra. A distância indicada no painel é 54,6 milhões de km; as ondas de rádio viajam a aproximadamente 300 mil km/s. Qual é a duração de ida do sinal, arredondada ao minuto?",
+    "correct": "3 minutos",
+    "wrong": [
+      "30 segundos",
+      "6 minutos",
+      "12 minutos"
+    ],
+    "explanation": "t = d/v = 54.600.000/300.000 = 182 s, ou aproximadamente 3 minutos. Não se trata do tempo de ida e volta.",
+    "reference": "https://sistema.oba.org.br/sisglob/sisglob_arquivos/downloads/Prova%20n%C3%ADvel%203%20da%2028%20OBA%20de%202025%20GABARITO-2_compressed.pdf",
+    "source_type": "Exercício original relacionado a questão da OBA; gabarito equivalente em conteúdo, não em letra."
+  },
+  {
+    "year": 2025,
+    "level": 4,
+    "question": 1,
+    "official_letter": "B",
+    "topic": "Astronomia",
+    "prompt": "Um catálogo histórico usado em uma missão registra uma média de 36 satélites naturais por planeta, considerando os oito planetas. Uma atualização experimental acrescenta 40 satélites ao catálogo. Qual será a média após a atualização?",
+    "correct": "41",
+    "wrong": [
+      "36",
+      "40",
+      "46"
+    ],
+    "explanation": "O catálogo inicial totaliza 8 × 36 = 288 satélites. Com 40 adicionais, (288 + 40)/8 = 41. Os números são os do exercício de 2025, não um censo atual.",
+    "reference": "https://sistema.oba.org.br/sisglob/sisglob_arquivos/downloads/Prova%20nivel%204%20da%2028%20OBA%20DE%202025%20-%20GABARITO_compressed.pdf",
+    "source_type": "Exercício original relacionado a questão da OBA; gabarito equivalente em conteúdo, não em letra."
+  },
+  {
+    "year": 2025,
+    "level": 4,
+    "question": 2,
+    "official_letter": "D",
+    "topic": "Astronomia",
+    "prompt": "O navegador de uma nave está calibrando sua escala de latitude. Para uma Terra idealizada com obliquidade de 23,5°, qual separação angular ao longo de um mesmo meridiano existe entre os dois círculos polares?",
+    "correct": "133°",
+    "wrong": [
+      "47°",
+      "90°",
+      "180°"
+    ],
+    "explanation": "Os círculos polares ficam às latitudes +66,5° e −66,5°, pois 90° − 23,5° = 66,5°. A separação é 133°.",
+    "reference": "https://sistema.oba.org.br/sisglob/sisglob_arquivos/downloads/Prova%20nivel%204%20da%2028%20OBA%20DE%202025%20-%20GABARITO_compressed.pdf",
+    "source_type": "Exercício original relacionado a questão da OBA; gabarito equivalente em conteúdo, não em letra.",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 230\"><rect width=\"560\" height=\"230\" rx=\"8\" fill=\"#07162c\"/><circle cx=\"230\" cy=\"115\" r=\"82\" fill=\"#133e70\" stroke=\"#83dcff\" stroke-width=\"2\"/><path d=\"M148 115H312M230 18V212\" stroke=\"#a3cee8\" stroke-dasharray=\"5 5\" fill=\"none\"/><path d=\"M197.3 39.8H262.7M197.3 190.2H262.7\" stroke=\"#6ff6dd\" stroke-width=\"2\"/><path d=\"M230 115L262.7 39.8M230 115L262.7 190.2\" stroke=\"#ffce80\" stroke-width=\"2\" fill=\"none\"/><path d=\"M263 40H321M263 190H321M312 115H321\" stroke=\"#9db1c9\" stroke-width=\"1\" fill=\"none\"/><g font-family=\"Arial,sans-serif\" font-size=\"15\" fill=\"#d9f4ff\"><text x=\"330\" y=\"44\">Círculo polar norte</text><text x=\"330\" y=\"119\">Equador</text><text x=\"330\" y=\"194\">Círculo polar sul</text><text x=\"20\" y=\"27\" fill=\"#8ee6ff\">Obliquidade = 23,5°</text><text x=\"20\" y=\"216\" fill=\"#9db1c9\">Esquema meridiano</text></g></svg>",
+    "alt": "Esquema meridiano da Terra, equador e dois círculos polares simétricos com obliquidade de 23,5°."
+  },
+  {
+    "year": 2025,
+    "level": 4,
+    "question": 10,
+    "official_letter": "E",
+    "topic": "Astronáutica",
+    "prompt": "No banco de testes de um motor, o painel mostra: massa instantânea do veículo = 1.000 kg; vazão mássica de propelente = 3 kg/s; velocidade de exaustão = 4.000 m/s. Ignore gravidade, arrasto e contribuição da pressão. Qual é a aceleração produzida pelo empuxo?",
+    "correct": "12 m/s²",
+    "wrong": [
+      "4 m/s²",
+      "9 m/s²",
+      "20 m/s²"
+    ],
+    "explanation": "O empuxo ideal é F = ṁvₑ = 3 × 4.000 = 12.000 N. Assim, a = 12.000/1.000 = 12 m/s².",
+    "reference": "https://sistema.oba.org.br/sisglob/sisglob_arquivos/downloads/Prova%20nivel%204%20da%2028%20OBA%20DE%202025%20-%20GABARITO_compressed.pdf",
+    "source_type": "Exercício original relacionado a questão da OBA; gabarito equivalente em conteúdo, não em letra."
+  }
+]
