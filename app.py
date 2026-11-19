@@ -239,7 +239,7 @@ if s.stage == "home":
                         st.button(f"Nível {level} · {LEVELS[level]}", key=f"level_{level}", type="primary" if s.selected_level == level else "secondary", use_container_width=True, on_click=lambda n=level: s.update(selected_level=n))
         section("02 / Modo de jogo", "Como você quer jogar?")
         mode = st.radio("Modo", ["Treino comentado", "Simulado"], horizontal=True, label_visibility="collapsed")
-        html('<div class="small-note">' + ("Aprenda com a explicação logo após cada resposta." if mode == "Treino comentado" else "Responda todas as questões antes de consultar o gabarito.") + '</div>')
+        html('<div class="small-note">' + ("Aprenda com a explicação logo após cada resposta." if mode == "Treino comentado" else "Receba o resultado de cada resposta; consulte as explicações completas no final.") + '</div>')
         section("03 / Cronômetro", "Quanto tempo por pergunta?")
         duration = st.selectbox("Tempo por pergunta", [30, 45, 60, 90, 120, 0], index=2, format_func=lambda n: f"{n} segundos" if n else "Sem limite de tempo", label_visibility="collapsed")
         st.button("Iniciar minha missão  →", type="primary", use_container_width=True, on_click=start, args=(s.selected_level, mode, duration))
