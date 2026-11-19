@@ -1,0 +1,122 @@
+[
+  {
+    "level": 1,
+    "topic": "Astronomia",
+    "prompt": "Qual dos planetas representados apresenta um anel ao seu redor?",
+    "correct": "B",
+    "wrong": [
+      "A",
+      "C",
+      "D"
+    ],
+    "explanation": "B apresenta um anel visível; Saturno é conhecido por seu sistema de anéis.",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 200\"><rect width=\"560\" height=\"200\" rx=\"7\" fill=\"#08182c\"/><g stroke=\"#284a6c\" opacity=\".4\"><path d=\"M0 40H560\"/><path d=\"M0 80H560\"/><path d=\"M0 120H560\"/><path d=\"M0 160H560\"/><path d=\"M80 0V200\"/><path d=\"M160 0V200\"/><path d=\"M240 0V200\"/><path d=\"M320 0V200\"/><path d=\"M400 0V200\"/><path d=\"M480 0V200\"/></g><circle cx=\"70\" cy=\"87\" r=\"28\" stroke=\"#c1eaff\" stroke-width=\"1.5\" fill=\"#b5846f\"/><circle cx=\"210\" cy=\"87\" r=\"34\" stroke=\"#c1eaff\" stroke-width=\"1.5\" fill=\"#d6b278\"/><ellipse cx=\"210\" cy=\"87\" rx=\"56\" ry=\"13\" fill=\"none\" stroke=\"#ffe2a1\" stroke-width=\"5\" transform=\"rotate(-20 210 87)\"/><circle cx=\"350\" cy=\"87\" r=\"33\" stroke=\"#c1eaff\" stroke-width=\"1.5\" fill=\"#3888bb\"/><circle cx=\"490\" cy=\"87\" r=\"26\" stroke=\"#c1eaff\" stroke-width=\"1.5\" fill=\"#7797d4\"/><text x=\"70\" y=\"155\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">A</text><text x=\"210\" y=\"155\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">B</text><text x=\"350\" y=\"155\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">C</text><text x=\"490\" y=\"155\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">D</text></svg>",
+    "alt": "Quatro planetas A, B, C e D, com cores e tamanhos diferentes; B possui um anel.",
+    "source": "Questão autoral de treino — conteúdos da OBA."
+  },
+  {
+    "level": 1,
+    "topic": "Astronáutica",
+    "prompt": "Qual é a principal função do veículo ilustrado?",
+    "correct": "Levar cargas ou pessoas ao espaço",
+    "wrong": [
+      "Viajar pelo fundo do mar",
+      "Andar sobre trilhos",
+      "Produzir chuva"
+    ],
+    "explanation": "Um foguete pode levar cargas ou tripulações ao espaço por meio da propulsão.",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 200\"><rect width=\"560\" height=\"200\" rx=\"7\" fill=\"#08182c\"/><g stroke=\"#284a6c\" opacity=\".4\"><path d=\"M0 40H560\"/><path d=\"M0 80H560\"/><path d=\"M0 120H560\"/><path d=\"M0 160H560\"/><path d=\"M80 0V200\"/><path d=\"M160 0V200\"/><path d=\"M240 0V200\"/><path d=\"M320 0V200\"/><path d=\"M400 0V200\"/><path d=\"M480 0V200\"/></g><g transform=\"translate(280 90)\"><path d=\"M0 -67Q-26 -35 -20 25L-35 45 -12 36 0 45 12 36 35 45 20 25Q26 -35 0 -67Z\" fill=\"#bad9e8\" stroke=\"#85dfff\" stroke-width=\"2\"/><circle cy=\"-19\" r=\"10\" fill=\"#296ba4\"/><path d=\"M-9 43L0 81 9 43\" fill=\"#ffbb53\"/></g></svg>",
+    "alt": "Veículo com ponta, aletas, janela e chama na parte de baixo.",
+    "source": "Questão autoral de treino — conteúdos da OBA."
+  },
+  {
+    "level": 2,
+    "topic": "Astronomia",
+    "prompt": "O gráfico apresenta durações aproximadas de rotação de quatro planetas. Qual completa uma rotação em menos tempo?",
+    "correct": "Júpiter",
+    "wrong": [
+      "Terra",
+      "Marte",
+      "Saturno"
+    ],
+    "explanation": "Júpiter apresenta a menor duração entre as quatro barras.",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 200\"><rect width=\"560\" height=\"200\" rx=\"7\" fill=\"#08182c\"/><g stroke=\"#284a6c\" opacity=\".4\"><path d=\"M0 40H560\"/><path d=\"M0 80H560\"/><path d=\"M0 120H560\"/><path d=\"M0 160H560\"/><path d=\"M80 0V200\"/><path d=\"M160 0V200\"/><path d=\"M240 0V200\"/><path d=\"M320 0V200\"/><path d=\"M400 0V200\"/><path d=\"M480 0V200\"/></g><path d=\"M55 20V155H530\" stroke=\"#b8d9f6\" stroke-width=\"2\" fill=\"none\"/><rect x=\"82\" y=\"47\" width=\"55\" height=\"108\" fill=\"#50c9ea\"/><text x=\"109\" y=\"40\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">24 h</text><text x=\"109\" y=\"180\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">Terra</text><rect x=\"197\" y=\"42.5\" width=\"55\" height=\"112.5\" fill=\"#50c9ea\"/><text x=\"224\" y=\"35.5\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">25 h</text><text x=\"224\" y=\"180\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">Marte</text><rect x=\"312\" y=\"110\" width=\"55\" height=\"45\" fill=\"#50c9ea\"/><text x=\"339\" y=\"103\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">10 h</text><text x=\"339\" y=\"180\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">Júpiter</text><rect x=\"427\" y=\"105.5\" width=\"55\" height=\"49.5\" fill=\"#50c9ea\"/><text x=\"454\" y=\"98.5\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">11 h</text><text x=\"454\" y=\"180\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">Saturno</text></svg>",
+    "alt": "Barras de Terra, 24 h; Marte, 25 h; Júpiter, 10 h; Saturno, 11 h.",
+    "source": "Questão autoral de treino — conteúdos da OBA."
+  },
+  {
+    "level": 2,
+    "topic": "Astronáutica",
+    "prompt": "Qual seria uma aplicação do equipamento em órbita mostrado no desenho?",
+    "correct": "Observar nuvens e tempestades",
+    "wrong": [
+      "Mudar as fases da Lua",
+      "Impedir a rotação terrestre",
+      "Criar estações do ano"
+    ],
+    "explanation": "Satélites meteorológicos registram imagens e dados da atmosfera.",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 200\"><rect width=\"560\" height=\"200\" rx=\"7\" fill=\"#08182c\"/><g stroke=\"#284a6c\" opacity=\".4\"><path d=\"M0 40H560\"/><path d=\"M0 80H560\"/><path d=\"M0 120H560\"/><path d=\"M0 160H560\"/><path d=\"M80 0V200\"/><path d=\"M160 0V200\"/><path d=\"M240 0V200\"/><path d=\"M320 0V200\"/><path d=\"M400 0V200\"/><path d=\"M480 0V200\"/></g><ellipse cx=\"250\" cy=\"105\" rx=\"170\" ry=\"80\" fill=\"none\" stroke=\"#8db7df\" stroke-dasharray=\"5 5\"/><circle cx=\"250\" cy=\"105\" r=\"61\" stroke=\"#c1eaff\" stroke-width=\"1.5\" fill=\"#2274aa\"/><path d=\"M215 64Q250 56 274 85L257 113 267 145 231 132 223 106Z\" fill=\"#72c8a0\"/><g transform=\"translate(410 72)\"><rect x=\"-12\" y=\"-14\" width=\"24\" height=\"28\" fill=\"#cbe5f4\"/><rect x=\"-58\" y=\"-11\" width=\"42\" height=\"22\" fill=\"#347bb4\" stroke=\"#a5e9ff\"/><rect x=\"16\" y=\"-11\" width=\"42\" height=\"22\" fill=\"#347bb4\" stroke=\"#a5e9ff\"/></g><path d=\"M410 88L300 130\" stroke=\"#6ae7ff\" stroke-dasharray=\"4 4\"/><text x=\"250\" y=\"185\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">Terra</text></svg>",
+    "alt": "Terra azul e um objeto com dois painéis solares em uma órbita tracejada.",
+    "source": "Questão autoral de treino — conteúdos da OBA."
+  },
+  {
+    "level": 3,
+    "topic": "Astronomia",
+    "prompt": "Considere a órbita elíptica desenhada, com o Sol em um dos focos. Em qual posição a velocidade orbital é maior?",
+    "correct": "A",
+    "wrong": [
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": "A está no periélio, a menor distância do Sol, onde a velocidade orbital é maior.",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 200\"><rect width=\"560\" height=\"200\" rx=\"7\" fill=\"#08182c\"/><g stroke=\"#284a6c\" opacity=\".4\"><path d=\"M0 40H560\"/><path d=\"M0 80H560\"/><path d=\"M0 120H560\"/><path d=\"M0 160H560\"/><path d=\"M80 0V200\"/><path d=\"M160 0V200\"/><path d=\"M240 0V200\"/><path d=\"M320 0V200\"/><path d=\"M400 0V200\"/><path d=\"M480 0V200\"/></g><ellipse cx=\"280\" cy=\"100\" rx=\"205\" ry=\"70\" fill=\"none\" stroke=\"#8abde9\" stroke-width=\"2\"/><circle cx=\"87\" cy=\"100\" r=\"24\" stroke=\"#c1eaff\" stroke-width=\"1.5\" fill=\"#f3b44f\"/><circle cx=\"75\" cy=\"100\" r=\"8\" stroke=\"#c1eaff\" stroke-width=\"1.5\" fill=\"#76d1ed\"/><text x=\"75\" y=\"142\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">A</text><circle cx=\"280\" cy=\"30\" r=\"8\" stroke=\"#c1eaff\" stroke-width=\"1.5\" fill=\"#76d1ed\"/><text x=\"280\" y=\"18\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">B</text><circle cx=\"485\" cy=\"100\" r=\"8\" stroke=\"#c1eaff\" stroke-width=\"1.5\" fill=\"#76d1ed\"/><text x=\"485\" y=\"140\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">C</text><circle cx=\"280\" cy=\"170\" r=\"8\" stroke=\"#c1eaff\" stroke-width=\"1.5\" fill=\"#76d1ed\"/><text x=\"280\" y=\"194\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">D</text></svg>",
+    "alt": "Órbita elíptica, Sol no foco à esquerda, A na extremidade esquerda, C à direita, B em cima, D embaixo.",
+    "source": "Questão autoral de treino — conteúdos da OBA."
+  },
+  {
+    "level": 3,
+    "topic": "Astronáutica",
+    "prompt": "O gráfico representa a altitude de um foguete ao longo do tempo. Entre quais instantes ocorreu o maior aumento de altitude?",
+    "correct": "De 2 a 3 minutos",
+    "wrong": [
+      "De 0 a 1 minuto",
+      "De 1 a 2 minutos",
+      "De 3 a 4 minutos"
+    ],
+    "explanation": "Entre 2 e 3 minutos a altitude cresce de 40 para 90 km, um aumento de 50 km.",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 200\"><rect width=\"560\" height=\"200\" rx=\"7\" fill=\"#08182c\"/><g stroke=\"#284a6c\" opacity=\".4\"><path d=\"M0 40H560\"/><path d=\"M0 80H560\"/><path d=\"M0 120H560\"/><path d=\"M0 160H560\"/><path d=\"M80 0V200\"/><path d=\"M160 0V200\"/><path d=\"M240 0V200\"/><path d=\"M320 0V200\"/><path d=\"M400 0V200\"/><path d=\"M480 0V200\"/></g><path d=\"M65 23V150H525\" stroke=\"#a5cce9\" fill=\"none\" stroke-width=\"2\"/><path d=\"M65 150L175 138L285 102L395 42L505 30\" fill=\"none\" stroke=\"#53dfed\" stroke-width=\"3\"/><circle cx=\"65\" cy=\"150\" r=\"4\" stroke=\"#c1eaff\" stroke-width=\"1.5\" fill=\"#8eeaff\"/><text x=\"65\" y=\"141\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">0</text><text x=\"65\" y=\"175\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">0</text><circle cx=\"175\" cy=\"138\" r=\"4\" stroke=\"#c1eaff\" stroke-width=\"1.5\" fill=\"#8eeaff\"/><text x=\"175\" y=\"129\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">10</text><text x=\"175\" y=\"175\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">1</text><circle cx=\"285\" cy=\"102\" r=\"4\" stroke=\"#c1eaff\" stroke-width=\"1.5\" fill=\"#8eeaff\"/><text x=\"285\" y=\"93\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">40</text><text x=\"285\" y=\"175\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">2</text><circle cx=\"395\" cy=\"42\" r=\"4\" stroke=\"#c1eaff\" stroke-width=\"1.5\" fill=\"#8eeaff\"/><text x=\"395\" y=\"33\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">90</text><text x=\"395\" y=\"175\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">3</text><circle cx=\"505\" cy=\"30\" r=\"4\" stroke=\"#c1eaff\" stroke-width=\"1.5\" fill=\"#8eeaff\"/><text x=\"505\" y=\"21\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">100</text><text x=\"505\" y=\"175\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">4</text><text x=\"280\" y=\"195\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">Tempo (min)</text><text x=\"43\" y=\"17\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">km</text></svg>",
+    "alt": "Altitude em km aos minutos 0, 1, 2, 3 e 4: 0, 10, 40, 90 e 100.",
+    "source": "Questão autoral de treino — conteúdos da OBA."
+  },
+  {
+    "level": 4,
+    "topic": "Astronomia",
+    "prompt": "As curvas representam espectros idealizados de corpo negro. A curva A tem pico em 450 nm; B, em 650 nm. Qual estrela possui maior temperatura superficial?",
+    "correct": "A",
+    "wrong": [
+      "B",
+      "Têm temperaturas iguais",
+      "Não é possível relacionar pico e temperatura"
+    ],
+    "explanation": "Pela lei de Wien, menor comprimento de onda no máximo de emissão corresponde a maior temperatura.",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 200\"><rect width=\"560\" height=\"200\" rx=\"7\" fill=\"#08182c\"/><g stroke=\"#284a6c\" opacity=\".4\"><path d=\"M0 40H560\"/><path d=\"M0 80H560\"/><path d=\"M0 120H560\"/><path d=\"M0 160H560\"/><path d=\"M80 0V200\"/><path d=\"M160 0V200\"/><path d=\"M240 0V200\"/><path d=\"M320 0V200\"/><path d=\"M400 0V200\"/><path d=\"M480 0V200\"/></g><path d=\"M60 25V155H535\" stroke=\"#b4d5f1\" fill=\"none\" stroke-width=\"2\"/><path d=\"M60 151Q125 150 155 75Q180 12 210 49Q255 105 535 150\" fill=\"none\" stroke=\"#63d9ff\" stroke-width=\"3\"/><path d=\"M60 154Q200 152 280 108Q315 50 355 96Q412 143 535 152\" fill=\"none\" stroke=\"#ffb165\" stroke-width=\"3\"/><text x=\"184\" y=\"28\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">A</text><text x=\"322\" y=\"70\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">B</text><text x=\"184\" y=\"177\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">450 nm</text><text x=\"322\" y=\"177\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">650 nm</text><text x=\"475\" y=\"193\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">λ</text></svg>",
+    "alt": "Duas curvas espectrais, A com pico em 450 nm e B em 650 nm.",
+    "source": "Questão autoral de treino — conteúdos da OBA."
+  },
+  {
+    "level": 4,
+    "topic": "Astronáutica",
+    "prompt": "O esquema mostra duas órbitas circulares em torno da mesma Terra. Se r₂ = 4r₁, qual é a razão entre os períodos T₂/T₁?",
+    "correct": "8",
+    "wrong": [
+      "2",
+      "4",
+      "16"
+    ],
+    "explanation": "Pela terceira lei de Kepler, T² é proporcional a r³; T₂/T₁ = 4^(3/2) = 8.",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 200\"><rect width=\"560\" height=\"200\" rx=\"7\" fill=\"#08182c\"/><g stroke=\"#284a6c\" opacity=\".4\"><path d=\"M0 40H560\"/><path d=\"M0 80H560\"/><path d=\"M0 120H560\"/><path d=\"M0 160H560\"/><path d=\"M80 0V200\"/><path d=\"M160 0V200\"/><path d=\"M240 0V200\"/><path d=\"M320 0V200\"/><path d=\"M400 0V200\"/><path d=\"M480 0V200\"/></g><circle cx=\"280\" cy=\"100\" r=\"80\" stroke=\"#809bd0\" stroke-width=\"2\" stroke-dasharray=\"5 4\" fill=\"none\"/><circle cx=\"280\" cy=\"100\" r=\"20\" stroke=\"#7ad8ff\" stroke-width=\"2\" fill=\"none\"/><circle cx=\"280\" cy=\"100\" r=\"12\" stroke=\"#c1eaff\" stroke-width=\"1.5\" fill=\"#418ac4\"/><path d=\"M280 100H360M280 100V80\" stroke=\"#d4f3ff\" stroke-width=\"1.5\"/><circle cx=\"360\" cy=\"100\" r=\"6\" stroke=\"#c1eaff\" stroke-width=\"1.5\" fill=\"#e7bbff\"/><circle cx=\"280\" cy=\"80\" r=\"5\" stroke=\"#c1eaff\" stroke-width=\"1.5\" fill=\"#79e8ff\"/><text x=\"325\" y=\"91\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">r₂</text><text x=\"248\" y=\"82\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">r₁</text><text x=\"280\" y=\"194\" fill=\"#dcf4ff\" font-family=\"Arial,sans-serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">Esquema orbital</text></svg>",
+    "alt": "Dois círculos concêntricos com raios r₁ e r₂, em torno da Terra; o maior possui quatro vezes o raio do menor.",
+    "source": "Questão autoral de treino — conteúdos da OBA."
+  }
+]
