@@ -16,7 +16,11 @@ for item in ILLUSTRATED:
     question = (item["topic"], item["prompt"], item["correct"], item["wrong"], item["explanation"])
     DATA[item["level"]].append(question)
     FIGURES[item["prompt"]] = (item["figure"], item["alt"])
+OBA_EXTRA = json.loads((Path(__file__).parent / "data" / "oba_training_2026.json").read_text(encoding="utf-8"))
+for item in OBA_EXTRA:
+    DATA[item["level"]].append((item["topic"], item["prompt"], item["correct"], item["wrong"], item["explanation"]))
 TOTAL_QUESTIONS = sum(len(pool) for pool in DATA.values())
+OBA_COUNT = sum(len(DATA[n]) for n in range(1, 5))
 
 st.set_page_config(page_title="AstroQuiz Lab", page_icon="✦", layout="wide")
 
@@ -151,10 +155,13 @@ if background_uri:
 
 LEVELS = {1: "1º ao 3º ano", 2: "4º e 5º ano", 3: "6º ao 9º ano", 4: "Ensino Médio", 5: "Desafio científico"}
 game = declare_component('astroquiz_game', path=str(Path(__file__).parent / 'game_frontend'))
+menu = declare_component('astroquiz_menu', path=str(Path(__file__).parent / 'menu_frontend'))
 arcade = declare_component('astro_arcade', path=str(Path(__file__).parent / 'arcade_frontend'))
 s = st.session_state
 if "stage" not in s:
     s.stage = "home"
+if "menu_round" not in s:
+    s.menu_round = 0
 if "selected_level" not in s:
     s.selected_level = 3
 
@@ -167,7 +174,7 @@ def section(kicker, title, desc=""):
 def stat(label, value):
     html(f'<div class="mini-stat"><span>{escape(str(label))}</span><strong>{escape(str(value))}</strong></div>')
 
-def start(level, mode, duration):
+def start(level, mode, duration, sound=True):
     pool = DATA[level]
     if level == 5:
         selected = random.sample(pool, min(10, len(pool)))
@@ -192,6 +199,7 @@ def start(level, mode, duration):
     s.level = level
     s.mode = mode
     s.duration = duration
+    s.sound = sound
     s.idx = 0
     s.answers = []
     s.locked = False
@@ -213,6 +221,7 @@ def advance():
 
 def home():
     s.stage = "home"
+    s.menu_round = s.get("menu_round", 0) + 1
 
 def open_arcade():
     s.stage = "arcade"
@@ -220,52 +229,19 @@ def open_arcade():
 html('<div class="brand"><div class="brand-name"><span class="brand-mark">✦</span> AstroQuiz Lab</div><span class="brand-tag">Matemática &amp; Contexto</span></div>')
 
 if s.stage == "home":
-    if background_uri:
-        html(f'<div class="game-banner"><img src="{background_uri}" alt="ASTROQUIZ — cenário espacial com planetas, galáxias e constelações"></div>')
-        html('<div class="game-menu"><strong>Selecione sua missão</strong><span>73 questões · 5 níveis · 10 perguntas por missão</span></div>')
-    else:
-        stars = "".join(f'<i class="star" style="left:{x}%;top:{y}%"></i>' for x,y in [(8,12),(48,10),(56,74),(69,13),(94,12),(93,82),(61,42),(48,86),(78,90),(99,47),(35,18),(84,27)])
-        html('''<div class="hero">''' + stars + '''
-        <div class="hero-copy"><div class="hero-kicker">Uma jornada pelo universo</div>
-        <h1>ASTROQUIZ</h1>
-        <p>Teste seus conhecimentos de astronomia e astronáutica. Aprenda a cada missão e prepare-se para a OBA.</p>
-        <div class="hero-tags"><span>73 questões</span><span>5 níveis</span><span>10 por missão</span></div></div>
-        <svg class="planet-art" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <defs><radialGradient id="sphere" cx=".3" cy=".25" r=".8"><stop stop-color="#f3dac0"/><stop offset=".42" stop-color="#c294a0"/><stop offset=".75" stop-color="#7b648f"/><stop offset="1" stop-color="#343957"/></radialGradient><linearGradient id="ring" x1="0" x2="1" y1="1" y2="0"><stop stop-color="#a683c4"/><stop offset=".5" stop-color="#f7ddba"/><stop offset="1" stop-color="#736d9d"/></linearGradient><clipPath id="disk"><circle cx="216" cy="210" r="104"/></clipPath></defs>
-        <g fill="none" stroke="#c6bbef" opacity=".18"><circle cx="216" cy="210" r="171"/><circle cx="216" cy="210" r="150" stroke-dasharray="2 8"/><path d="M55 210H377M216 49V371"/></g>
-        <ellipse cx="216" cy="210" rx="179" ry="47" fill="none" stroke="url(#ring)" stroke-width="21" opacity=".48" transform="rotate(-25 216 210)"/>
-        <circle cx="216" cy="210" r="104" fill="url(#sphere)"/>
-        <g clip-path="url(#disk)" opacity=".31" fill="none" stroke-linecap="round"><path d="M95 156Q220 204 344 137M92 176Q220 218 343 155" stroke="#e5c7bc" stroke-width="13"/><path d="M95 221Q212 263 345 194M93 249Q232 285 342 226M100 286Q230 314 337 263" stroke="#55486f" stroke-width="11"/></g>
-        <g transform="rotate(-25 216 210)" fill="none" stroke="url(#ring)"><path d="M37 210a179 47 0 0 0 358 0" stroke-width="21" opacity=".92"/><path d="M22 210a194 61 0 0 0 388 0" stroke-width="1.8" opacity=".55"/></g>
-        <circle cx="344" cy="95" r="5" fill="#e7d6fd"/><circle cx="344" cy="95" r="11" fill="none" stroke="#c1bce9" opacity=".4"/>
-        </svg></div>''')
-    nav_quiz, nav_arcade = st.columns(2)
-    with nav_quiz:
-        st.button("QUIZ · Desafio de conhecimentos", type="primary", use_container_width=True, disabled=True)
-    with nav_arcade:
-        st.button("ASTRO ARCADE · Minijogos", use_container_width=True, on_click=open_arcade)
-    left, right = st.columns([1.65, 1], gap="large")
-    with left:
-        section("01 / Sua missão", "Escolha seu nível", "Selecione a etapa escolar para começar.")
-        with st.container(key="levels"):
-            for chunk in [(1, 2), (3, 4), (5,)]:
-                cols = st.columns(len(chunk))
-                for col, level in zip(cols, chunk):
-                    with col:
-                        st.button(f"Nível {level} · {LEVELS[level]}", key=f"level_{level}", type="primary" if s.selected_level == level else "secondary", use_container_width=True, on_click=lambda n=level: s.update(selected_level=n))
-        section("02 / Modo de jogo", "Como você quer jogar?")
-        mode = st.radio("Modo", ["Treino comentado", "Simulado"], horizontal=True, label_visibility="collapsed")
-        html('<div class="small-note">' + ("Aprenda com a explicação logo após cada resposta." if mode == "Treino comentado" else "Receba o resultado de cada resposta; consulte as explicações completas no final.") + '</div>')
-        section("03 / Cronômetro", "Quanto tempo por pergunta?")
-        duration = st.selectbox("Tempo por pergunta", [30, 45, 60, 90, 120, 0], index=2, format_func=lambda n: f"{n} segundos" if n else "Sem limite de tempo", label_visibility="collapsed")
-        st.button("Iniciar minha missão  →", type="primary", use_container_width=True, on_click=start, args=(s.selected_level, mode, duration))
-    with right:
-        with st.container(border=True):
-            section("Guia de bordo", "O que te espera")
-            html('''<div class="feature"><div class="feature-num">01</div><div><strong>Explore o universo</strong><p>Planetas, estrelas, órbitas, eclipses e outros temas.</p></div></div>
-            <div class="feature"><div class="feature-num">02</div><div><strong>Desafie seus conhecimentos</strong><p>Sete perguntas de astronomia e três de astronáutica por rodada.</p></div></div>
-            <div class="feature"><div class="feature-num">03</div><div><strong>Aprenda com o resultado</strong><p>Veja sua pontuação e revise o gabarito explicado.</p></div></div>''')
-            st.caption("Níveis 1–4: preparação independente para a OBA. Nível 5: questões científicas adaptadas do Astro-MCQ, em português.")
+    command = menu(oba_count=OBA_COUNT, science_count=len(DATA[5]), round=s.menu_round, key=f"console_menu_{s.menu_round}", default=None)
+    if isinstance(command, dict) and command.get("round") == s.menu_round:
+        action = command.get("action")
+        if action == "arcade":
+            open_arcade()
+            st.rerun()
+        elif action == "quiz":
+            level = command.get("level")
+            mode = command.get("mode")
+            duration = command.get("duration")
+            if level in LEVELS and mode in ("Treino comentado", "Simulado") and duration in (0, 30, 45, 60, 90, 120):
+                start(level, mode, duration, bool(command.get("sound", True)))
+                st.rerun()
 
 elif s.stage == "arcade":
     section("Astro Arcade", "Minijogos espaciais", "Escolha uma missão arcade. A pontuação dos jogos é independente do quiz.")
@@ -280,10 +256,10 @@ elif s.stage == "arcade":
 elif s.stage == "quiz":
     left, right = st.columns([2.4, 1], gap="large")
     with left:
-        result = game(questions=s.questions, round=s.round, level=s.level, mode=s.mode, duration=s.duration, background=background_uri, key=f"game_{s.round}", default=None)
+        result = game(questions=s.questions, round=s.round, level=s.level, mode=s.mode, duration=s.duration, background=background_uri, sound=s.get("sound", True), key=f"game_{s.round}", default=None)
         if isinstance(result, dict) and result.get("round") == s.round:
             if result.get("action") == "exit":
-                s.stage = "home"
+                home()
                 st.rerun()
             elif result.get("action") == "complete":
                 recorded = result.get("answers")
@@ -341,6 +317,6 @@ else:
 
 st.divider()
 with st.expander("Sobre o projeto e referências"):
-    st.markdown("Níveis 1–4: questões autorais de preparação para a OBA de 2025, sem vínculo oficial. Nível 5: 17 questões traduzidas e adaptadas do Astro-MCQ, com explicações e atribuição. [Patrick Fleith, Astro-MCQ (2025)](https://huggingface.co/datasets/patrickfleith/astro-mcq) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).")
-    st.markdown("[Conteúdos oficiais da OBA 2025](https://docs.oba.org.br/regulamento-da-28-olimpiada-brasileira-de-astronomia-e-astronautica-28-oba-2025) · [Provas e gabaritos oficiais](https://site.oba.org.br/provas-e-gabaritos)")
+    st.markdown("Níveis 1–4: questões autorais de preparação para a OBA, alinhadas aos conteúdos das edições 2025 e 2026, sem vínculo oficial. Não são transcrições das provas. Nível 5: 17 questões traduzidas e adaptadas do Astro-MCQ, com explicações e atribuição. [Patrick Fleith, Astro-MCQ (2025)](https://huggingface.co/datasets/patrickfleith/astro-mcq) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).")
+    st.markdown("[Programa da OBA 2026](https://site.oba.org.br/o-que-e-a-oba) · [Conteúdos oficiais da OBA 2025](https://docs.oba.org.br/regulamento-da-28-olimpiada-brasileira-de-astronomia-e-astronautica-28-oba-2025) · [Provas e gabaritos oficiais](https://site.oba.org.br/provas-e-gabaritos)")
 html('<div class="footer-note">AstroQuiz Lab · Matemática &amp; Contexto · Joice Souza Martins Santos</div>')
