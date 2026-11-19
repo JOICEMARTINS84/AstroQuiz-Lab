@@ -38,7 +38,7 @@ for item in OBA_PDF:
 TOTAL_QUESTIONS = sum(len(pool) for pool in DATA.values())
 OBA_COUNT = sum(len(DATA[n]) for n in range(1, 5))
 
-st.set_page_config(page_title="AstroQuiz Lab", page_icon="✦", layout="wide")
+st.set_page_config(page_title="ASTROQUIZ", page_icon="🔭", layout="wide")
 
 background_file = Path(__file__).parent / "astroquiz.webp"
 background_uri = "data:image/webp;base64," + base64.b64encode(background_file.read_bytes()).decode("ascii") if background_file.is_file() else ""
@@ -257,7 +257,7 @@ def open_arcade():
     s.stage = "arcade"
     s.arcade_round = s.get("arcade_round", 0) + 1
 
-html('<div class="brand"><div class="brand-name"><span class="brand-mark">✦</span> AstroQuiz Lab</div><span class="brand-tag">Matemática &amp; Contexto</span></div>')
+html('<div class="brand"><div class="brand-name"><span class="brand-mark" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 15.5 4l3.2 6.1-12.5 6.5z"/><path d="m15.5 4 3-1.5 3.2 6.1-3 1.5M3 10.5l-1.2.6 3.2 6.1 1.2-.6M11 14l1 3m0 0-5 5m5-5 5 5m-5-5v5"/></svg></span> ASTROQUIZ</div><span class="brand-tag">Matemática &amp; Contexto</span></div>')
 
 if s.stage == "home":
     command = menu(oba_count=OBA_COUNT, science_count=len(DATA[5]), round=s.menu_round, key=f"console_menu_{s.menu_round}", default=None)
@@ -362,4 +362,4 @@ st.divider()
 with st.expander("Sobre o projeto e referências"):
     st.markdown("Níveis 1–4: questões autorais de preparação para a OBA, alinhadas aos conteúdos das edições 2025 e 2026, sem vínculo oficial. Inclui exercícios relacionados a provas de 2025 e questões importadas do material fornecido de 2024, 2025 e 2026. As respostas importadas seguem o gabarito do PDF, sem conferência externa independente. As sequências de verdadeiro ou falso têm alternativas geradas pelo jogo; algumas figuras foram reconstruídas. Nível 5: 17 questões traduzidas e adaptadas do Astro-MCQ, com explicações e atribuição. [Patrick Fleith, Astro-MCQ (2025)](https://huggingface.co/datasets/patrickfleith/astro-mcq) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).")
     st.markdown("[Programa da OBA 2026](https://site.oba.org.br/o-que-e-a-oba) · [Conteúdos oficiais da OBA 2025](https://docs.oba.org.br/regulamento-da-28-olimpiada-brasileira-de-astronomia-e-astronautica-28-oba-2025) · [Provas e gabaritos oficiais](https://site.oba.org.br/provas-e-gabaritos)")
-html('<div class="footer-note">AstroQuiz Lab · Matemática &amp; Contexto · Joice Souza Martins Santos</div>')
+html('<div class="footer-note">ASTROQUIZ · Matemática &amp; Contexto · Joice Souza Martins Santos</div>')
