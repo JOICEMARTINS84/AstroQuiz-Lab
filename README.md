@@ -37,3 +37,24 @@ As questões são autorais, alinhadas ao conteúdo programático de 2025; não s
 ## Campanha OBA e menu de console
 
 Menu em Canvas com cenário animado e nave low-poly em perspectiva, inspirado em jogos da era PlayStation 2. Campanha principal com 10 perguntas por missão: sete de astronomia e três de astronáutica. Pontuação de 100 pontos por acerto, sequência de acertos e cronômetro. Questões escolares autorais, não transcrições oficiais. [Programa oficial da OBA](https://site.oba.org.br/o-que-e-a-oba).
+
+
+## Ranking persistente no Supabase
+
+O AstroQuiz usa o PostgreSQL do Supabase para compartilhar o ranking entre visitantes. O app cria automaticamente a tabela `public.scores`, o índice de classificação e ativa Row Level Security (RLS) na primeira conexão. Não é necessário inserir SQL manualmente.
+
+1. No projeto **Supabase exclusivo do AstroQuiz**, abra **Connect > Session pooler** e copie a string de conexão PostgreSQL. Use a porta indicada pelo Supabase (geralmente `5432` para Session pooler).
+2. No **Streamlit Community Cloud**, abra o aplicativo do AstroQuiz > **Settings > Secrets**. Adicione as informações abaixo, substituindo o endereço e a senha pelos do projeto. A senha deve permanecer em Secrets, nunca em um arquivo do GitHub.
+3. Salve o Secret e reinicie o app. Abra **Ranking** no AstroQuiz. O banco será preparado automaticamente.
+
+```toml
+[ranking_db]
+connection = "postgresql://postgres.PROJECT_REF:[YOUR-DATABASE-PASSWORD]@HOST_DO_SESSION_POOLER:5432/postgres"
+password = "SENHA_DO_BANCO_SUPABASE"
+```
+
+No campo `connection`, copie o endereço **Session pooler** completo gerado pelo Supabase, mas **deixe o trecho `[YOUR-DATABASE-PASSWORD]` como marcador**, em vez de colocar a senha real dentro da URL. O código usa o campo `password` para autenticar. Se aparecer outro marcador `[YOUR-PASSWORD]`, ele também é aceito.
+
+O app usa conexão PostgreSQL direta pelo servidor: não precisa da `anon key` nem da `service_role key`. Por segurança, a tabela usa RLS sem políticas públicas e o jogo acessa o ranking exclusivamente com a credencial PostgreSQL armazenada no Streamlit.
+
+**Importante:** vincular o Supabase ao GitHub não injeta automaticamente credenciais no Streamlit. Sem a seção `[ranking_db]` nos Secrets do app, o ranking continua temporário em SQLite local. Não use o Supabase do condomínio.
