@@ -31,6 +31,25 @@ def migrate_existing(db, destination):
     with _migration_lock:
         if destination in _migrated:
             return
+        # Inicializa o ranking no primeiro acesso ao novo Supabase.
+        # O PostgreSQL gerencia dados persistentes; nao dependemos do disco do Streamlit.
+        with db.cursor() as cursor:
+            cursor.execute("""CREATE TABLE IF NOT EXISTS public.scores (
+                mission TEXT PRIMARY KEY,
+                nickname TEXT NOT NULL,
+                nickname_key TEXT NOT NULL,
+                level INTEGER NOT NULL CHECK (level BETWEEN 1 AND 5),
+                mode TEXT NOT NULL,
+                duration INTEGER NOT NULL,
+                hits INTEGER NOT NULL CHECK (hits BETWEEN 0 AND 10),
+                elapsed INTEGER NOT NULL CHECK (elapsed >= 0),
+                created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+            )""")
+            cursor.execute("""CREATE INDEX IF NOT EXISTS scores_category
+                ON public.scores(level, mode, duration, hits DESC, elapsed ASC)""")
+            # Ranking acessado via driver PostgreSQL, nao por API anon publica.
+            cursor.execute("ALTER TABLE public.scores ENABLE ROW LEVEL SECURITY")
+        db.commit()
         if DB_PATH.is_file():
             with sqlite3.connect(str(DB_PATH), timeout=10) as old:
                 rows = old.execute("""SELECT mission, nickname, nickname_key, level,
